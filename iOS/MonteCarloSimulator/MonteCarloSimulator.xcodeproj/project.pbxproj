@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DACC34371DBC136200B7DBF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34361DBC136200B7DBF4 /* AppDelegate.swift */; };
+		DACC34391DBC136200B7DBF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34381DBC136200B7DBF4 /* ViewController.swift */; };
+		DACC343C1DBC136200B7DBF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACC343A1DBC136200B7DBF4 /* Main.storyboard */; };
+		DACC343F1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DACC343D1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld */; };
+		DACC34411DBC136200B7DBF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACC34401DBC136200B7DBF4 /* Assets.xcassets */; };
+		DACC34441DBC136200B7DBF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACC34421DBC136200B7DBF4 /* LaunchScreen.storyboard */; };
+		DACC344F1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC344E1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift */; };
+		DACC345A1DBC136200B7DBF4 /* MonteCarloSimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34591DBC136200B7DBF4 /* MonteCarloSimulatorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DACC344B1DBC136200B7DBF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DACC342B1DBC136200B7DBF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DACC34321DBC136200B7DBF4;
+			remoteInfo = MonteCarloSimulator;
+		};
+		DACC34561DBC136200B7DBF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DACC342B1DBC136200B7DBF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DACC34321DBC136200B7DBF4;
+			remoteInfo = MonteCarloSimulator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DACC34331DBC136200B7DBF4 /* MonteCarloSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonteCarloSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DACC34361DBC136200B7DBF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DACC34381DBC136200B7DBF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DACC343B1DBC136200B7DBF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DACC343E1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MonteCarloSimulator.xcdatamodel; sourceTree = "<group>"; };
+		DACC34401DBC136200B7DBF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DACC34431DBC136200B7DBF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DACC34451DBC136200B7DBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DACC344A1DBC136200B7DBF4 /* MonteCarloSimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonteCarloSimulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DACC344E1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonteCarloSimulatorTests.swift; sourceTree = "<group>"; };
+		DACC34501DBC136200B7DBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DACC34551DBC136200B7DBF4 /* MonteCarloSimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonteCarloSimulatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DACC34591DBC136200B7DBF4 /* MonteCarloSimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonteCarloSimulatorUITests.swift; sourceTree = "<group>"; };
+		DACC345B1DBC136200B7DBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DACC34301DBC136200B7DBF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DACC34471DBC136200B7DBF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DACC34521DBC136200B7DBF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DACC342A1DBC136200B7DBF4 = {
+			isa = PBXGroup;
+			children = (
+				DACC34351DBC136200B7DBF4 /* MonteCarloSimulator */,
+				DACC344D1DBC136200B7DBF4 /* MonteCarloSimulatorTests */,
+				DACC34581DBC136200B7DBF4 /* MonteCarloSimulatorUITests */,
+				DACC34341DBC136200B7DBF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DACC34341DBC136200B7DBF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DACC34331DBC136200B7DBF4 /* MonteCarloSimulator.app */,
+				DACC344A1DBC136200B7DBF4 /* MonteCarloSimulatorTests.xctest */,
+				DACC34551DBC136200B7DBF4 /* MonteCarloSimulatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DACC34351DBC136200B7DBF4 /* MonteCarloSimulator */ = {
+			isa = PBXGroup;
+			children = (
+				DACC34361DBC136200B7DBF4 /* AppDelegate.swift */,
+				DACC34381DBC136200B7DBF4 /* ViewController.swift */,
+				DACC343A1DBC136200B7DBF4 /* Main.storyboard */,
+				DACC34401DBC136200B7DBF4 /* Assets.xcassets */,
+				DACC34421DBC136200B7DBF4 /* LaunchScreen.storyboard */,
+				DACC34451DBC136200B7DBF4 /* Info.plist */,
+				DACC343D1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld */,
+			);
+			path = MonteCarloSimulator;
+			sourceTree = "<group>";
+		};
+		DACC344D1DBC136200B7DBF4 /* MonteCarloSimulatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				DACC344E1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift */,
+				DACC34501DBC136200B7DBF4 /* Info.plist */,
+			);
+			path = MonteCarloSimulatorTests;
+			sourceTree = "<group>";
+		};
+		DACC34581DBC136200B7DBF4 /* MonteCarloSimulatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DACC34591DBC136200B7DBF4 /* MonteCarloSimulatorUITests.swift */,
+				DACC345B1DBC136200B7DBF4 /* Info.plist */,
+			);
+			path = MonteCarloSimulatorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DACC34321DBC136200B7DBF4 /* MonteCarloSimulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DACC345E1DBC136200B7DBF4 /* Build configuration list for PBXNativeTarget "MonteCarloSimulator" */;
+			buildPhases = (
+				DACC342F1DBC136200B7DBF4 /* Sources */,
+				DACC34301DBC136200B7DBF4 /* Frameworks */,
+				DACC34311DBC136200B7DBF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonteCarloSimulator;
+			productName = MonteCarloSimulator;
+			productReference = DACC34331DBC136200B7DBF4 /* MonteCarloSimulator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DACC34491DBC136200B7DBF4 /* MonteCarloSimulatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DACC34611DBC136200B7DBF4 /* Build configuration list for PBXNativeTarget "MonteCarloSimulatorTests" */;
+			buildPhases = (
+				DACC34461DBC136200B7DBF4 /* Sources */,
+				DACC34471DBC136200B7DBF4 /* Frameworks */,
+				DACC34481DBC136200B7DBF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DACC344C1DBC136200B7DBF4 /* PBXTargetDependency */,
+			);
+			name = MonteCarloSimulatorTests;
+			productName = MonteCarloSimulatorTests;
+			productReference = DACC344A1DBC136200B7DBF4 /* MonteCarloSimulatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DACC34541DBC136200B7DBF4 /* MonteCarloSimulatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DACC34641DBC136200B7DBF4 /* Build configuration list for PBXNativeTarget "MonteCarloSimulatorUITests" */;
+			buildPhases = (
+				DACC34511DBC136200B7DBF4 /* Sources */,
+				DACC34521DBC136200B7DBF4 /* Frameworks */,
+				DACC34531DBC136200B7DBF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DACC34571DBC136200B7DBF4 /* PBXTargetDependency */,
+			);
+			name = MonteCarloSimulatorUITests;
+			productName = MonteCarloSimulatorUITests;
+			productReference = DACC34551DBC136200B7DBF4 /* MonteCarloSimulatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DACC342B1DBC136200B7DBF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = EECS393;
+				TargetAttributes = {
+					DACC34321DBC136200B7DBF4 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = N8H54VZ747;
+					};
+					DACC34491DBC136200B7DBF4 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = N8H54VZ747;
+						TestTargetID = DACC34321DBC136200B7DBF4;
+					};
+					DACC34541DBC136200B7DBF4 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = N8H54VZ747;
+						TestTargetID = DACC34321DBC136200B7DBF4;
+					};
+				};
+			};
+			buildConfigurationList = DACC342E1DBC136200B7DBF4 /* Build configuration list for PBXProject "MonteCarloSimulator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DACC342A1DBC136200B7DBF4;
+			productRefGroup = DACC34341DBC136200B7DBF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DACC34321DBC136200B7DBF4 /* MonteCarloSimulator */,
+				DACC34491DBC136200B7DBF4 /* MonteCarloSimulatorTests */,
+				DACC34541DBC136200B7DBF4 /* MonteCarloSimulatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DACC34311DBC136200B7DBF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DACC34441DBC136200B7DBF4 /* LaunchScreen.storyboard in Resources */,
+				DACC34411DBC136200B7DBF4 /* Assets.xcassets in Resources */,
+				DACC343C1DBC136200B7DBF4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DACC34481DBC136200B7DBF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DACC34531DBC136200B7DBF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DACC342F1DBC136200B7DBF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DACC34391DBC136200B7DBF4 /* ViewController.swift in Sources */,
+				DACC34371DBC136200B7DBF4 /* AppDelegate.swift in Sources */,
+				DACC343F1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DACC34461DBC136200B7DBF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DACC344F1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DACC34511DBC136200B7DBF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DACC345A1DBC136200B7DBF4 /* MonteCarloSimulatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DACC344C1DBC136200B7DBF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DACC34321DBC136200B7DBF4 /* MonteCarloSimulator */;
+			targetProxy = DACC344B1DBC136200B7DBF4 /* PBXContainerItemProxy */;
+		};
+		DACC34571DBC136200B7DBF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DACC34321DBC136200B7DBF4 /* MonteCarloSimulator */;
+			targetProxy = DACC34561DBC136200B7DBF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DACC343A1DBC136200B7DBF4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DACC343B1DBC136200B7DBF4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DACC34421DBC136200B7DBF4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DACC34431DBC136200B7DBF4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DACC345C1DBC136200B7DBF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DACC345D1DBC136200B7DBF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DACC345F1DBC136200B7DBF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = MonteCarloSimulator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DACC34601DBC136200B7DBF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = MonteCarloSimulator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DACC34621DBC136200B7DBF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MonteCarloSimulatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonteCarloSimulator.app/MonteCarloSimulator";
+			};
+			name = Debug;
+		};
+		DACC34631DBC136200B7DBF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MonteCarloSimulatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonteCarloSimulator.app/MonteCarloSimulator";
+			};
+			name = Release;
+		};
+		DACC34651DBC136200B7DBF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MonteCarloSimulatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MonteCarloSimulator;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DACC34661DBC136200B7DBF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MonteCarloSimulatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MonteCarloSimulator;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DACC342E1DBC136200B7DBF4 /* Build configuration list for PBXProject "MonteCarloSimulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DACC345C1DBC136200B7DBF4 /* Debug */,
+				DACC345D1DBC136200B7DBF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DACC345E1DBC136200B7DBF4 /* Build configuration list for PBXNativeTarget "MonteCarloSimulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DACC345F1DBC136200B7DBF4 /* Debug */,
+				DACC34601DBC136200B7DBF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DACC34611DBC136200B7DBF4 /* Build configuration list for PBXNativeTarget "MonteCarloSimulatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DACC34621DBC136200B7DBF4 /* Debug */,
+				DACC34631DBC136200B7DBF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DACC34641DBC136200B7DBF4 /* Build configuration list for PBXNativeTarget "MonteCarloSimulatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DACC34651DBC136200B7DBF4 /* Debug */,
+				DACC34661DBC136200B7DBF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DACC343D1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DACC343E1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodel */,
+			);
+			currentVersion = DACC343E1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodel */;
+			path = MonteCarloSimulator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DACC342B1DBC136200B7DBF4 /* Project object */;
+}
