@@ -15,6 +15,10 @@
 		DACC34441DBC136200B7DBF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACC34421DBC136200B7DBF4 /* LaunchScreen.storyboard */; };
 		DACC344F1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC344E1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift */; };
 		DACC345A1DBC136200B7DBF4 /* MonteCarloSimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34591DBC136200B7DBF4 /* MonteCarloSimulatorUITests.swift */; };
+		DACC34681DBD019300B7DBF4 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34671DBD019300B7DBF4 /* IntroViewController.swift */; };
+		DACC346A1DBD024C00B7DBF4 /* BasicInputsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */; };
+		DACC346C1DBD038400B7DBF4 /* StockSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */; };
+		DACC346E1DBD040400B7DBF4 /* StockAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		DACC34551DBC136200B7DBF4 /* MonteCarloSimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonteCarloSimulatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACC34591DBC136200B7DBF4 /* MonteCarloSimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonteCarloSimulatorUITests.swift; sourceTree = "<group>"; };
 		DACC345B1DBC136200B7DBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DACC34671DBD019300B7DBF4 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInputsViewController.swift; sourceTree = "<group>"; };
+		DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSelectionViewController.swift; sourceTree = "<group>"; };
+		DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +109,15 @@
 			children = (
 				DACC34361DBC136200B7DBF4 /* AppDelegate.swift */,
 				DACC34381DBC136200B7DBF4 /* ViewController.swift */,
+				DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */,
 				DACC343A1DBC136200B7DBF4 /* Main.storyboard */,
+				DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */,
+				DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */,
 				DACC34401DBC136200B7DBF4 /* Assets.xcassets */,
 				DACC34421DBC136200B7DBF4 /* LaunchScreen.storyboard */,
 				DACC34451DBC136200B7DBF4 /* Info.plist */,
 				DACC343D1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld */,
+				DACC34671DBD019300B7DBF4 /* IntroViewController.swift */,
 			);
 			path = MonteCarloSimulator;
 			sourceTree = "<group>";
@@ -264,7 +276,11 @@
 			files = (
 				DACC34391DBC136200B7DBF4 /* ViewController.swift in Sources */,
 				DACC34371DBC136200B7DBF4 /* AppDelegate.swift in Sources */,
+				DACC346E1DBD040400B7DBF4 /* StockAllocation.swift in Sources */,
+				DACC346C1DBD038400B7DBF4 /* StockSelectionViewController.swift in Sources */,
+				DACC346A1DBD024C00B7DBF4 /* BasicInputsViewController.swift in Sources */,
 				DACC343F1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld in Sources */,
+				DACC34681DBD019300B7DBF4 /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
