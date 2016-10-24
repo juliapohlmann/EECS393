@@ -14,12 +14,36 @@
                         <viewControllerLayoutGuide type="bottom" id="TIB-Yk-qQ8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="G2u-HH-Dxa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gua-US-rWb">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="183" y="690" width="34" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="startButtonClick:" destination="vSh-be-VPV" eventType="touchUpInside" id="Ry4-te-sN1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="gua-US-rWb"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="gua-US-rWb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Monte Carlo Simulator" id="8tb-XJ-Rdp"/>
                     <connections>
-                        <segue destination="rbn-SG-jiL" kind="show" id="jTJ-hl-QxT"/>
+                        <outlet property="startButton" destination="gua-US-rWb" id="5qt-1w-OwJ"/>
+                        <segue destination="rbn-SG-jiL" kind="show" identifier="startSimulation" id="jTJ-hl-QxT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQL-8h-5wR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -29,26 +53,38 @@
         <!--Basic Inputs-->
         <scene sceneID="yrk-mU-OVm">
             <objects>
-                <viewController id="0ML-DS-cSm" customClass="BasicInputsViewController" sceneMemberID="viewController">
+                <viewController id="0ML-DS-cSm" customClass="BasicInputsViewController" customModule="MonteCarloSimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="at2-tj-Pni"/>
                         <viewControllerLayoutGuide type="bottom" id="WuL-ij-T4a"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XWa-8S-aMi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Basic Inputs" id="rRc-xP-qRr">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="UQ1-0u-yF7"/>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="TaD-Iu-Na2"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="UQ1-0u-yF7">
+                            <connections>
+                                <action selector="backClick:" destination="0ML-DS-cSm" id="hLc-cw-Fyl"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="TaD-Iu-Na2">
+                            <connections>
+                                <action selector="nextClick:" destination="0ML-DS-cSm" id="yYZ-r3-SyH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="27O-ic-cwU" kind="show" id="05a-Pe-4b2"/>
+                        <outlet property="backButton" destination="UQ1-0u-yF7" id="0SG-OB-OpR"/>
+                        <outlet property="nextButton" destination="TaD-Iu-Na2" id="e8h-R3-JIw"/>
+                        <segue destination="27O-ic-cwU" kind="show" identifier="basicInputsNext" id="05a-Pe-4b2"/>
+                        <segue destination="vSh-be-VPV" kind="show" identifier="basicInputsBack" id="IzE-fW-2OJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEE-xI-MA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2301" y="441.75"/>
+            <point key="canvasLocation" x="2307" y="432.75"/>
         </scene>
         <!--Stock Selection-->
         <scene sceneID="gmF-7X-dMq">
@@ -59,15 +95,27 @@
                         <viewControllerLayoutGuide type="bottom" id="yci-FZ-3Y7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J0i-fd-can">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Stock Selection" id="7cO-ez-dNB">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="uW4-Np-mFQ"/>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="Jfl-Hf-QNd"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="beZ-dP-ePT" userLabel="Back">
+                            <connections>
+                                <action selector="backClick:" destination="yna-Ql-AVd" id="f8n-Kv-xxx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="Jfl-Hf-QNd">
+                            <connections>
+                                <action selector="nextClick:" destination="yna-Ql-AVd" id="JkH-Nm-fTi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="awV-53-HgX" kind="show" id="TaG-nH-k2r"/>
+                        <outlet property="backButton" destination="beZ-dP-ePT" id="Fr9-3n-uWZ"/>
+                        <outlet property="nextButton" destination="Jfl-Hf-QNd" id="PIL-C4-d8m"/>
+                        <segue destination="awV-53-HgX" kind="show" identifier="stockSelectionNext" id="TaG-nH-k2r"/>
+                        <segue destination="0ML-DS-cSm" kind="show" identifier="stockSelectionBack" id="UNP-Hi-O1g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9A-vG-3dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -133,12 +181,23 @@
             <objects>
                 <tableViewController id="d3z-2L-O3T" customClass="StockAllocationViewController" customModule="MonteCarloSimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iKt-Dg-s4O">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="abq-ar-Hmo">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="runSimulation:" destination="d3z-2L-O3T" eventType="touchUpInside" id="K8R-K8-KkB"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gfP-A6-uDT">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfP-A6-uDT" id="xor-hf-Z21">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -149,11 +208,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Allocate Value" id="D29-ga-P16">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="bdC-ah-UFR"/>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="mNA-4O-fSW"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="bdC-ah-UFR">
+                            <connections>
+                                <action selector="backClick:" destination="d3z-2L-O3T" id="9Tk-Sr-9Mu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="9h1-kh-KX9" kind="show" id="h3R-ns-qpU"/>
+                        <outlet property="backButton" destination="bdC-ah-UFR" id="Blu-SO-I1f"/>
+                        <outlet property="runSimulation" destination="abq-ar-Hmo" id="Dfg-fD-lgY"/>
+                        <segue destination="9h1-kh-KX9" kind="show" identifier="stockAllocationNext" id="h3R-ns-qpU"/>
+                        <segue destination="yna-Ql-AVd" kind="show" identifier="stockAllocationBack" id="OPc-Jv-54m"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMd-sv-kfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -169,6 +234,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qqj-hY-GbS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0dy-Lc-Are">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -215,4 +281,9 @@
             <point key="canvasLocation" x="6399" y="436.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UNP-Hi-O1g"/>
+        <segue reference="OPc-Jv-54m"/>
+        <segue reference="IzE-fW-2OJ"/>
+    </inferredMetricsTieBreakers>
 </document>

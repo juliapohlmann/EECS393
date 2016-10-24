@@ -10,6 +10,9 @@ import UIKit
 
 class BasicInputsViewController: UIViewController {
     
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var nextButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,10 +22,20 @@ class BasicInputsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if(sender === )
+//    @IBAction func backClick(sender: AnyObject) {
+//        performSegueWithIdentifier("basicInputsBack", sender: sender)
 //    }
+    
+    @IBAction func backClick(sender: AnyObject) {
+        performSegueWithIdentifier("basicInputsBack", sender: sender)
+    }
+    
+    
+    @IBAction func nextClick(sender: AnyObject) {
+        performSegueWithIdentifier("basicInputsNext", sender: sender)
+    }
+    
+
     
     
 }

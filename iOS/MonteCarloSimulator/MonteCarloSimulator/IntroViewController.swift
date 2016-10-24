@@ -10,6 +10,9 @@ import UIKit
 
 class IntroViewController: UIViewController {
     
+    @IBOutlet weak var startButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +22,17 @@ class IntroViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func startButtonClick(sender: AnyObject) {
+        performSegueWithIdentifier("startSimulation", sender: sender)
+    }
+    
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if(sender === startButton) {
+//            //set next data
+//        }
+//    }
     
     
 }
