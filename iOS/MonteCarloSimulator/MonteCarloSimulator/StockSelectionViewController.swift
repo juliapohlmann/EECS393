@@ -13,6 +13,7 @@ class StockSelectionViewController: UIViewController {
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var nextButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,6 +30,10 @@ class StockSelectionViewController: UIViewController {
     
     @IBAction func nextClick(sender: AnyObject) {
         performSegueWithIdentifier("stockSelectionNext", sender: sender)
+    }
+    
+    func isInputValid() {
+        
     }
 }
 
