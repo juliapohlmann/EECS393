@@ -12,6 +12,7 @@ class BasicInputsViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var nextButton: UIButton!
+    
     @IBOutlet weak var durationInput: UITextField!
     @IBOutlet weak var initialValueInput: UITextField!
     @IBOutlet weak var goalValueInput: UITextField!
@@ -32,7 +33,9 @@ class BasicInputsViewController: UIViewController {
     
     
     @IBAction func nextClick(sender: AnyObject) {
-        performSegueWithIdentifier("basicInputsNext", sender: sender)
+        if(isInputValid()) {
+            performSegueWithIdentifier("basicInputsNext", sender: sender)
+        }
     }
     
     func isInputValid() -> Bool {
@@ -59,6 +62,7 @@ class BasicInputsViewController: UIViewController {
     }
     
     func showError(message: String) {
+        //replace with error pop up
         print(message)
     }
     
