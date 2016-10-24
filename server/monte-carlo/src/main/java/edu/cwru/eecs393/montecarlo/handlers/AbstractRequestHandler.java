@@ -39,6 +39,7 @@ public abstract class AbstractRequestHandler implements RequestHandler {
 			mapper.writeValue(sw, data);
 			return sw.toString();
 		} catch (IOException e) {
+			// Should not be possible
 			throw new RuntimeException("IOException from a StringWriter?");
 		}
 	}

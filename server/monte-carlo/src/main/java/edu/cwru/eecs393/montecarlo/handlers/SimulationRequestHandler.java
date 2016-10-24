@@ -1,10 +1,12 @@
 package edu.cwru.eecs393.montecarlo.handlers;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import edu.cwru.eecs393.montecarlo.data.SimulationParameters;
+import lombok.extern.java.Log;
 import spark.Request;
 import spark.Response;
 
@@ -14,10 +16,12 @@ import spark.Response;
  * @author David
  *
  */
+@Log
 public class SimulationRequestHandler extends AbstractRequestHandler {
 
 	@Override
 	public String handleRequest(Request req, Response res) {
+		log.log(Level.INFO, "Received simulation request.");
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			SimulationParameters params = mapper.readValue(req.body(), SimulationParameters.class);
@@ -30,6 +34,7 @@ public class SimulationRequestHandler extends AbstractRequestHandler {
 			// TODO call simulation here
 			return dataToJson(params);
 		} catch (IOException jpe) {
+			log.log(Level.WARNING, "Exception occurred while handing simulation request.", jpe);
 			res.status(HTTP_BAD_REQUEST);
 			return "";
 		}
