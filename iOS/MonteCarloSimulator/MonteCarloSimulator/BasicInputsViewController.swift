@@ -11,7 +11,7 @@ import UIKit
 class BasicInputsViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIBarButtonItem!
-    @IBOutlet weak var nextButton: UIBarButtonItem!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +22,6 @@ class BasicInputsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-//    @IBAction func backClick(sender: AnyObject) {
-//        performSegueWithIdentifier("basicInputsBack", sender: sender)
-//    }
     
     @IBAction func backClick(sender: AnyObject) {
         performSegueWithIdentifier("basicInputsBack", sender: sender)

@@ -11,7 +11,7 @@ import UIKit
 class StockSelectionViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIBarButtonItem!
-    @IBOutlet weak var nextButton: UIBarButtonItem!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -61,7 +61,65 @@
                     <view key="view" contentMode="scaleToFill" id="XWa-8S-aMi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Duration:" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJv-BQ-uEe">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="45" y="99" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Initial Value" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qLB-UD-Jqm">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="45" y="219" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Goal Value" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sfS-3V-LpR">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="45" y="314" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWQ-2T-qJa">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="496" width="32" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="nextClick:" destination="0ML-DS-cSm" eventType="touchUpInside" id="1W3-Wa-sAU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="wJv-BQ-uEe"/>
+                                <exclude reference="qLB-UD-Jqm"/>
+                                <exclude reference="sfS-3V-LpR"/>
+                                <exclude reference="BWQ-2T-qJa"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="wJv-BQ-uEe"/>
+                                <include reference="qLB-UD-Jqm"/>
+                                <include reference="sfS-3V-LpR"/>
+                                <include reference="BWQ-2T-qJa"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Basic Inputs" id="rRc-xP-qRr">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="UQ1-0u-yF7">
@@ -69,15 +127,11 @@
                                 <action selector="backClick:" destination="0ML-DS-cSm" id="hLc-cw-Fyl"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="TaD-Iu-Na2">
-                            <connections>
-                                <action selector="nextClick:" destination="0ML-DS-cSm" id="yYZ-r3-SyH"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="backButton" destination="UQ1-0u-yF7" id="0SG-OB-OpR"/>
-                        <outlet property="nextButton" destination="TaD-Iu-Na2" id="e8h-R3-JIw"/>
+                        <outlet property="nextButton" destination="BWQ-2T-qJa" id="miO-in-coU"/>
                         <segue destination="27O-ic-cwU" kind="show" identifier="basicInputsNext" id="05a-Pe-4b2"/>
                         <segue destination="vSh-be-VPV" kind="show" identifier="basicInputsBack" id="IzE-fW-2OJ"/>
                     </connections>
@@ -97,7 +151,29 @@
                     <view key="view" contentMode="scaleToFill" id="J0i-fd-can">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCd-Q1-DUr">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="184" y="643" width="32" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="nextClick:" destination="yna-Ql-AVd" eventType="touchUpInside" id="zRF-uu-25w"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fCd-Q1-DUr"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fCd-Q1-DUr"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Stock Selection" id="7cO-ez-dNB">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="beZ-dP-ePT" userLabel="Back">
@@ -105,15 +181,11 @@
                                 <action selector="backClick:" destination="yna-Ql-AVd" id="f8n-Kv-xxx"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="Jfl-Hf-QNd">
-                            <connections>
-                                <action selector="nextClick:" destination="yna-Ql-AVd" id="JkH-Nm-fTi"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="backButton" destination="beZ-dP-ePT" id="Fr9-3n-uWZ"/>
-                        <outlet property="nextButton" destination="Jfl-Hf-QNd" id="PIL-C4-d8m"/>
+                        <outlet property="nextButton" destination="fCd-Q1-DUr" id="E52-EF-vRF"/>
                         <segue destination="awV-53-HgX" kind="show" identifier="stockSelectionNext" id="TaG-nH-k2r"/>
                         <segue destination="0ML-DS-cSm" kind="show" identifier="stockSelectionBack" id="UNP-Hi-O1g"/>
                     </connections>
@@ -185,16 +257,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="abq-ar-Hmo">
-                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <rect key="frame" x="0.0" y="72" width="600" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="Run Simulation"/>
                             <connections>
                                 <action selector="runSimulation:" destination="d3z-2L-O3T" eventType="touchUpInside" id="K8R-K8-KkB"/>
                             </connections>
                         </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gfP-A6-uDT">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfP-A6-uDT" id="xor-hf-Z21">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -214,6 +286,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="backButton" destination="bdC-ah-UFR" id="Blu-SO-I1f"/>
                         <outlet property="runSimulation" destination="abq-ar-Hmo" id="Dfg-fD-lgY"/>
@@ -239,6 +312,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Results" id="Jfo-Gr-fz6"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jr2-ij-7H8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
