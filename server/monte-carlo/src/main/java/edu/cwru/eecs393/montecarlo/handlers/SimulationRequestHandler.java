@@ -27,7 +27,7 @@ public class SimulationRequestHandler extends AbstractRequestHandler {
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			SimulationParameters params = mapper.readValue(req.body(), SimulationParameters.class);
-			if (!params.checkValid()) {
+			if (!isValidParams(params)) {
 				res.status(HTTP_BAD_REQUEST);
 				return "";
 			}

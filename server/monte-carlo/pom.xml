@@ -65,6 +65,9 @@
   			<artifactId>jacoco-maven-plugin</artifactId>
   			<version>0.7.7.201606060606</version>
   			<configuration>
+  				<excludes>
+  					<exclude>edu/cwru/eecs393/montecarlo/data/*.class</exclude>
+  				</excludes>
    				<destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
    				<dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
   			</configuration>
