@@ -56,6 +56,7 @@ class StockAllocationViewController: UITableViewController {
         
         cell.tickerField.text = stockTickers[indexPath.row]
         cell.percentageField.text = String(stockPercentages[indexPath.row])
+        cell.StockAllocationInstance = self
         
         return cell
     }
@@ -73,6 +74,52 @@ class StockAllocationViewController: UITableViewController {
     
     func isInputValid() -> Bool {
         return true;
+    }
+    
+    func decrementUnallocatedPercentage() {
+        unallocatedPercentage -= 1
+        unallocatedPercentageField.text = String(unallocatedPercentage)
+    }
+    
+    func incrementUnallocatedPercentage() {
+        unallocatedPercentage += 1
+        unallocatedPercentageField.text = String(unallocatedPercentage)
+    }
+    
+    func incrementStockPercentage(ticker: String) -> Bool {
+        if(unallocatedPercentage > 0) {
+            var index = 0
+            for i in 0..<stockTickers.count {
+                if(ticker == stockTickers[i]) {
+                    index = i
+                    break
+                }
+            }
+        
+            stockPercentages[index] += 1
+            decrementUnallocatedPercentage()
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func decrementStockPercentage(ticker: String) -> Bool {
+        var index = 0
+        for i in 0..<stockTickers.count {
+            if(ticker == stockTickers[i]) {
+                index = i
+                break
+            }
+        }
+        
+        if(stockPercentages[index] > 0) {
+            stockPercentages[index] -= 1
+            incrementUnallocatedPercentage()
+            return true
+        } else {
+            return false
+        }
     }
     
 }
