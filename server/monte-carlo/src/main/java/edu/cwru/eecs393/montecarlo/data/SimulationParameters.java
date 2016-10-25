@@ -14,12 +14,13 @@ import lombok.Data;
 public class SimulationParameters {
 
 	private Map<String, Double> tickerToAllocation;
-	private int startingCash;
+	private int startingMoney;
 	private int years;
+	private int goalMoney;
 
 	public boolean isValid() {
-		// TODO what makes these valid?
-		return true;
+		return null != tickerToAllocation && !tickerToAllocation.isEmpty() && 0 < years && startingMoney != 0
+				&& goalMoney != 0;
 	}
 
 }

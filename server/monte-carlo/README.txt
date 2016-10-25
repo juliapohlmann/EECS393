@@ -6,6 +6,8 @@ Dependencies:
 		$ sudo add-apt-repository ppa:webupd8team/java
 		$ sudo apt-get update
 		$ sudo apt-get install oracle-java8-installer
+	Lombok:
+		You will need to configure your IDE to work with Lombok, see https://projectlombok.org/index.html
 
 To run the server, execute the command:
 	$ mvn compile && mvn exec:java
