@@ -13,6 +13,7 @@ class StockSelectionViewController: UIViewController {
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var nextButton: UIButton!
     
+    var userDict: [String:Int] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,16 @@ class StockSelectionViewController: UIViewController {
         if(isInputValid()) {
             performSegueWithIdentifier("stockSelectionNext", sender: sender)
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        let navVC = segue.destinationViewController as! UINavigationController
+        
+        let destinationVC = navVC.viewControllers.first as! StockAllocationViewController
+        
+        destinationVC.userDict = userDict
+        
     }
     
     func isInputValid() -> Bool {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1C39721DBFF38F00CB147B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */; };
 		DACC34371DBC136200B7DBF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34361DBC136200B7DBF4 /* AppDelegate.swift */; };
 		DACC34391DBC136200B7DBF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34381DBC136200B7DBF4 /* ViewController.swift */; };
 		DACC343C1DBC136200B7DBF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACC343A1DBC136200B7DBF4 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		DACC34331DBC136200B7DBF4 /* MonteCarloSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonteCarloSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACC34361DBC136200B7DBF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DACC34381DBC136200B7DBF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,16 +113,17 @@
 			children = (
 				DACC34361DBC136200B7DBF4 /* AppDelegate.swift */,
 				DACC34381DBC136200B7DBF4 /* ViewController.swift */,
-				DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */,
-				DACC343A1DBC136200B7DBF4 /* Main.storyboard */,
+				DACC34671DBD019300B7DBF4 /* IntroViewController.swift */,
 				DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */,
 				DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */,
+				DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */,
+				1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */,
+				DACC343A1DBC136200B7DBF4 /* Main.storyboard */,
+				DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */,
 				DACC34401DBC136200B7DBF4 /* Assets.xcassets */,
 				DACC34421DBC136200B7DBF4 /* LaunchScreen.storyboard */,
 				DACC34451DBC136200B7DBF4 /* Info.plist */,
 				DACC343D1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld */,
-				DACC34671DBD019300B7DBF4 /* IntroViewController.swift */,
-				DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */,
 			);
 			path = MonteCarloSimulator;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				DADFC9101DBFA431009A2C7D /* StockAllocationTableViewCell.swift in Sources */,
 				DACC346E1DBD040400B7DBF4 /* StockAllocation.swift in Sources */,
 				DACC346C1DBD038400B7DBF4 /* StockSelectionViewController.swift in Sources */,
+				1C1C39721DBFF38F00CB147B /* ResultsViewController.swift in Sources */,
 				DACC346A1DBD024C00B7DBF4 /* BasicInputsViewController.swift in Sources */,
 				DACC343F1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld in Sources */,
 				DACC34681DBD019300B7DBF4 /* IntroViewController.swift in Sources */,

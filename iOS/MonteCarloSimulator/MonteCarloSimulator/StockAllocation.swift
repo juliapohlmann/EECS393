@@ -18,6 +18,8 @@ class StockAllocationViewController: UITableViewController {
     var stockPercentages = [Int]()
     var unallocatedPercentage : Int = 100
     
+    var userDict: [String:Int] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSampleStocks()
@@ -67,6 +69,17 @@ class StockAllocationViewController: UITableViewController {
             performSegueWithIdentifier("stockAllocationNext", sender: sender)
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        let navVC = segue.destinationViewController as! UINavigationController
+        
+        let destinationVC = navVC.viewControllers.first! as UIViewController
+        
+        // destinationVC.userDict = userDict
+        
+    }
+    
     
     @IBAction func backClick(sender: AnyObject) {
         performSegueWithIdentifier("stockAllocationBack", sender: sender)
@@ -134,6 +147,7 @@ class StockAllocationViewController: UITableViewController {
         }
         return -1
     }
+    
     
 }
 

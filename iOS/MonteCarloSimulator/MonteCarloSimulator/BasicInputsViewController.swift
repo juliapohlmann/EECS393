@@ -17,6 +17,8 @@ class BasicInputsViewController: UIViewController {
     @IBOutlet weak var initialValueInput: UITextField!
     @IBOutlet weak var goalValueInput: UITextField!
     
+    var userDict: [String:Int] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,10 +36,23 @@ class BasicInputsViewController: UIViewController {
     
     @IBAction func nextClick(sender: AnyObject) {
         if(isInputValid()) {
+            userDict["duration"] = Int(durationInput.text!)
+            userDict["initialValue"] = Int(initialValueInput.text!)
+            userDict["goalValue"] = Int(goalValueInput.text!)
             performSegueWithIdentifier("basicInputsNext", sender: sender)
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        let navVC = segue.destinationViewController as! UINavigationController
+
+        let destinationVC = navVC.viewControllers.first as! StockSelectionViewController
+        
+        destinationVC.userDict = userDict
+        
+    }
+
     func isInputValid() -> Bool {
 //        let duration : Int? = Int(durationInput.text!)
 //        let initialValue : Int? = Int(initialValueInput.text!)
@@ -65,7 +80,7 @@ class BasicInputsViewController: UIViewController {
         //replace with error pop up
         print(message)
     }
-    
-    
+
 }
+
 
