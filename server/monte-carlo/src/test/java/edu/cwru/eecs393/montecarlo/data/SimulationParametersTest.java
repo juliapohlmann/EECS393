@@ -18,7 +18,7 @@ public class SimulationParametersTest extends TestCase {
 		Map<String, Double> tickerToAllocation = new HashMap<>();
 		tickerToAllocation.put("T", 100.0);
 		params.setTickerToAllocation(tickerToAllocation);
-		assertTrue(params.isValid());
+		assertTrue(params.checkValid());
 	}
 
 	@Test
@@ -29,10 +29,10 @@ public class SimulationParametersTest extends TestCase {
 		params.setYears(5);
 		Map<String, Double> tickerToAllocation = new HashMap<>();
 		params.setTickerToAllocation(tickerToAllocation);
-		assertFalse(params.isValid());
+		assertFalse(params.checkValid());
 
 		params.setTickerToAllocation(null);
-		assertFalse(params.isValid());
+		assertFalse(params.checkValid());
 	}
 
 	@Test
@@ -45,17 +45,17 @@ public class SimulationParametersTest extends TestCase {
 		tickerToAllocation.put("T", 100.0);
 		params.setTickerToAllocation(tickerToAllocation);
 
-		assertFalse(params.isValid());
+		assertFalse(params.checkValid());
 
 		params.setGoalMoney(200);
 		params.setStartingMoney(0);
 
-		assertFalse(params.isValid());
+		assertFalse(params.checkValid());
 
 		params.setStartingMoney(100);
 		params.setYears(0);
 
-		assertFalse(params.isValid());
+		assertFalse(params.checkValid());
 	}
 
 }

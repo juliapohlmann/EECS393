@@ -18,7 +18,14 @@ public class SimulationParameters {
 	private int years;
 	private int goalMoney;
 
-	public boolean isValid() {
+	/**
+	 * Checks if these params are valid for starting a simulation. <br>
+	 * <b>Note:</b> can not be called <code>isValid</code> due to how Jackson
+	 * will serialize the object, resulting an an extra JSON field named "valid"
+	 *
+	 * @return true if the params are valid, false otherwise.
+	 */
+	public boolean checkValid() {
 		return null != tickerToAllocation && !tickerToAllocation.isEmpty() && 0 < years && startingMoney != 0
 				&& goalMoney != 0;
 	}
