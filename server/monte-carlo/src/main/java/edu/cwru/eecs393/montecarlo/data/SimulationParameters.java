@@ -2,7 +2,9 @@ package edu.cwru.eecs393.montecarlo.data;
 
 import java.util.Map;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A simple object for simulation parameters.
@@ -11,15 +13,13 @@ import lombok.Data;
  *
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class SimulationParameters {
 
 	private Map<String, Double> tickerToAllocation;
-	private int startingCash;
+	private int startingMoney;
 	private int years;
-
-	public boolean isValid() {
-		// TODO what makes these valid?
-		return true;
-	}
+	private int goalMoney;
 
 }

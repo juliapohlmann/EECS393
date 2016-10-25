@@ -6,9 +6,26 @@ Dependencies:
 		$ sudo add-apt-repository ppa:webupd8team/java
 		$ sudo apt-get update
 		$ sudo apt-get install oracle-java8-installer
+	Lombok:
+		You will need to configure your IDE to work with Lombok, see https://projectlombok.org/index.html
 
 To run the server, execute the command:
 	$ mvn compile && mvn exec:java
+	
+To run tests and code coverage, execute the command:
+	$ mvn clean package
+This will place code coverage results in the directory ${basedir}/target/site/jacoco, just
+open the file index.html in a web browser.
 
 The default port is 4567, visiting localhost:4567/hello will display a hello 
-world message. Visiting /simulation is currently not supported.
+world message. Executing a POST to /simulation with valid JSON body will result in
+a result of all zeros being returned. The correct JSON format is:
+{
+	"tickerToAllocation" : {
+		"tickerString" : double,
+		...
+	},
+	"years" : int,
+	"startingMoney" : int,
+	"goalMoney" : int
+} 

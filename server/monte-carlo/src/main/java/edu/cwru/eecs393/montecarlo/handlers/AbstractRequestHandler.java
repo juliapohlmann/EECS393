@@ -6,6 +6,8 @@ import java.io.StringWriter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import edu.cwru.eecs393.montecarlo.data.SimulationParameters;
+
 /**
  * Abstract base class for all implementations of {@link RequestHandler}.
  *
@@ -42,6 +44,16 @@ public abstract class AbstractRequestHandler implements RequestHandler {
 			// Should not be possible
 			throw new RuntimeException("IOException from a StringWriter?");
 		}
+	}
+
+	/**
+	 * Checks if these params are valid for starting a simulation.
+	 *
+	 * @return true if the params are valid, false otherwise.
+	 */
+	public static boolean isValidParams(SimulationParameters params) {
+		return null != params.getTickerToAllocation() && !params.getTickerToAllocation().isEmpty()
+				&& 0 < params.getYears() && params.getStartingMoney() != 0 && params.getGoalMoney() != 0;
 	}
 
 }
