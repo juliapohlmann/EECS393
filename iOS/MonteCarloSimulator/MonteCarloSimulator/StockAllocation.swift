@@ -87,14 +87,8 @@ class StockAllocationViewController: UITableViewController {
     }
     
     func incrementStockPercentage(ticker: String) -> Bool {
-        if(unallocatedPercentage > 0) {
-            var index = 0
-            for i in 0..<stockTickers.count {
-                if(ticker == stockTickers[i]) {
-                    index = i
-                    break
-                }
-            }
+        if(canIncrementStock()) {
+            let index = findIndexOfTicker(ticker)
         
             stockPercentages[index] += 1
             decrementUnallocatedPercentage()
@@ -105,21 +99,40 @@ class StockAllocationViewController: UITableViewController {
     }
     
     func decrementStockPercentage(ticker: String) -> Bool {
-        var index = 0
-        for i in 0..<stockTickers.count {
-            if(ticker == stockTickers[i]) {
-                index = i
-                break
-            }
-        }
+        let index = findIndexOfTicker(ticker)
         
-        if(stockPercentages[index] > 0) {
+        if(canDecrementStock(index)) {
             stockPercentages[index] -= 1
             incrementUnallocatedPercentage()
             return true
         } else {
             return false
         }
+    }
+    
+    func canDecrementStock(percentage: Int) -> Bool {
+        if(percentage > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    func canIncrementStock() -> Bool {
+        if(unallocatedPercentage > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    func findIndexOfTicker(ticker: String) -> Int {
+        for i in 0..<stockTickers.count {
+            if(ticker == stockTickers[i]) {
+                return i
+            }
+        }
+        return -1
     }
     
 }
