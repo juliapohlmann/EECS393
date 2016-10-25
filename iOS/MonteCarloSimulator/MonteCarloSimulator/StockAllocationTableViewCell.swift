@@ -17,7 +17,6 @@ class StockAllocationTableViewCell: UITableViewCell {
     var StockAllocationInstance : StockAllocationViewController = StockAllocationViewController()
     
     @IBAction func minusClick(sender: AnyObject) {
-        
         if(StockAllocationInstance.decrementStockPercentage(tickerField.text!)) {
             let currentPercentage = Int(percentageField.text!)
             percentageField.text = String(currentPercentage! - 1)
@@ -27,9 +26,7 @@ class StockAllocationTableViewCell: UITableViewCell {
     @IBAction func plusClick(sender: AnyObject) {
         if(StockAllocationInstance.incrementStockPercentage(tickerField.text!)) {
             let currentPercentage = Int(percentageField.text!)
-            if(currentPercentage < 99) {
-                percentageField.text = String(currentPercentage! + 1)
-            }
+            percentageField.text = String(currentPercentage! + 1)
         }
     }
 }
