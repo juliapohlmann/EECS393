@@ -29,11 +29,13 @@ class StockSelectionViewController: UIViewController {
     }
     
     @IBAction func nextClick(sender: AnyObject) {
-        performSegueWithIdentifier("stockSelectionNext", sender: sender)
+        if(isInputValid()) {
+            performSegueWithIdentifier("stockSelectionNext", sender: sender)
+        }
     }
     
-    func isInputValid() {
-        
+    func isInputValid() -> Bool {
+        return true;
     }
 }
 

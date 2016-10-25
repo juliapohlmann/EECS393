@@ -19,6 +19,7 @@
 		DACC346A1DBD024C00B7DBF4 /* BasicInputsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */; };
 		DACC346C1DBD038400B7DBF4 /* StockSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */; };
 		DACC346E1DBD040400B7DBF4 /* StockAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */; };
+		DADFC9101DBFA431009A2C7D /* StockAllocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInputsViewController.swift; sourceTree = "<group>"; };
 		DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSelectionViewController.swift; sourceTree = "<group>"; };
 		DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocation.swift; sourceTree = "<group>"; };
+		DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				DACC34451DBC136200B7DBF4 /* Info.plist */,
 				DACC343D1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld */,
 				DACC34671DBD019300B7DBF4 /* IntroViewController.swift */,
+				DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */,
 			);
 			path = MonteCarloSimulator;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				DACC34391DBC136200B7DBF4 /* ViewController.swift in Sources */,
 				DACC34371DBC136200B7DBF4 /* AppDelegate.swift in Sources */,
+				DADFC9101DBFA431009A2C7D /* StockAllocationTableViewCell.swift in Sources */,
 				DACC346E1DBD040400B7DBF4 /* StockAllocation.swift in Sources */,
 				DACC346C1DBD038400B7DBF4 /* StockSelectionViewController.swift in Sources */,
 				DACC346A1DBD024C00B7DBF4 /* BasicInputsViewController.swift in Sources */,
@@ -509,6 +513,7 @@
 				DACC34601DBC136200B7DBF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DACC34611DBC136200B7DBF4 /* Build configuration list for PBXNativeTarget "MonteCarloSimulatorTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +522,7 @@
 				DACC34631DBC136200B7DBF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DACC34641DBC136200B7DBF4 /* Build configuration list for PBXNativeTarget "MonteCarloSimulatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +531,7 @@
 				DACC34661DBC136200B7DBF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
