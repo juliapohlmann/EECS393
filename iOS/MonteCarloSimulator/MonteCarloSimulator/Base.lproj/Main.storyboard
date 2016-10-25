@@ -395,6 +395,7 @@
                     <connections>
                         <outlet property="backButton" destination="bdC-ah-UFR" id="Blu-SO-I1f"/>
                         <outlet property="runSimulation" destination="abq-ar-Hmo" id="Dfg-fD-lgY"/>
+                        <outlet property="unallocatedPercentageField" destination="EAj-rJ-4ZI" id="o5U-Cl-Cts"/>
                         <segue destination="9h1-kh-KX9" kind="show" identifier="stockAllocationNext" id="h3R-ns-qpU"/>
                         <segue destination="yna-Ql-AVd" kind="show" identifier="stockAllocationBack" id="OPc-Jv-54m"/>
                     </connections>
