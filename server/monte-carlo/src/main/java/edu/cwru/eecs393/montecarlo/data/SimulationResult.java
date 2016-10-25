@@ -3,7 +3,9 @@ package edu.cwru.eecs393.montecarlo.data;
 import java.util.Map;
 
 import edu.cwru.eecs393.montecarlo.simulation.Simulation;
-import lombok.Value;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A class for holding the results of a {@link Simulation}.
@@ -11,12 +13,14 @@ import lombok.Value;
  * @author David
  *
  */
-@Value
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class SimulationResult {
 
-	private final double maxValue;
-	private final double minValue;
-	private final double percentGoalReached;
-	private final Map<Double, Double> valueToPercent;
+	private double maxValue;
+	private double minValue;
+	private double percentGoalReached;
+	private Map<Double, Double> valueToPercent;
 
 }
