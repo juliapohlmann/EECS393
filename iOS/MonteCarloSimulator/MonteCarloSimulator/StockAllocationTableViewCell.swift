@@ -20,19 +20,16 @@ class StockAllocationTableViewCell: UITableViewCell {
     
     @IBAction func beginEditingPercentageField(sender: AnyObject) {
         previousPercentage = Int(percentageField.text!)!
-        print("Previous percentage: \(previousPercentage)")
     }
     
     @IBAction func editPercentageField(sender: AnyObject) {
-        print("New percentage: \(percentageField.text!)")
-        print("OLD PERCENTAGE: \(String(previousPercentage))")
         let newValue = Int(percentageField.text!)!
-        StockAllocationInstance.isValidChange(tickerField.text!, oldValue: previousPercentage, newValue: newValue)
+        if(!StockAllocationInstance.validEdit(tickerField.text!, oldValue: previousPercentage, newValue: newValue)) {
+            percentageField.text = String(previousPercentage)
+            //show error here
+        }
         
     }
-    
-    
-    
     
     @IBAction func minusClick(sender: AnyObject) {
         if(StockAllocationInstance.decrementStockPercentage(tickerField.text!)) {

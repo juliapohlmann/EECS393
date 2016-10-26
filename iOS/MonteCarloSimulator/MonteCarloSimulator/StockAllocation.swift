@@ -14,8 +14,6 @@ class StockAllocationViewController: UITableViewController {
     @IBOutlet weak var runSimulation: UIButton!
     @IBOutlet weak var unallocatedPercentageField: UITextField!
     
-    
-    
     var stockTickers = [String]()
     var stockPercentages = [Int]()
     var unallocatedPercentage : Int = 100
@@ -143,27 +141,27 @@ class StockAllocationViewController: UITableViewController {
         unallocatedPercentageField.text = String(unallocatedPercentage)
     }
     
-    func isValidChange(ticker: String, oldValue: Int, newValue: Int) -> Bool {
+    func validEdit(ticker: String, oldValue: Int, newValue: Int) -> Bool{
+        let index = findIndexOfTicker(ticker)
+        var isValid = true
+        
         if(newValue <= 0 || newValue > 100) {
-            return false;
-        }
-        if(newValue > oldValue) {
-            //adding value
-            let percentageGain = newValue - oldValue
-            if(percentageGain > unallocatedPercentage) {
-                return false;
-            }
-            unallocatedPercentage -= percentageGain
-        } else {
-            //decrementing value
-            let percentageLoss = oldValue - newValue
-            unallocatedPercentage += percentageLoss
+            isValid = false
+        } else if((newValue - oldValue) > unallocatedPercentage) {
+            isValid = false
+        } else{
+            unallocatedPercentage += oldValue - newValue
         }
         
-        let index = findIndexOfTicker(ticker)
-        stockPercentages[index] = newValue
-        updateUnallocatedPercentage()
-        return true
+        if(isValid) {
+            stockPercentages[index] = newValue
+            updateUnallocatedPercentage()
+        } else {
+            //show error message here
+            stockPercentages[index] = oldValue
+        }
+        
+        return isValid
     }
     
 }
