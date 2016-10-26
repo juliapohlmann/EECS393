@@ -19,6 +19,7 @@ class StockSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getQuoteForAPPL()
+        print(userDict)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -28,7 +29,7 @@ class StockSelectionViewController: UIViewController {
     }
     
     @IBAction func backClick(sender: AnyObject) {
-        performSegueWithIdentifier("stockSelectionBack", sender: sender)
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
     
     @IBAction func nextClick(sender: AnyObject) {

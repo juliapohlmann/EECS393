@@ -21,6 +21,7 @@ class BasicInputsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(userDict)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -30,7 +31,7 @@ class BasicInputsViewController: UIViewController {
     }
     
     @IBAction func backClick(sender: AnyObject) {
-        performSegueWithIdentifier("basicInputsBack", sender: sender)
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
     
     
@@ -46,9 +47,9 @@ class BasicInputsViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         let navVC = segue.destinationViewController as! UINavigationController
-
+            
         let destinationVC = navVC.viewControllers.first as! StockSelectionViewController
-        
+            
         destinationVC.userDict = userDict
         
     }

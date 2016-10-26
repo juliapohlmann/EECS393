@@ -23,6 +23,7 @@ class StockAllocationViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSampleStocks()
+        print(userDict)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -70,19 +71,8 @@ class StockAllocationViewController: UITableViewController {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        
-        let navVC = segue.destinationViewController as! UINavigationController
-        
-        let destinationVC = navVC.viewControllers.first! as UIViewController
-        
-        // destinationVC.userDict = userDict
-        
-    }
-    
-    
     @IBAction func backClick(sender: AnyObject) {
-        performSegueWithIdentifier("stockAllocationBack", sender: sender)
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
     
     func isInputValid() -> Bool {
@@ -147,7 +137,6 @@ class StockAllocationViewController: UITableViewController {
         }
         return -1
     }
-    
     
 }
 

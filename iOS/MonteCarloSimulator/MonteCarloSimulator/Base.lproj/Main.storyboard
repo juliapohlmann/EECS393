@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="abf-je-lCU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="abf-je-lCU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -166,7 +166,6 @@
                         <outlet property="initialValueInput" destination="msB-fE-VMg" id="zxH-Kk-eI6"/>
                         <outlet property="nextButton" destination="BWQ-2T-qJa" id="miO-in-coU"/>
                         <segue destination="27O-ic-cwU" kind="show" identifier="basicInputsNext" id="05a-Pe-4b2"/>
-                        <segue destination="vSh-be-VPV" kind="show" identifier="basicInputsBack" id="IzE-fW-2OJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEE-xI-MA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -220,7 +219,6 @@
                         <outlet property="backButton" destination="beZ-dP-ePT" id="Fr9-3n-uWZ"/>
                         <outlet property="nextButton" destination="fCd-Q1-DUr" id="E52-EF-vRF"/>
                         <segue destination="awV-53-HgX" kind="show" identifier="stockSelectionNext" id="TaG-nH-k2r"/>
-                        <segue destination="0ML-DS-cSm" kind="show" identifier="stockSelectionBack" id="UNP-Hi-O1g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9A-vG-3dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,7 +306,7 @@
                                 <rect key="frame" x="0.0" y="58" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfP-A6-uDT" id="xor-hf-Z21">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TICKER" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASW-OP-HK1">
@@ -397,7 +395,6 @@
                         <outlet property="runSimulation" destination="abq-ar-Hmo" id="Dfg-fD-lgY"/>
                         <outlet property="unallocatedPercentageField" destination="EAj-rJ-4ZI" id="o5U-Cl-Cts"/>
                         <segue destination="9h1-kh-KX9" kind="show" identifier="stockAllocationNext" id="h3R-ns-qpU"/>
-                        <segue destination="yna-Ql-AVd" kind="show" identifier="stockAllocationBack" id="OPc-Jv-54m"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMd-sv-kfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -461,9 +458,4 @@
             <point key="canvasLocation" x="6399" y="436.5"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="OPc-Jv-54m"/>
-        <segue reference="UNP-Hi-O1g"/>
-        <segue reference="ZF8-ay-WOY"/>
-    </inferredMetricsTieBreakers>
 </document>
