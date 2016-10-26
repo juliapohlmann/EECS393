@@ -17,6 +17,11 @@ To run tests and code coverage, execute the command:
 This will place code coverage results in the directory ${basedir}/target/site/jacoco, just
 open the file index.html in a web browser.
 
+To gererate Javadoc comments as navigable HTML files, use the command:
+	$ mvn javadoc:javadoc
+This will place the resulting docs in the director ${basedir}/target/site/apidocs, just
+open the file index.html in a web browser.
+
 The default port is 4567, visiting localhost:4567/hello will display a hello 
 world message. Executing a POST to /simulation with valid JSON body will result in
 a result of all zeros being returned. The correct JSON format is:
