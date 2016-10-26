@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		187878160C2E9ED1A4CCD504 /* Pods_MonteCarloSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D394E49C3CD6448C5709002E /* Pods_MonteCarloSimulator.framework */; };
 		1C1C39721DBFF38F00CB147B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */; };
+		1CA21CCA1DC13CEF005AB2E3 /* IntroViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA21CC91DC13CEF005AB2E3 /* IntroViewControllerTest.swift */; };
 		34110C3B97536C8322EC39F7 /* Pods_MonteCarloSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0BB019AF49CC91B64EDD25 /* Pods_MonteCarloSimulatorTests.framework */; };
 		BD98E457620CF37F9D99D4B2 /* Pods_MonteCarloSimulatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09732685C9D5418514E21D79 /* Pods_MonteCarloSimulatorUITests.framework */; };
 		DA3EDA331DC116F90050983F /* StocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3EDA321DC116F90050983F /* StocksKit.framework */; };
@@ -49,6 +50,7 @@
 		09732685C9D5418514E21D79 /* Pods_MonteCarloSimulatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B86C38997E14A7516E6617A /* Pods-MonteCarloSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulator/Pods-MonteCarloSimulator.release.xcconfig"; sourceTree = "<group>"; };
 		1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		1CA21CC91DC13CEF005AB2E3 /* IntroViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroViewControllerTest.swift; path = ../MonteCarloSimulator/IntroViewControllerTest.swift; sourceTree = "<group>"; };
 		5712F9A486BEE6FFB2242BD8 /* Pods-MonteCarloSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorTests/Pods-MonteCarloSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C0BB019AF49CC91B64EDD25 /* Pods_MonteCarloSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C32A32B857102DD69450FD /* Pods-MonteCarloSimulatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorUITests/Pods-MonteCarloSimulatorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		DACC344D1DBC136200B7DBF4 /* MonteCarloSimulatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				1CA21CC91DC13CEF005AB2E3 /* IntroViewControllerTest.swift */,
 				DACC344E1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift */,
 				DACC34501DBC136200B7DBF4 /* Info.plist */,
 			);
@@ -488,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DACC344F1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift in Sources */,
+				1CA21CCA1DC13CEF005AB2E3 /* IntroViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
