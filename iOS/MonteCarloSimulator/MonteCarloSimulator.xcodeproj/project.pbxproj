@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187878160C2E9ED1A4CCD504 /* Pods_MonteCarloSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D394E49C3CD6448C5709002E /* Pods_MonteCarloSimulator.framework */; };
 		1C1C39721DBFF38F00CB147B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */; };
+		34110C3B97536C8322EC39F7 /* Pods_MonteCarloSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0BB019AF49CC91B64EDD25 /* Pods_MonteCarloSimulatorTests.framework */; };
+		BD98E457620CF37F9D99D4B2 /* Pods_MonteCarloSimulatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09732685C9D5418514E21D79 /* Pods_MonteCarloSimulatorUITests.framework */; };
+		DA3EDA331DC116F90050983F /* StocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3EDA321DC116F90050983F /* StocksKit.framework */; };
 		DACC34371DBC136200B7DBF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34361DBC136200B7DBF4 /* AppDelegate.swift */; };
 		DACC34391DBC136200B7DBF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34381DBC136200B7DBF4 /* ViewController.swift */; };
 		DACC343C1DBC136200B7DBF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACC343A1DBC136200B7DBF4 /* Main.storyboard */; };
@@ -41,7 +45,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05BD6DAF7CE4FA61C4B334CE /* Pods-MonteCarloSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorTests/Pods-MonteCarloSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		09732685C9D5418514E21D79 /* Pods_MonteCarloSimulatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B86C38997E14A7516E6617A /* Pods-MonteCarloSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulator/Pods-MonteCarloSimulator.release.xcconfig"; sourceTree = "<group>"; };
 		1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		5712F9A486BEE6FFB2242BD8 /* Pods-MonteCarloSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorTests/Pods-MonteCarloSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		5C0BB019AF49CC91B64EDD25 /* Pods_MonteCarloSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C32A32B857102DD69450FD /* Pods-MonteCarloSimulatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorUITests/Pods-MonteCarloSimulatorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		94ABAAA55777096FC0E70685 /* Pods-MonteCarloSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulator/Pods-MonteCarloSimulator.debug.xcconfig"; sourceTree = "<group>"; };
+		CF74FBF98E2472CB7F30F0F5 /* Pods-MonteCarloSimulatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorUITests/Pods-MonteCarloSimulatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D394E49C3CD6448C5709002E /* Pods_MonteCarloSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA3EDA321DC116F90050983F /* StocksKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StocksKit.framework; path = "Pods/../build/Debug-iphoneos/StocksKit/StocksKit.framework"; sourceTree = "<group>"; };
 		DACC34331DBC136200B7DBF4 /* MonteCarloSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonteCarloSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACC34361DBC136200B7DBF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DACC34381DBC136200B7DBF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3EDA331DC116F90050983F /* StocksKit.framework in Frameworks */,
+				187878160C2E9ED1A4CCD504 /* Pods_MonteCarloSimulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34110C3B97536C8322EC39F7 /* Pods_MonteCarloSimulatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +99,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD98E457620CF37F9D99D4B2 /* Pods_MonteCarloSimulatorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		535F2417CA6A3053B6BFBED1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA3EDA321DC116F90050983F /* StocksKit.framework */,
+				D394E49C3CD6448C5709002E /* Pods_MonteCarloSimulator.framework */,
+				5C0BB019AF49CC91B64EDD25 /* Pods_MonteCarloSimulatorTests.framework */,
+				09732685C9D5418514E21D79 /* Pods_MonteCarloSimulatorUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA24AE90024DC90A0DC967AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94ABAAA55777096FC0E70685 /* Pods-MonteCarloSimulator.debug.xcconfig */,
+				0B86C38997E14A7516E6617A /* Pods-MonteCarloSimulator.release.xcconfig */,
+				05BD6DAF7CE4FA61C4B334CE /* Pods-MonteCarloSimulatorTests.debug.xcconfig */,
+				5712F9A486BEE6FFB2242BD8 /* Pods-MonteCarloSimulatorTests.release.xcconfig */,
+				CF74FBF98E2472CB7F30F0F5 /* Pods-MonteCarloSimulatorUITests.debug.xcconfig */,
+				84C32A32B857102DD69450FD /* Pods-MonteCarloSimulatorUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DACC342A1DBC136200B7DBF4 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +137,8 @@
 				DACC344D1DBC136200B7DBF4 /* MonteCarloSimulatorTests */,
 				DACC34581DBC136200B7DBF4 /* MonteCarloSimulatorUITests */,
 				DACC34341DBC136200B7DBF4 /* Products */,
+				CA24AE90024DC90A0DC967AC /* Pods */,
+				535F2417CA6A3053B6BFBED1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DACC345E1DBC136200B7DBF4 /* Build configuration list for PBXNativeTarget "MonteCarloSimulator" */;
 			buildPhases = (
+				B1023D53908FCB8C5E75BEE8 /* [CP] Check Pods Manifest.lock */,
 				DACC342F1DBC136200B7DBF4 /* Sources */,
 				DACC34301DBC136200B7DBF4 /* Frameworks */,
 				DACC34311DBC136200B7DBF4 /* Resources */,
+				EE41B1554E6F89D6F851B2A1 /* [CP] Embed Pods Frameworks */,
+				E73DB65BDB09A9A4DF699587 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DACC34611DBC136200B7DBF4 /* Build configuration list for PBXNativeTarget "MonteCarloSimulatorTests" */;
 			buildPhases = (
+				B6A559007988A0F85F409047 /* [CP] Check Pods Manifest.lock */,
 				DACC34461DBC136200B7DBF4 /* Sources */,
 				DACC34471DBC136200B7DBF4 /* Frameworks */,
 				DACC34481DBC136200B7DBF4 /* Resources */,
+				449B1FF968509FE010B75931 /* [CP] Embed Pods Frameworks */,
+				A138BCCD70B04DA35083E322 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,9 +238,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DACC34641DBC136200B7DBF4 /* Build configuration list for PBXNativeTarget "MonteCarloSimulatorUITests" */;
 			buildPhases = (
+				C15F80814BCF10466241D76B /* [CP] Check Pods Manifest.lock */,
 				DACC34511DBC136200B7DBF4 /* Sources */,
 				DACC34521DBC136200B7DBF4 /* Frameworks */,
 				DACC34531DBC136200B7DBF4 /* Resources */,
+				5F88A37F09D53C1B4F429349 /* [CP] Embed Pods Frameworks */,
+				C529E158255FBF9432F55FF9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -274,6 +327,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		449B1FF968509FE010B75931 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonteCarloSimulatorTests/Pods-MonteCarloSimulatorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F88A37F09D53C1B4F429349 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonteCarloSimulatorUITests/Pods-MonteCarloSimulatorUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A138BCCD70B04DA35083E322 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonteCarloSimulatorTests/Pods-MonteCarloSimulatorTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1023D53908FCB8C5E75BEE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B6A559007988A0F85F409047 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C15F80814BCF10466241D76B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C529E158255FBF9432F55FF9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonteCarloSimulatorUITests/Pods-MonteCarloSimulatorUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E73DB65BDB09A9A4DF699587 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonteCarloSimulator/Pods-MonteCarloSimulator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE41B1554E6F89D6F851B2A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonteCarloSimulator/Pods-MonteCarloSimulator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DACC342F1DBC136200B7DBF4 /* Sources */ = {
@@ -428,9 +619,14 @@
 		};
 		DACC345F1DBC136200B7DBF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94ABAAA55777096FC0E70685 /* Pods-MonteCarloSimulator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/StocksKit",
+				);
 				INFOPLIST_FILE = MonteCarloSimulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulator;
@@ -440,9 +636,14 @@
 		};
 		DACC34601DBC136200B7DBF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B86C38997E14A7516E6617A /* Pods-MonteCarloSimulator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/StocksKit",
+				);
 				INFOPLIST_FILE = MonteCarloSimulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulator;
@@ -452,6 +653,7 @@
 		};
 		DACC34621DBC136200B7DBF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05BD6DAF7CE4FA61C4B334CE /* Pods-MonteCarloSimulatorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MonteCarloSimulatorTests/Info.plist;
@@ -464,6 +666,7 @@
 		};
 		DACC34631DBC136200B7DBF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5712F9A486BEE6FFB2242BD8 /* Pods-MonteCarloSimulatorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MonteCarloSimulatorTests/Info.plist;
@@ -476,6 +679,7 @@
 		};
 		DACC34651DBC136200B7DBF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF74FBF98E2472CB7F30F0F5 /* Pods-MonteCarloSimulatorUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MonteCarloSimulatorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -488,6 +692,7 @@
 		};
 		DACC34661DBC136200B7DBF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84C32A32B857102DD69450FD /* Pods-MonteCarloSimulatorUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MonteCarloSimulatorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

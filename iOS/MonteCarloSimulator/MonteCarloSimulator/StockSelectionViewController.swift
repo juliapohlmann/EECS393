@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StocksKit
 
 class StockSelectionViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class StockSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getQuoteForAPPL()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -47,6 +49,24 @@ class StockSelectionViewController: UIViewController {
     
     func isInputValid() -> Bool {
         return true;
+    }
+    
+    func getQuoteForAPPL() {
+        Quote.fetch(["AAPL"]) { result in
+            
+            switch result {
+            case .Success(let quotes):
+                print(quotes[0].lastTradePrice)
+                // do something with the quotes
+                break
+            case .Failure(let error):
+                // handle the error
+                print("ERROR")
+                break
+            }
+            
+            }.resume()
+
     }
 }
 
