@@ -14,6 +14,8 @@ class StockAllocationViewController: UITableViewController {
     @IBOutlet weak var runSimulation: UIButton!
     @IBOutlet weak var unallocatedPercentageField: UITextField!
     
+    
+    
     var stockTickers = [String]()
     var stockPercentages = [Int]()
     var unallocatedPercentage : Int = 100
@@ -40,8 +42,7 @@ class StockAllocationViewController: UITableViewController {
         for percentage in stockPercentages {
             unallocatedPercentage -= percentage
         }
-        
-        unallocatedPercentageField.text = String(unallocatedPercentage)
+        updateUnallocatedPercentage()
         
     }
     
@@ -81,12 +82,12 @@ class StockAllocationViewController: UITableViewController {
     
     func decrementUnallocatedPercentage() {
         unallocatedPercentage -= 1
-        unallocatedPercentageField.text = String(unallocatedPercentage)
+        updateUnallocatedPercentage()
     }
     
     func incrementUnallocatedPercentage() {
         unallocatedPercentage += 1
-        unallocatedPercentageField.text = String(unallocatedPercentage)
+        updateUnallocatedPercentage()
     }
     
     func incrementStockPercentage(ticker: String) -> Bool {
@@ -136,6 +137,33 @@ class StockAllocationViewController: UITableViewController {
             }
         }
         return -1
+    }
+    
+    func updateUnallocatedPercentage() {
+        unallocatedPercentageField.text = String(unallocatedPercentage)
+    }
+    
+    func isValidChange(ticker: String, oldValue: Int, newValue: Int) -> Bool {
+        if(newValue <= 0 || newValue > 100) {
+            return false;
+        }
+        if(newValue > oldValue) {
+            //adding value
+            let percentageGain = newValue - oldValue
+            if(percentageGain > unallocatedPercentage) {
+                return false;
+            }
+            unallocatedPercentage -= percentageGain
+        } else {
+            //decrementing value
+            let percentageLoss = oldValue - newValue
+            unallocatedPercentage += percentageLoss
+        }
+        
+        let index = findIndexOfTicker(ticker)
+        stockPercentages[index] = newValue
+        updateUnallocatedPercentage()
+        return true
     }
     
 }
