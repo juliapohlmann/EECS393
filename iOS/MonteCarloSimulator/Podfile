@@ -7,6 +7,7 @@ target 'MonteCarloSimulator' do
 
   # Pods for MonteCarloSimulator
   pod 'StocksKit'
+  pod 'SwiftStock'
   target 'MonteCarloSimulatorTests' do
     inherit! :search_paths
     # Pods for testing
