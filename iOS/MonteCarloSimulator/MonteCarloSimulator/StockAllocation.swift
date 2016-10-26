@@ -75,7 +75,14 @@ class StockAllocationViewController: UITableViewController {
     }
     
     func isInputValid() -> Bool {
-        return true;
+        if(unallocatedPercentage == 0) {
+            return true;
+        } else {
+            print("Error: you must allocate all 100% percent")
+            //SHOW ERROR
+            return false;
+        }
+        
     }
     
     func decrementUnallocatedPercentage() {
@@ -157,7 +164,6 @@ class StockAllocationViewController: UITableViewController {
             stockPercentages[index] = newValue
             updateUnallocatedPercentage()
         } else {
-            //show error message here
             stockPercentages[index] = oldValue
         }
         
