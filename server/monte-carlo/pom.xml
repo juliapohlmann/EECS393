@@ -5,6 +5,10 @@
   <version>1.0</version>
   <name>MonteCarloSimulator</name>
   
+  <properties>
+  	<powermock.version>1.6.5</powermock.version>
+  </properties>
+  
   <dependencies>
     <dependency>
         <groupId>com.sparkjava</groupId>
@@ -20,9 +24,21 @@
   	<dependency>
   		<groupId>org.mockito</groupId>
   		<artifactId>mockito-core</artifactId>
-  		<version>2.2.8</version>
+  		<version>2.0.42-beta</version>
   		<scope>test</scope>
   	</dependency>
+   	<dependency>
+      	<groupId>org.powermock</groupId>
+      	<artifactId>powermock-module-junit4</artifactId>
+      	<version>${powermock.version}</version>
+      	<scope>test</scope>
+   	</dependency>
+   	<dependency>
+      	<groupId>org.powermock</groupId>
+      	<artifactId>powermock-api-mockito2</artifactId>
+      	<version>${powermock.version}</version>
+      	<scope>test</scope>
+   	</dependency>
   	<dependency>
     	<groupId>com.fasterxml.jackson.core</groupId>
     	<artifactId>jackson-core</artifactId>
@@ -67,6 +83,7 @@
   			<configuration>
   				<excludes>
   					<exclude>edu/cwru/eecs393/montecarlo/data/*.class</exclude>
+  					<exclude>edu/cwru/**/*Test.class</exclude>
   				</excludes>
    				<destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
    				<dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
