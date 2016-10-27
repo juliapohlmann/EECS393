@@ -45,47 +45,41 @@ class BasicInputsViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         let navVC = segue.destinationViewController as! UINavigationController
-            
         let destinationVC = navVC.viewControllers.first as! StockSelectionViewController
             
         destinationVC.userDict = userDict
         
     }
-
+    
+    func displayError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     func isInputValid() -> Bool {
         let duration : Int? = Int(durationInput.text!)
         let initialValue : Int? = Int(initialValueInput.text!)
         let goalValue : Int? = Int(goalValueInput.text!)
         
-        let alert = UIAlertController(title: "Error", message: "test", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-        
         if(duration == nil || duration <= 1 || duration >= 100) {
             
-            alert.message = "Duration must be a number greater than one year and less than 100 years.";
-            self.presentViewController(alert, animated: true, completion: nil)
+            displayError("Duration must be a number greater than one year and less than 100 years.")
             return false;
             
         }else if(initialValue == nil || initialValue < 1) {
             
-            alert.message = "The initial portfolio value must be a number greater than $1"
-            self.presentViewController(alert, animated: true, completion: nil)
+            displayError("The initial portfolio value must be a number greater than $1")
             return false;
             
         }else if(goalValue == nil || goalValue < initialValue) {
             
-            alert.message = "The goal portfolio value must be a number greater than the initial portfolio value";
-            self.presentViewController(alert, animated: true, completion: nil)
+            displayError("The goal portfolio value must be a number greater than the initial portfolio value")
             return false;
             
         }
         
         return true;
-    }
-    
-    func showError(message: String) {
-        //replace with error pop up
-        print(message)
     }
 
 }
