@@ -1,5 +1,5 @@
 //
-//  StockAllocationViewController.swift
+//  StockAllocationTableViewController.swift
 //  MonteCarloSimulator
 //
 //  Created by Julia Pohlmann on 10/22/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StockAllocationViewController: UITableViewController {
+class StockAllocationTableViewController: UITableViewController {
     
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var runSimulation: UIButton!
@@ -23,7 +23,6 @@ class StockAllocationViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //change to just setStartingStockPercentages after stock selection works
         setStartingStockPercentages()
     }
     
@@ -42,11 +41,10 @@ class StockAllocationViewController: UITableViewController {
         
     }
     
-//    //SETUP FUNCTIONS
-//    func loadStocks() {
-//        stockTickers += ["AAPL", "ABCD", "EFGH", "IJKL"]
-//        setStartingStockPercentages()
-//    }
+    //SETUP FUNCTIONS
+    func loadStocks(tickers: [String]) {
+        stockTickers = tickers
+    }
     
     func setStartingStockPercentages() {
         let startingValue = (100 / (stockTickers.count + (stockTickers.count / 2)))

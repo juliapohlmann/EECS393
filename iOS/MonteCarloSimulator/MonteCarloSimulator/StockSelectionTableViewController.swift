@@ -113,10 +113,10 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         let navVC = segue.destinationViewController as! UINavigationController
-        let destinationVC = navVC.viewControllers.first as! StockAllocationViewController
+        let destinationVC = navVC.viewControllers.first as! StockAllocationTableViewController
         
         destinationVC.userDict = userDict
-        destinationVC.stockTickers = stockTickers
+        destinationVC.loadStocks(stockTickers)
     }
     
     func isInputValid() -> Bool {
