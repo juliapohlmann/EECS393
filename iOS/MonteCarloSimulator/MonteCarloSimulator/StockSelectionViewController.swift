@@ -18,12 +18,10 @@ class StockSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func backClick(sender: AnyObject) {
@@ -33,16 +31,20 @@ class StockSelectionViewController: UIViewController {
     @IBAction func nextClick(sender: AnyObject) {
         //if(isInputValid()) {
             performSegueWithIdentifier("stockSelectionNext", sender: sender)
-        //}
+        //} else {
+//            let alert = UIAlertController(title: "Error", message: "You must select between 15 and 100 stocks", preferredStyle: UIAlertControllerStyle.Alert)
+//            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+//            self.presentViewController(alert, animated: true, completion: nil)
+//        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         let navVC = segue.destinationViewController as! UINavigationController
-        
         let destinationVC = navVC.viewControllers.first as! StockAllocationViewController
         
         destinationVC.userDict = userDict
+        destinationVC.stockTickers = stockTickers
         
     }
     

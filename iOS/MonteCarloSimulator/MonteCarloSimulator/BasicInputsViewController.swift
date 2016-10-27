@@ -33,7 +33,6 @@ class BasicInputsViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil);
     }
     
-    
     @IBAction func nextClick(sender: AnyObject) {
         if(isInputValid()) {
             userDict["duration"] = Int(durationInput.text!)
@@ -57,8 +56,6 @@ class BasicInputsViewController: UIViewController {
         let duration : Int? = Int(durationInput.text!)
         let initialValue : Int? = Int(initialValueInput.text!)
         let goalValue : Int? = Int(goalValueInput.text!)
-        
-        
         
         let alert = UIAlertController(title: "Error", message: "test", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
