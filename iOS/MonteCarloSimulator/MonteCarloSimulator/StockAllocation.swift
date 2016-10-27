@@ -56,6 +56,7 @@ class StockAllocationViewController: UITableViewController {
         let cellIdentifier = "StockAllocationTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! StockAllocationTableViewCell
         
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.tickerField.text = stockTickers[indexPath.row]
         cell.percentageField.text = String(stockPercentages[indexPath.row])
         cell.StockAllocationInstance = self
@@ -78,8 +79,9 @@ class StockAllocationViewController: UITableViewController {
         if(unallocatedPercentage == 0) {
             return true;
         } else {
-            print("Error: you must allocate all 100% percent")
-            //SHOW ERROR
+            let alert = UIAlertController(title: "Error", message: "You must allocate all 100% percent", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
             return false;
         }
         
@@ -165,6 +167,9 @@ class StockAllocationViewController: UITableViewController {
             updateUnallocatedPercentage()
         } else {
             stockPercentages[index] = oldValue
+            let alert = UIAlertController(title: "Error", message: "You cannot allocate more than 100% percent", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         return isValid

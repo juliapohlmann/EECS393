@@ -55,24 +55,34 @@ class BasicInputsViewController: UIViewController {
     }
 
     func isInputValid() -> Bool {
-//        let duration : Int? = Int(durationInput.text!)
-//        let initialValue : Int? = Int(initialValueInput.text!)
-//        let goalValue : Int? = Int(goalValueInput.text!)
-//        
-//        if(duration == nil || duration <= 1 || duration >= 100) {
-//            showError("Duration must be a number greater than one year and less than 100 years.");
-//            return false;
-//        }
-//        
-//        if(initialValue == nil || initialValue < 1) {
-//            showError("The initial portfolio value must be a number greater than $1");
-//            return false;
-//        }
-//        
-//        if(goalValue == nil || goalValue < initialValue) {
-//            showError("The goal portfolio value must be a number greater than the initial portfolio value");
-//            return false;
-//        }
+        let duration : Int? = Int(durationInput.text!)
+        let initialValue : Int? = Int(initialValueInput.text!)
+        let goalValue : Int? = Int(goalValueInput.text!)
+        
+        
+        
+        let alert = UIAlertController(title: "Error", message: "test", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        
+        if(duration == nil || duration <= 1 || duration >= 100) {
+            
+            alert.message = "Duration must be a number greater than one year and less than 100 years.";
+            self.presentViewController(alert, animated: true, completion: nil)
+            return false;
+            
+        }else if(initialValue == nil || initialValue < 1) {
+            
+            alert.message = "The initial portfolio value must be a number greater than $1"
+            self.presentViewController(alert, animated: true, completion: nil)
+            return false;
+            
+        }else if(goalValue == nil || goalValue < initialValue) {
+            
+            alert.message = "The goal portfolio value must be a number greater than the initial portfolio value";
+            self.presentViewController(alert, animated: true, completion: nil)
+            return false;
+            
+        }
         
         return true;
     }

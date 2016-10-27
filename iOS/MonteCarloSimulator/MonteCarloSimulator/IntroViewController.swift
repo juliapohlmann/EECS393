@@ -26,13 +26,5 @@ class IntroViewController: UIViewController {
         performSegueWithIdentifier("startSimulation", sender: sender)
     }
     
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if(sender === startButton) {
-//            //set next data
-//        }
-//    }
-    
-    
 }
 

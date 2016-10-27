@@ -26,7 +26,6 @@ class StockAllocationTableViewCell: UITableViewCell {
         let newValue = Int(percentageField.text!)!
         if(!StockAllocationInstance.validEdit(tickerField.text!, oldValue: previousPercentage, newValue: newValue)) {
             percentageField.text = String(previousPercentage)
-            //show error here
         }
         
     }
