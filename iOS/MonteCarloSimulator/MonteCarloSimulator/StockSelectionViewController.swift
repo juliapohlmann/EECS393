@@ -7,21 +7,48 @@
 //
 
 import UIKit
+import StocksKit
 
-class StockSelectionViewController: UIViewController {
+class StockSelectionViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var userDict: [String:Int] = [:]
     var stockTickers = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func displayError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+        let ticker : String = searchBar.text!.uppercaseString
+        self.view.userInteractionEnabled = false
+        Quote.fetch([ticker]) { result in
+            
+            switch result {
+        
+                case .Success(_):
+                    self.view.userInteractionEnabled = true
+                    self.stockTickers.append(ticker)
+                    break
+                case .Failure(_):
+                    self.view.userInteractionEnabled = true
+                    self.displayError("Not a valid stock ticker")
+                    break
+            }
+            
+        }.resume()
+        
     }
     
     @IBAction func backClick(sender: AnyObject) {
@@ -32,9 +59,7 @@ class StockSelectionViewController: UIViewController {
         //if(isInputValid()) {
             performSegueWithIdentifier("stockSelectionNext", sender: sender)
         //} else {
-//            let alert = UIAlertController(title: "Error", message: "You must select between 15 and 100 stocks", preferredStyle: UIAlertControllerStyle.Alert)
-//            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-//            self.presentViewController(alert, animated: true, completion: nil)
+//            displayError("You must select between 15 and 100 stocks")
 //        }
     }
     
@@ -56,23 +81,5 @@ class StockSelectionViewController: UIViewController {
         }
         
     }
-    
-//    func getQuoteForAPPL() {
-//        Quote.fetch(["AAPL"]) { result in
-//            
-//            switch result {
-//            case .Success(let quotes):
-//                print(quotes[0].lastTradePrice)
-//                // do something with the quotes
-//                break
-//            case .Failure(let error):
-//                // handle the error
-//                print("ERROR")
-//                break
-//            }
-//            
-//            }.resume()
-//
-//    }
 }
 

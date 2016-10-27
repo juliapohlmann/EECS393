@@ -265,16 +265,25 @@
                                     <action selector="nextClick:" destination="yna-Ql-AVd" eventType="touchUpInside" id="zRF-uu-25w"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wBn-hW-QRi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="61" width="400" height="44"/>
+                                </variation>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="fCd-Q1-DUr"/>
+                                <exclude reference="wBn-hW-QRi"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="fCd-Q1-DUr"/>
+                                <include reference="wBn-hW-QRi"/>
                             </mask>
                         </variation>
                     </view>
@@ -289,6 +298,7 @@
                     <connections>
                         <outlet property="backButton" destination="beZ-dP-ePT" id="Fr9-3n-uWZ"/>
                         <outlet property="nextButton" destination="fCd-Q1-DUr" id="E52-EF-vRF"/>
+                        <outlet property="searchBar" destination="wBn-hW-QRi" id="uBM-kP-EdL"/>
                         <segue destination="awV-53-HgX" kind="show" identifier="stockSelectionNext" id="TaG-nH-k2r"/>
                     </connections>
                 </viewController>
