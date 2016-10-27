@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulatorTests/StockAllocationViewControllerTests.swift"
-            timestampString = "499225388.672879"
+            timestampString = "499226151.21034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322">
+            startingLineNumber = "443"
+            endingLineNumber = "443">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
