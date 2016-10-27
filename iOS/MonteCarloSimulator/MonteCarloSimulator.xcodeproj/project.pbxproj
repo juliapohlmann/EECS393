@@ -169,6 +169,7 @@
 				DACC34381DBC136200B7DBF4 /* ViewController.swift */,
 				DACC34671DBD019300B7DBF4 /* IntroViewController.swift */,
 				DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */,
+				DAE3AFAC1DC1A8B8004E8206 /* StockSelectionTableViewController.swift */,
 				DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */,
 				DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */,
 				1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */,
@@ -178,7 +179,6 @@
 				DACC34421DBC136200B7DBF4 /* LaunchScreen.storyboard */,
 				DACC34451DBC136200B7DBF4 /* Info.plist */,
 				DACC343D1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld */,
-				DAE3AFAC1DC1A8B8004E8206 /* StockSelectionTableViewController.swift */,
 				DAE3AFAE1DC1ABF9004E8206 /* StockSelectionTableViewCell.swift */,
 			);
 			path = MonteCarloSimulator;

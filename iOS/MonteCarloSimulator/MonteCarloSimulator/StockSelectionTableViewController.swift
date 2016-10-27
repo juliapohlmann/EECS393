@@ -60,6 +60,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         cell.StockInfo.text = stockInfoText
         cell.StockSelectionInstance = self
         cell.ticker = stockTickers[indexPath.row]
+        cell.StockInfo.enabled = false
         
         return cell
     }
@@ -75,10 +76,14 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
             
             case .Success(let quotes):
                 self.view.userInteractionEnabled = true
-                self.stockTickers += [ticker]
-                self.stockValues += [quotes[0].lastTradePrice]
-                self.tableView.reloadData()
-
+                searchBar.text = ""
+                if(self.stockTickers.contains(ticker)) {
+                    self.displayError("This stock is already added")
+                } else {
+                    self.stockTickers += [ticker]
+                    self.stockValues += [quotes[0].lastTradePrice]
+                    self.tableView.reloadData()
+                }
                 break
             case .Failure(_):
                 self.view.userInteractionEnabled = true
