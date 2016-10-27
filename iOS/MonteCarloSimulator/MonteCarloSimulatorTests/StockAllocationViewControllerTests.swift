@@ -27,19 +27,162 @@ class StockAllocationViewControllerTest: XCTestCase {
     //validEdit                           +
     //setStartingStockPercentages         +
     //findIndexOfTicker                   +
-    //loadStocks
     //runSimulation                       +
-    //backClick
     //isInputValid                        +
-    //decrementUnallocatedPercentage
-    //incrementUnallocatedPercentage
-    //incrementStockPercentage
-    //decrementStockPercentage
-    //canDecrementStock
-    //canIncrementStock
+    //canDecrementStock                   +
+    //canIncrementStock                   +
+    //incrementStockPercentage            +
+    //decrementStockPercentage            +
+    //decrementUnallocatedPercentage      +
+    //incrementUnallocatedPercentage      +
     //updateUnallocatedPercentageField
+    //backClick
+    //loadStocks
+
+    func testIncrementUnallocatedPercentage() {
+        class StockAllocationViewControllerMock: StockAllocationViewController {
+            override func updateUnallocatedPercentageField() {
+                //do nothing
+            }
+        }
+        
+        let controller = StockAllocationViewControllerMock()
+        controller.unallocatedPercentage = 15
+        controller.incrementUnallocatedPercentage()
+        let expected = 16
+        XCTAssertEqual(expected, controller.unallocatedPercentage)
+    }
+    
+    func testDecrementUnallocatedPercentage() {
+        class StockAllocationViewControllerMock: StockAllocationViewController {
+            override func updateUnallocatedPercentageField() {
+                //do nothing
+            }
+        }
+        
+        let controller = StockAllocationViewControllerMock()
+        controller.unallocatedPercentage = 15
+        controller.decrementUnallocatedPercentage()
+        let expected = 14
+        XCTAssertEqual(expected, controller.unallocatedPercentage)
+    }
+    
+    func testDecrementStockPercentage() {
+        testDecrementStockPercentageTrue()
+        testDecrementStockPercentageFalse()
+    }
+    
+    func testDecrementStockPercentageTrue() {
+        class StockAllocationViewControllerMock: StockAllocationViewController {
+            override func loadStocks() {
+                stockTickers += ["ABCD", "EFGH", "IJKL"]
+                setStartingStockPercentages()
+            }
+            override func updateUnallocatedPercentageField() {
+                //do nothing
+            }
+        }
+        
+        let controller = StockAllocationViewControllerMock()
+        controller.loadStocks()
+        
+        controller.decrementStockPercentage("ABCD")
+        let expected = 24
+        XCTAssertEqual(expected, controller.stockPercentages[0])
+    }
+    
+    func testDecrementStockPercentageFalse() {
+        class StockAllocationViewControllerMock: StockAllocationViewController {
+            override func loadStocks() {
+                stockTickers += ["ABCD", "EFGH", "IJKL"]
+                setStartingStockPercentages()
+            }
+            override func canDecrementStock(percentage: Int) -> Bool {
+                return false
+            }
+            override func updateUnallocatedPercentageField() {
+                //do nothing
+            }
+        }
+        
+        let controller = StockAllocationViewControllerMock()
+        controller.loadStocks()
+        
+        controller.decrementStockPercentage("ABCD")
+        let expected = 25
+        XCTAssertEqual(expected, controller.stockPercentages[0])
+    }
+    
+    func testIncrementStockPercentage() {
+        testIncrementStockPercentageTrue()
+        testIncrementStockPercentageFalse()
+    }
+    
+    func testIncrementStockPercentageTrue() {
+        class StockAllocationViewControllerMock: StockAllocationViewController {
+            override func loadStocks() {
+                stockTickers += ["ABCD", "EFGH", "IJKL"]
+                setStartingStockPercentages()
+            }
+            override func updateUnallocatedPercentageField() {
+                //do nothing
+            }
+        }
+        
+        let controller = StockAllocationViewControllerMock()
+        controller.loadStocks()
+        
+        controller.incrementStockPercentage("ABCD")
+        let expected = 26
+        XCTAssertEqual(expected, controller.stockPercentages[0])
+    }
+    
+    func testIncrementStockPercentageFalse() {
+        class StockAllocationViewControllerMock: StockAllocationViewController {
+            override func loadStocks() {
+                stockTickers += ["ABCD", "EFGH", "IJKL"]
+                setStartingStockPercentages()
+            }
+            override func canIncrementStock() -> Bool {
+                return false
+            }
+            override func updateUnallocatedPercentageField() {
+                //do nothing
+            }
+        }
+        
+        let controller = StockAllocationViewControllerMock()
+        controller.loadStocks()
+        
+        controller.incrementStockPercentage("ABCD")
+        let expected = 25
+        XCTAssertEqual(expected, controller.stockPercentages[0])
+    }
     
     
+    func testCanIncrementStock() {
+        class StockAllocationViewControllerMock: StockAllocationViewController {}
+        let controller = StockAllocationViewControllerMock()
+        controller.unallocatedPercentage = 1
+        //true
+        var expected = true
+        XCTAssertEqual(expected, controller.canIncrementStock())
+        //false
+        controller.unallocatedPercentage = 0
+        expected = false
+        XCTAssertEqual(expected, controller.canIncrementStock())
+    }
+    
+    func testCanDecrementStock() {
+        class StockAllocationViewControllerMock: StockAllocationViewController {}
+        let controller = StockAllocationViewControllerMock()
+        //true
+        var expected = true
+        XCTAssertEqual(expected, controller.canDecrementStock(1))
+        //false
+        expected = false
+        XCTAssertEqual(expected, controller.canDecrementStock(0))
+    }
     
     
     func testFindIndexOfTicker() {
@@ -74,6 +217,10 @@ class StockAllocationViewControllerTest: XCTestCase {
         return controller.findIndexOfTicker(ticker)
     }
     
+    func testValidEdit() {
+        testValidEditTrue()
+        testValidEditFalse()
+    }
     
     func testValidEditTrue() {
         //true
@@ -83,8 +230,10 @@ class StockAllocationViewControllerTest: XCTestCase {
     func testValidEditFalse() {
         //false because newValue > 100
         helperValidEdit(false, ticker: "ABCD", oldValue: 25, newValue: 101)
+        
         //false because newValue =  0
         helperValidEdit(false, ticker: "ABCD", oldValue: 25, newValue: 0)
+        
         //false because newValue < 0
         helperValidEdit(false, ticker: "ABCD", oldValue: 25, newValue: -1)
         
@@ -111,6 +260,11 @@ class StockAllocationViewControllerTest: XCTestCase {
         XCTAssertEqual(expectedValue, actualValue)
     }
     
+    func testIsInputValid() {
+        testIsInputValidFalse()
+        testIsInputValidTrue()
+    }
+    
     func testIsInputValidFalse() {
         class StockAllocationViewControllerMock: StockAllocationViewController {
             override func updateUnallocatedPercentageField() {
@@ -127,7 +281,7 @@ class StockAllocationViewControllerTest: XCTestCase {
         XCTAssertEqual(expectedIsValid, controller.isInputValid())
         
     }
-
+    
     func testIsInputValidTrue() {
         class StockAllocationViewControllerMock: StockAllocationViewController {
             override func updateUnallocatedPercentageField() {
@@ -140,6 +294,10 @@ class StockAllocationViewControllerTest: XCTestCase {
         XCTAssertEqual(expectedIsValid, controller.isInputValid())
     }
     
+    func testSetStartingStockPercentages() {
+        testSetStartingStockPercentagesEvenNumberOfTickers()
+        testSetStartingStockPercentagesOddNumberOfTickers()
+    }
     
     func testSetStartingStockPercentagesOddNumberOfTickers() {
         class StockAllocationViewControllerMock: StockAllocationViewController {

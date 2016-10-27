@@ -166,7 +166,6 @@ class StockAllocationViewController: UITableViewController {
     func incrementStockPercentage(ticker: String) -> Bool {
         if(canIncrementStock()) {
             let index = findIndexOfTicker(ticker)
-        
             stockPercentages[index] += 1
             decrementUnallocatedPercentage()
             return true
