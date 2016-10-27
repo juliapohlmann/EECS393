@@ -26,8 +26,7 @@
 		DACC345A1DBC136200B7DBF4 /* MonteCarloSimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34591DBC136200B7DBF4 /* MonteCarloSimulatorUITests.swift */; };
 		DACC34681DBD019300B7DBF4 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34671DBD019300B7DBF4 /* IntroViewController.swift */; };
 		DACC346A1DBD024C00B7DBF4 /* BasicInputsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */; };
-		DACC346C1DBD038400B7DBF4 /* StockSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */; };
-		DACC346E1DBD040400B7DBF4 /* StockAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */; };
+		DACC346E1DBD040400B7DBF4 /* StockAllocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC346D1DBD040400B7DBF4 /* StockAllocationTableViewController.swift */; };
 		DADFC9101DBFA431009A2C7D /* StockAllocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */; };
 		DAE3AFAB1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3AFAA1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift */; };
 		DAE3AFAD1DC1A8B8004E8206 /* StockSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3AFAC1DC1A8B8004E8206 /* StockSelectionTableViewController.swift */; };
@@ -83,8 +82,7 @@
 		DACC345B1DBC136200B7DBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DACC34671DBD019300B7DBF4 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInputsViewController.swift; sourceTree = "<group>"; };
-		DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSelectionViewController.swift; sourceTree = "<group>"; };
-		DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocation.swift; sourceTree = "<group>"; };
+		DACC346D1DBD040400B7DBF4 /* StockAllocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocationTableViewController.swift; sourceTree = "<group>"; };
 		DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocationTableViewCell.swift; sourceTree = "<group>"; };
 		DAE3AFAA1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInputsViewControllerTests.swift; sourceTree = "<group>"; };
 		DAE3AFAC1DC1A8B8004E8206 /* StockSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSelectionTableViewController.swift; sourceTree = "<group>"; };
@@ -175,8 +173,7 @@
 				DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */,
 				DAE3AFAC1DC1A8B8004E8206 /* StockSelectionTableViewController.swift */,
 				DAE3AFAE1DC1ABF9004E8206 /* StockSelectionTableViewCell.swift */,
-				DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */,
-				DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */,
+				DACC346D1DBD040400B7DBF4 /* StockAllocationTableViewController.swift */,
 				DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */,
 				1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */,
 				DACC343A1DBC136200B7DBF4 /* Main.storyboard */,
@@ -496,8 +493,7 @@
 				DACC34371DBC136200B7DBF4 /* AppDelegate.swift in Sources */,
 				DADFC9101DBFA431009A2C7D /* StockAllocationTableViewCell.swift in Sources */,
 				DAE3AFAF1DC1ABF9004E8206 /* StockSelectionTableViewCell.swift in Sources */,
-				DACC346E1DBD040400B7DBF4 /* StockAllocation.swift in Sources */,
-				DACC346C1DBD038400B7DBF4 /* StockSelectionViewController.swift in Sources */,
+				DACC346E1DBD040400B7DBF4 /* StockAllocationTableViewController.swift in Sources */,
 				1C1C39721DBFF38F00CB147B /* ResultsViewController.swift in Sources */,
 				DACC346A1DBD024C00B7DBF4 /* BasicInputsViewController.swift in Sources */,
 				DACC343F1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld in Sources */,

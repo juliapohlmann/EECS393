@@ -1,5 +1,5 @@
 //
-//  StockAllocationViewController.swift
+//  StockAllocationTableViewController.swift
 //  MonteCarloSimulator
 //
 //  Created by Julia Pohlmann on 10/22/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StockAllocationViewController: UITableViewController {
+class StockAllocationTableViewController: UITableViewController {
     
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var runSimulation: UIButton!

@@ -15,7 +15,7 @@ class StockAllocationTableViewCell: UITableViewCell {
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var percentageField: UITextField!
     var previousPercentage : Int = 0
-    var StockAllocationInstance : StockAllocationViewController = StockAllocationViewController()
+    var StockAllocationInstance : StockAllocationTableViewController = StockAllocationTableViewController()
     
     
     @IBAction func beginEditingPercentageField(sender: AnyObject) {
