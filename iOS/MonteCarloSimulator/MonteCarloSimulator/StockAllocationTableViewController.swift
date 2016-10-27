@@ -23,7 +23,6 @@ class StockAllocationTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //change to just setStartingStockPercentages after stock selection works
         setStartingStockPercentages()
     }
     
@@ -42,11 +41,10 @@ class StockAllocationTableViewController: UITableViewController {
         
     }
     
-//    //SETUP FUNCTIONS
-//    func loadStocks() {
-//        stockTickers += ["AAPL", "ABCD", "EFGH", "IJKL"]
-//        setStartingStockPercentages()
-//    }
+    //SETUP FUNCTIONS
+    func loadStocks(tickers: [String]) {
+        stockTickers = tickers
+    }
     
     func setStartingStockPercentages() {
         let startingValue = (100 / (stockTickers.count + (stockTickers.count / 2)))

@@ -116,7 +116,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         let destinationVC = navVC.viewControllers.first as! StockAllocationTableViewController
         
         destinationVC.userDict = userDict
-        destinationVC.stockTickers = stockTickers
+        destinationVC.loadStocks(stockTickers)
     }
     
     func isInputValid() -> Bool {

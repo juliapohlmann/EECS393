@@ -13,7 +13,7 @@
 		34110C3B97536C8322EC39F7 /* Pods_MonteCarloSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0BB019AF49CC91B64EDD25 /* Pods_MonteCarloSimulatorTests.framework */; };
 		BD98E457620CF37F9D99D4B2 /* Pods_MonteCarloSimulatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09732685C9D5418514E21D79 /* Pods_MonteCarloSimulatorUITests.framework */; };
 		DA3EDA331DC116F90050983F /* StocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3EDA321DC116F90050983F /* StocksKit.framework */; };
-		DA8898981DC1733B00BAB43E /* StockAllocationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8898971DC1733B00BAB43E /* StockAllocationViewControllerTests.swift */; };
+		DA8898981DC1733B00BAB43E /* StockAllocationTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8898971DC1733B00BAB43E /* StockAllocationTableViewControllerTests.swift */; };
 		DABA06A41DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA06A31DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift */; };
 		DABA06A61DC242FA00BB1407 /* ResultsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */; };
 		DACC34371DBC136200B7DBF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34361DBC136200B7DBF4 /* AppDelegate.swift */; };
@@ -63,7 +63,7 @@
 		CF74FBF98E2472CB7F30F0F5 /* Pods-MonteCarloSimulatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorUITests/Pods-MonteCarloSimulatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D394E49C3CD6448C5709002E /* Pods_MonteCarloSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3EDA321DC116F90050983F /* StocksKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StocksKit.framework; path = "Pods/../build/Debug-iphoneos/StocksKit/StocksKit.framework"; sourceTree = "<group>"; };
-		DA8898971DC1733B00BAB43E /* StockAllocationViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocationViewControllerTests.swift; sourceTree = "<group>"; };
+		DA8898971DC1733B00BAB43E /* StockAllocationTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocationTableViewControllerTests.swift; sourceTree = "<group>"; };
 		DABA06A31DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSelectionTableViewControllerTests.swift; sourceTree = "<group>"; };
 		DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTests.swift; sourceTree = "<group>"; };
 		DACC34331DBC136200B7DBF4 /* MonteCarloSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonteCarloSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,7 +191,7 @@
 				1CA21CC91DC13CEF005AB2E3 /* IntroViewControllerTest.swift */,
 				DACC344E1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift */,
 				DACC34501DBC136200B7DBF4 /* Info.plist */,
-				DA8898971DC1733B00BAB43E /* StockAllocationViewControllerTests.swift */,
+				DA8898971DC1733B00BAB43E /* StockAllocationTableViewControllerTests.swift */,
 				DAE3AFAA1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift */,
 				DABA06A31DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift */,
 				DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */,
@@ -511,7 +511,7 @@
 				DABA06A61DC242FA00BB1407 /* ResultsViewControllerTests.swift in Sources */,
 				1CA21CCA1DC13CEF005AB2E3 /* IntroViewControllerTest.swift in Sources */,
 				DAE3AFAB1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift in Sources */,
-				DA8898981DC1733B00BAB43E /* StockAllocationViewControllerTests.swift in Sources */,
+				DA8898981DC1733B00BAB43E /* StockAllocationTableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
