@@ -3,6 +3,9 @@ package edu.cwru.eecs393.montecarlo;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.mockito.PowerMockito;
@@ -16,7 +19,7 @@ import spark.Spark;
 public class ServerTest {
 
 	@Test
-	public void testServerSetup() {
+	public void testServerSetup() throws SecurityException, FileNotFoundException, IOException {
 		PowerMockito.mockStatic(Spark.class);
 
 		Server.main(new String[] {});
