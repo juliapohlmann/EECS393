@@ -40,6 +40,7 @@ class StockSelectionViewController: UIViewController, UISearchBarDelegate {
                 case .Success(_):
                     self.view.userInteractionEnabled = true
                     self.stockTickers.append(ticker)
+                    print(result)
                     break
                 case .Failure(_):
                     self.view.userInteractionEnabled = true

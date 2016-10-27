@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="abf-je-lCU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="abf-je-lCU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -236,7 +236,7 @@
                         <outlet property="goalValueInput" destination="7n1-5L-0o9" id="EdT-Sg-A8a"/>
                         <outlet property="initialValueInput" destination="msB-fE-VMg" id="zxH-Kk-eI6"/>
                         <outlet property="nextButton" destination="BWQ-2T-qJa" id="miO-in-coU"/>
-                        <segue destination="27O-ic-cwU" kind="show" identifier="basicInputsNext" id="05a-Pe-4b2"/>
+                        <segue destination="2Q5-WJ-nBe" kind="show" identifier="basicInputsNext" id="wT9-ch-sdB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEE-xI-MA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -298,8 +298,6 @@
                     <connections>
                         <outlet property="backButton" destination="beZ-dP-ePT" id="Fr9-3n-uWZ"/>
                         <outlet property="nextButton" destination="fCd-Q1-DUr" id="E52-EF-vRF"/>
-                        <outlet property="searchBar" destination="wBn-hW-QRi" id="uBM-kP-EdL"/>
-                        <segue destination="awV-53-HgX" kind="show" identifier="stockSelectionNext" id="TaG-nH-k2r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9A-vG-3dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -387,7 +385,7 @@
                                 <rect key="frame" x="0.0" y="58" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfP-A6-uDT" id="xor-hf-Z21">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TICKER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASW-OP-HK1">
@@ -541,6 +539,111 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qej-IK-lYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6399" y="436.5"/>
+        </scene>
+        <!--Stock Selection-->
+        <scene sceneID="UbJ-sx-KS6">
+            <objects>
+                <tableViewController id="dQH-fk-Aso" customClass="StockSelectionTableViewController" customModule="MonteCarloSimulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Myq-Af-8cy" userLabel="Table">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="vSg-r8-2Ty">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vnb-ln-Zfz" userLabel="Next">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="nextClick:" destination="dQH-fk-Aso" eventType="touchUpInside" id="rl2-LA-eQr"/>
+                            </connections>
+                        </button>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StockSelectionTableViewCell" id="5uG-be-P3g" customClass="StockSelectionTableViewCell" customModule="MonteCarloSimulator" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5uG-be-P3g" id="m1M-8Z-nHD">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TICKER + VALUE" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RZ0-yO-jaE">
+                                            <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="7" width="188" height="30"/>
+                                            </variation>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhB-Xw-Qmi">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <state key="normal" title="Remove"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="337" y="7" width="55" height="30"/>
+                                            </variation>
+                                            <connections>
+                                                <action selector="removeClick:" destination="5uG-be-P3g" eventType="touchUpInside" id="zig-ll-0p7"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="RZ0-yO-jaE"/>
+                                            <exclude reference="FhB-Xw-Qmi"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="RZ0-yO-jaE"/>
+                                            <include reference="FhB-Xw-Qmi"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="StockInfo" destination="RZ0-yO-jaE" id="1fn-1A-MOp"/>
+                                    <outlet property="removeButton" destination="FhB-Xw-Qmi" id="N9B-Ve-Y48"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dQH-fk-Aso" id="aXu-3v-YN6"/>
+                            <outlet property="delegate" destination="dQH-fk-Aso" id="2oH-Jf-0Bz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Stock Selection" id="seG-8d-1rO">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="NNn-4i-mR8">
+                            <connections>
+                                <action selector="backClick:" destination="dQH-fk-Aso" id="18G-9H-h2A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="NNn-4i-mR8" id="EBr-Qo-w2O"/>
+                        <outlet property="nextButton" destination="Vnb-ln-Zfz" id="n9g-P4-LCh"/>
+                        <outlet property="searchBar" destination="vSg-r8-2Ty" id="3Bu-3m-n54"/>
+                        <segue destination="awV-53-HgX" kind="show" identifier="stockSelectionNext" id="tfM-BG-7Qu"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81i-5a-wUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3873" y="1113"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YA5-tL-QAp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Q5-WJ-nBe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Czz-DG-DD1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dQH-fk-Aso" kind="relationship" relationship="rootViewController" id="8E7-Xl-c1D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Yz-ea-tXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3057" y="1113"/>
         </scene>
     </scenes>
 </document>

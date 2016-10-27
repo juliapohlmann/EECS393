@@ -46,7 +46,7 @@ class BasicInputsViewController: UIViewController {
         
         let navVC = segue.destinationViewController as! UINavigationController
         
-        let destinationVC = navVC.viewControllers.first as! StockSelectionViewController
+        let destinationVC = navVC.viewControllers.first as! StockSelectionTableViewController
         
         destinationVC.userDict = userDict
         
