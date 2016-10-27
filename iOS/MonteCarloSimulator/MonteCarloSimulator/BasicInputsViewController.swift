@@ -30,12 +30,11 @@ class BasicInputsViewController: UIViewController {
     }
     
     @IBAction func backClick(sender: AnyObject) {
-        performSegueWithIdentifier("basicInputsBack", sender: sender)
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
     
-    
     @IBAction func nextClick(sender: AnyObject) {
-        if(isInputValid()) {
+        if(isInputValid(getInputValues())) {
             userDict["duration"] = Int(durationInput.text!)
             userDict["initialValue"] = Int(initialValueInput.text!)
             userDict["goalValue"] = Int(goalValueInput.text!)
@@ -46,41 +45,48 @@ class BasicInputsViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         let navVC = segue.destinationViewController as! UINavigationController
-
-        let destinationVC = navVC.viewControllers.first as! StockSelectionViewController
+        
+        let destinationVC = navVC.viewControllers.first as! StockSelectionTableViewController
         
         destinationVC.userDict = userDict
         
     }
-
-    func isInputValid() -> Bool {
-//        let duration : Int? = Int(durationInput.text!)
-//        let initialValue : Int? = Int(initialValueInput.text!)
-//        let goalValue : Int? = Int(goalValueInput.text!)
-//        
-//        if(duration == nil || duration <= 1 || duration >= 100) {
-//            showError("Duration must be a number greater than one year and less than 100 years.");
-//            return false;
-//        }
-//        
-//        if(initialValue == nil || initialValue < 1) {
-//            showError("The initial portfolio value must be a number greater than $1");
-//            return false;
-//        }
-//        
-//        if(goalValue == nil || goalValue < initialValue) {
-//            showError("The goal portfolio value must be a number greater than the initial portfolio value");
-//            return false;
-//        }
+    
+    func getInputValues() -> (Int?, Int?, Int?) {
+        let duration : Int? = Int(durationInput.text!)
+        let initialValue : Int? = Int(initialValueInput.text!)
+        let goalValue : Int? = Int(goalValueInput.text!)
+        return (duration, initialValue, goalValue)
+    }
+    
+    func isInputValid(values: (Int?, Int?, Int?)) -> Bool {
+        let (duration, initialValue, goalValue) = values
+        
+        if(duration == nil || duration <= 1 || duration >= 100) {
+            displayError("Duration must be a number greater than one year and less than 100 years.")
+            return false
+            
+        }else if(initialValue == nil || initialValue < 1) {
+            displayError("The initial portfolio value must be a number greater than $1")
+            return false
+            
+        }else if(goalValue == nil || goalValue < initialValue) {
+            displayError("The goal portfolio value must be a number greater than the initial portfolio value")
+            return false
+            
+        }
         
         return true;
     }
     
-    func showError(message: String) {
-        //replace with error pop up
-        print(message)
+    func displayError(message: String) {
+        let alert = UIAlertController(title: "Error", message: "test", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        alert.message = message;
+        self.presentViewController(alert, animated: true, completion: nil)
+        
     }
-
+    
 }
 
 

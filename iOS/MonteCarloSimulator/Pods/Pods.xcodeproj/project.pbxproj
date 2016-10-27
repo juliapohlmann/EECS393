@@ -1,0 +1,893 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		027F056DE2EC850D2C3C92E00DDE93B3 /* YahooQueryResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F7143836F643AF441DA02842A1A398 /* YahooQueryResponseSerializer.swift */; };
+		0AF49E4B710429505B2ED697148637F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		19F098431051AAF929C7CEE1752B6827 /* QueryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936C0C26F059492E78885250324A435E /* QueryParser.swift */; };
+		26229359B0B9BDE784B4FC99A76DFAFF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F629AC8A22FD3B6716A2C9517032201 /* Result.swift */; };
+		31D71820A855215D6B26DC252C521FDB /* JSONParsingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B895A9EC3D4CA2BF33FD3AB9A9C714 /* JSONParsingType.swift */; };
+		3D6D7EDD80D9C0178B527B7BCFFACD44 /* Pods-MonteCarloSimulator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 298EA59699EDC6CE63F3847D4C028E1D /* Pods-MonteCarloSimulator-dummy.m */; };
+		3FEE0E105DD63663CB8E06A6EB76DC27 /* StocksKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E90785BF013ABE840968A3DDAA11C2A /* StocksKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		465B5ECEE54E017E3CD8C971D5969A0D /* Pods-MonteCarloSimulatorUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FF19CED4F3AF5935FB86CD7E63DBF332 /* Pods-MonteCarloSimulatorUITests-dummy.m */; };
+		52D73F9274F6F5093A0CD20260B5A990 /* Pods-MonteCarloSimulator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5351D1FCD130EB6D4EF17948DB11D46C /* Pods-MonteCarloSimulator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		652BFFE9D2B838D1E907932DF69E9DF2 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA31A92BE67ACCB4D04E8E1273080B1 /* Query.swift */; };
+		686ED72461CD6295AC099E66648C9EC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		69003A269FB3BD9E2291E5D7F7A0ECAC /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B0732784AE163F0261062139B7506 /* ExchangeRate.swift */; };
+		6D460DC7540E8A50747419EB6F115473 /* Pods-MonteCarloSimulatorTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE2B415517562911009373732FD42396 /* Pods-MonteCarloSimulatorTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70C3633257F8AAE88C9BD838498D2717 /* QuoteParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE7E52B5616A83DC1E88EC1633D985 /* QuoteParser.swift */; };
+		818AA23EBCF685048B0DF369BE562247 /* StocksKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B33C2B824EEDA62EF68A634D21A8FD /* StocksKit-dummy.m */; };
+		872417C6BAEDCB3DFF54C5C3D6346083 /* Pods-MonteCarloSimulatorUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6ECCB46036ABFD8BCC36447915D1F736 /* Pods-MonteCarloSimulatorUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903151D85F3E24C68587A1A4CE970DC9 /* Pods-MonteCarloSimulatorTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2399B530B8E03B4E7C3579AADEBBD032 /* Pods-MonteCarloSimulatorTests-dummy.m */; };
+		A0FCA94CEEFB1A36D551654CF0C00428 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7BFBCBC04E08B931B2A63CDBB86C7 /* Router.swift */; };
+		ADE7CFFAEC41EF01FA63994A3F5652D3 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370CCC8CC904DBD481E9F81922F86169 /* Quote.swift */; };
+		BAF2B440A111ED857E6F1CD713244081 /* QuoteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E1C11B6814018319E65865E54093C /* QuoteType.swift */; };
+		C923ACC22FF0F029FE82D3780AD755B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		C932B5299DDB1C8BFC8C8112D978741F /* ExchangeRateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235BC10CDE4284F708AB348341E1AC13 /* ExchangeRateParser.swift */; };
+		C952831D7DADFE9172E15A2D5A16078E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		E791DDC03F3D46FAB3F6ADE887D41741 /* QuoteResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9082E350EDE2E0C07D13077D5A458122 /* QuoteResponseSerializer.swift */; };
+		EC06035FAAC6C2066315C4C0021D20F7 /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1624D6C77112B7660221BFEC776DB /* ResponseSerializer.swift */; };
+		F4D4C2763187D4DD06AAC2657D58A241 /* ExchangeRateResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1E1DDF010882BFA707FED41DE3C494 /* ExchangeRateResponseSerializer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F5EC4CF087776B9C4C4F1C7DEB25943 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4950D0115054646C8216773805AF1A6F;
+			remoteInfo = StocksKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02B7BFBCBC04E08B931B2A63CDBB86C7 /* Router.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Sources/StocksKit/Router.swift; sourceTree = "<group>"; };
+		06D8697B978DAA87D1F86EEA0BF048E8 /* Pods_MonteCarloSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FE2F275D11264DD98F4B977069B2AD4 /* Pods_MonteCarloSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		118B0732784AE163F0261062139B7506 /* ExchangeRate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExchangeRate.swift; path = Sources/StocksKit/Model/ExchangeRate.swift; sourceTree = "<group>"; };
+		1264FC6C27004EF1F80E015A8C07BCB0 /* Pods_MonteCarloSimulatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FCA9D834B46A4EF6F153E5A6E49DA70 /* Pods-MonteCarloSimulatorTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MonteCarloSimulatorTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2266967493C417439A7D28347EC7656D /* StocksKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StocksKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		235BC10CDE4284F708AB348341E1AC13 /* ExchangeRateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExchangeRateParser.swift; path = Sources/StocksKit/Parsers/ExchangeRateParser.swift; sourceTree = "<group>"; };
+		2399B530B8E03B4E7C3579AADEBBD032 /* Pods-MonteCarloSimulatorTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MonteCarloSimulatorTests-dummy.m"; sourceTree = "<group>"; };
+		243B75779A0435641A576CE7904B7832 /* Pods-MonteCarloSimulator-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MonteCarloSimulator-frameworks.sh"; sourceTree = "<group>"; };
+		2662AD2AE0EE8AE347CB69E2EEDB3561 /* Pods-MonteCarloSimulatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MonteCarloSimulatorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		298EA59699EDC6CE63F3847D4C028E1D /* Pods-MonteCarloSimulator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MonteCarloSimulator-dummy.m"; sourceTree = "<group>"; };
+		2C1E1DDF010882BFA707FED41DE3C494 /* ExchangeRateResponseSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExchangeRateResponseSerializer.swift; path = Sources/StocksKit/ResponseSerializers/ExchangeRateResponseSerializer.swift; sourceTree = "<group>"; };
+		2DB81E4FA7A613E95C2F6C414BFCDE9A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3143D87860587CA0B91713C8042B5B38 /* Pods-MonteCarloSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MonteCarloSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		370CCC8CC904DBD481E9F81922F86169 /* Quote.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Quote.swift; path = Sources/StocksKit/Model/Quote.swift; sourceTree = "<group>"; };
+		3733FED9DDE31D01B39D38BCC0DB4D42 /* Pods-MonteCarloSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MonteCarloSimulator.debug.xcconfig"; sourceTree = "<group>"; };
+		412077E765BBC4FCFF324A1D4329C9F2 /* Pods-MonteCarloSimulatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MonteCarloSimulatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		42643C8509CA99E1A9173D4D678C2004 /* Pods-MonteCarloSimulator-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MonteCarloSimulator-acknowledgements.markdown"; sourceTree = "<group>"; };
+		524FCF292841E64C1CC4572307D231B8 /* StocksKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StocksKit-prefix.pch"; sourceTree = "<group>"; };
+		5351D1FCD130EB6D4EF17948DB11D46C /* Pods-MonteCarloSimulator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MonteCarloSimulator-umbrella.h"; sourceTree = "<group>"; };
+		5F629AC8A22FD3B6716A2C9517032201 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/StocksKit/Model/Result.swift; sourceTree = "<group>"; };
+		6AA31A92BE67ACCB4D04E8E1273080B1 /* Query.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Query.swift; path = Sources/StocksKit/Model/Query.swift; sourceTree = "<group>"; };
+		6ECCB46036ABFD8BCC36447915D1F736 /* Pods-MonteCarloSimulatorUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MonteCarloSimulatorUITests-umbrella.h"; sourceTree = "<group>"; };
+		7003836328601EF9E86EBD4995E56743 /* Pods-MonteCarloSimulator-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MonteCarloSimulator-resources.sh"; sourceTree = "<group>"; };
+		70E1624D6C77112B7660221BFEC776DB /* ResponseSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerializer.swift; path = Sources/StocksKit/ResponseSerializer.swift; sourceTree = "<group>"; };
+		7255E706D7FB96721C23EF40231CC8A5 /* Pods-MonteCarloSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MonteCarloSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		74E9541DEF8FAF3B66A79D5F34453F00 /* Pods-MonteCarloSimulatorTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MonteCarloSimulatorTests-frameworks.sh"; sourceTree = "<group>"; };
+		80A9F6DAE80DEBF0015C794C0DD6B555 /* Pods-MonteCarloSimulatorTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MonteCarloSimulatorTests-resources.sh"; sourceTree = "<group>"; };
+		86F43B058FCB9676EA1DB5450DBEA1AF /* Pods-MonteCarloSimulatorUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MonteCarloSimulatorUITests-frameworks.sh"; sourceTree = "<group>"; };
+		8DEB7C055A11B3ED80D3B641D5798EB9 /* Pods-MonteCarloSimulatorTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MonteCarloSimulatorTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		8DFC596A22C5F9BFD2F6DEFFE48FADF1 /* Pods-MonteCarloSimulatorTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MonteCarloSimulatorTests.modulemap"; sourceTree = "<group>"; };
+		8E90785BF013ABE840968A3DDAA11C2A /* StocksKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StocksKit-umbrella.h"; sourceTree = "<group>"; };
+		9082E350EDE2E0C07D13077D5A458122 /* QuoteResponseSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuoteResponseSerializer.swift; path = Sources/StocksKit/ResponseSerializers/QuoteResponseSerializer.swift; sourceTree = "<group>"; };
+		908431F1B372BB427513C0813501BF23 /* Pods-MonteCarloSimulator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MonteCarloSimulator.modulemap"; sourceTree = "<group>"; };
+		92B895A9EC3D4CA2BF33FD3AB9A9C714 /* JSONParsingType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONParsingType.swift; path = Sources/StocksKit/Protocols/JSONParsingType.swift; sourceTree = "<group>"; };
+		936C0C26F059492E78885250324A435E /* QueryParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QueryParser.swift; path = Sources/StocksKit/Parsers/QueryParser.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A47320C578D3221D4ADD368786838A3A /* StocksKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StocksKit.xcconfig; sourceTree = "<group>"; };
+		A9B33C2B824EEDA62EF68A634D21A8FD /* StocksKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StocksKit-dummy.m"; sourceTree = "<group>"; };
+		AADE7E52B5616A83DC1E88EC1633D985 /* QuoteParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuoteParser.swift; path = Sources/StocksKit/Parsers/QuoteParser.swift; sourceTree = "<group>"; };
+		B44C2CC3F925B88CB07828350558277C /* Pods-MonteCarloSimulatorUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MonteCarloSimulatorUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B701747A70694DA8E52C2F0EA132230E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C12F22A2A7443E6B88DA35739E8A4F3A /* Pods-MonteCarloSimulatorUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MonteCarloSimulatorUITests-resources.sh"; sourceTree = "<group>"; };
+		C5E968A091BD02F1AF990420142632A9 /* StocksKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = StocksKit.modulemap; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CBE84F062492A964C75420885A225AE9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1F7143836F643AF441DA02842A1A398 /* YahooQueryResponseSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YahooQueryResponseSerializer.swift; path = Sources/StocksKit/ResponseSerializers/YahooQueryResponseSerializer.swift; sourceTree = "<group>"; };
+		DFD96AE93E3AC85B9C8AB53A39725BEE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E63E1C11B6814018319E65865E54093C /* QuoteType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuoteType.swift; path = Sources/StocksKit/Protocols/QuoteType.swift; sourceTree = "<group>"; };
+		E665A4A13B43B03D1794220C30BB8189 /* Pods-MonteCarloSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MonteCarloSimulator.release.xcconfig"; sourceTree = "<group>"; };
+		F29CB152205825937476A8DC25745AA9 /* Pods-MonteCarloSimulatorUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MonteCarloSimulatorUITests.modulemap"; sourceTree = "<group>"; };
+		F317CF561E2DA904E0B2DD31FF3E7DC6 /* Pods-MonteCarloSimulatorUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MonteCarloSimulatorUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FE05EEEC7DC0C99B69FC3D29A225B664 /* Pods-MonteCarloSimulator-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MonteCarloSimulator-acknowledgements.plist"; sourceTree = "<group>"; };
+		FE2B415517562911009373732FD42396 /* Pods-MonteCarloSimulatorTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MonteCarloSimulatorTests-umbrella.h"; sourceTree = "<group>"; };
+		FF19CED4F3AF5935FB86CD7E63DBF332 /* Pods-MonteCarloSimulatorUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MonteCarloSimulatorUITests-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CDA67873F1064FCEEF7A0ACAE4510DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				686ED72461CD6295AC099E66648C9EC0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BF87EBF88B7529DA197F277F43EFD20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C952831D7DADFE9172E15A2D5A16078E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADA499529BD6E2F6648C3F2097047F53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AF49E4B710429505B2ED697148637F3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF77520A14607388755835C38BAF8290 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C923ACC22FF0F029FE82D3780AD755B2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1894EA04D3ED9D9C6583C2F99D33C8F0 /* Pods-MonteCarloSimulator */ = {
+			isa = PBXGroup;
+			children = (
+				CBE84F062492A964C75420885A225AE9 /* Info.plist */,
+				908431F1B372BB427513C0813501BF23 /* Pods-MonteCarloSimulator.modulemap */,
+				42643C8509CA99E1A9173D4D678C2004 /* Pods-MonteCarloSimulator-acknowledgements.markdown */,
+				FE05EEEC7DC0C99B69FC3D29A225B664 /* Pods-MonteCarloSimulator-acknowledgements.plist */,
+				298EA59699EDC6CE63F3847D4C028E1D /* Pods-MonteCarloSimulator-dummy.m */,
+				243B75779A0435641A576CE7904B7832 /* Pods-MonteCarloSimulator-frameworks.sh */,
+				7003836328601EF9E86EBD4995E56743 /* Pods-MonteCarloSimulator-resources.sh */,
+				5351D1FCD130EB6D4EF17948DB11D46C /* Pods-MonteCarloSimulator-umbrella.h */,
+				3733FED9DDE31D01B39D38BCC0DB4D42 /* Pods-MonteCarloSimulator.debug.xcconfig */,
+				E665A4A13B43B03D1794220C30BB8189 /* Pods-MonteCarloSimulator.release.xcconfig */,
+			);
+			name = "Pods-MonteCarloSimulator";
+			path = "Target Support Files/Pods-MonteCarloSimulator";
+			sourceTree = "<group>";
+		};
+		26342D650158890872EADE27BFAC872E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFD96AE93E3AC85B9C8AB53A39725BEE /* Info.plist */,
+				C5E968A091BD02F1AF990420142632A9 /* StocksKit.modulemap */,
+				A47320C578D3221D4ADD368786838A3A /* StocksKit.xcconfig */,
+				A9B33C2B824EEDA62EF68A634D21A8FD /* StocksKit-dummy.m */,
+				524FCF292841E64C1CC4572307D231B8 /* StocksKit-prefix.pch */,
+				8E90785BF013ABE840968A3DDAA11C2A /* StocksKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/StocksKit";
+			sourceTree = "<group>";
+		};
+		6B660BAEA40A613674C020A2EDB1BBEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FE2F275D11264DD98F4B977069B2AD4 /* Pods_MonteCarloSimulator.framework */,
+				06D8697B978DAA87D1F86EEA0BF048E8 /* Pods_MonteCarloSimulatorTests.framework */,
+				1264FC6C27004EF1F80E015A8C07BCB0 /* Pods_MonteCarloSimulatorUITests.framework */,
+				2266967493C417439A7D28347EC7656D /* StocksKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7101B685135E2C79E79305F88D59EB0D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1894EA04D3ED9D9C6583C2F99D33C8F0 /* Pods-MonteCarloSimulator */,
+				EFDF85DF07740067EA4AF1DBAFBD2FBE /* Pods-MonteCarloSimulatorTests */,
+				D6CA4A57F72E210149BBC87D7EE614CC /* Pods-MonteCarloSimulatorUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				DC01F91BF788D41F3632A3DB6D5BED0B /* Pods */,
+				6B660BAEA40A613674C020A2EDB1BBEA /* Products */,
+				7101B685135E2C79E79305F88D59EB0D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE90A15471C2784FE61AEB6132BE4A8D /* StocksKit */ = {
+			isa = PBXGroup;
+			children = (
+				118B0732784AE163F0261062139B7506 /* ExchangeRate.swift */,
+				235BC10CDE4284F708AB348341E1AC13 /* ExchangeRateParser.swift */,
+				2C1E1DDF010882BFA707FED41DE3C494 /* ExchangeRateResponseSerializer.swift */,
+				92B895A9EC3D4CA2BF33FD3AB9A9C714 /* JSONParsingType.swift */,
+				6AA31A92BE67ACCB4D04E8E1273080B1 /* Query.swift */,
+				936C0C26F059492E78885250324A435E /* QueryParser.swift */,
+				370CCC8CC904DBD481E9F81922F86169 /* Quote.swift */,
+				AADE7E52B5616A83DC1E88EC1633D985 /* QuoteParser.swift */,
+				9082E350EDE2E0C07D13077D5A458122 /* QuoteResponseSerializer.swift */,
+				E63E1C11B6814018319E65865E54093C /* QuoteType.swift */,
+				70E1624D6C77112B7660221BFEC776DB /* ResponseSerializer.swift */,
+				5F629AC8A22FD3B6716A2C9517032201 /* Result.swift */,
+				02B7BFBCBC04E08B931B2A63CDBB86C7 /* Router.swift */,
+				D1F7143836F643AF441DA02842A1A398 /* YahooQueryResponseSerializer.swift */,
+				26342D650158890872EADE27BFAC872E /* Support Files */,
+			);
+			path = StocksKit;
+			sourceTree = "<group>";
+		};
+		D6CA4A57F72E210149BBC87D7EE614CC /* Pods-MonteCarloSimulatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B701747A70694DA8E52C2F0EA132230E /* Info.plist */,
+				F29CB152205825937476A8DC25745AA9 /* Pods-MonteCarloSimulatorUITests.modulemap */,
+				F317CF561E2DA904E0B2DD31FF3E7DC6 /* Pods-MonteCarloSimulatorUITests-acknowledgements.markdown */,
+				B44C2CC3F925B88CB07828350558277C /* Pods-MonteCarloSimulatorUITests-acknowledgements.plist */,
+				FF19CED4F3AF5935FB86CD7E63DBF332 /* Pods-MonteCarloSimulatorUITests-dummy.m */,
+				86F43B058FCB9676EA1DB5450DBEA1AF /* Pods-MonteCarloSimulatorUITests-frameworks.sh */,
+				C12F22A2A7443E6B88DA35739E8A4F3A /* Pods-MonteCarloSimulatorUITests-resources.sh */,
+				6ECCB46036ABFD8BCC36447915D1F736 /* Pods-MonteCarloSimulatorUITests-umbrella.h */,
+				412077E765BBC4FCFF324A1D4329C9F2 /* Pods-MonteCarloSimulatorUITests.debug.xcconfig */,
+				2662AD2AE0EE8AE347CB69E2EEDB3561 /* Pods-MonteCarloSimulatorUITests.release.xcconfig */,
+			);
+			name = "Pods-MonteCarloSimulatorUITests";
+			path = "Target Support Files/Pods-MonteCarloSimulatorUITests";
+			sourceTree = "<group>";
+		};
+		DC01F91BF788D41F3632A3DB6D5BED0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE90A15471C2784FE61AEB6132BE4A8D /* StocksKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EFDF85DF07740067EA4AF1DBAFBD2FBE /* Pods-MonteCarloSimulatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				2DB81E4FA7A613E95C2F6C414BFCDE9A /* Info.plist */,
+				8DFC596A22C5F9BFD2F6DEFFE48FADF1 /* Pods-MonteCarloSimulatorTests.modulemap */,
+				1FCA9D834B46A4EF6F153E5A6E49DA70 /* Pods-MonteCarloSimulatorTests-acknowledgements.markdown */,
+				8DEB7C055A11B3ED80D3B641D5798EB9 /* Pods-MonteCarloSimulatorTests-acknowledgements.plist */,
+				2399B530B8E03B4E7C3579AADEBBD032 /* Pods-MonteCarloSimulatorTests-dummy.m */,
+				74E9541DEF8FAF3B66A79D5F34453F00 /* Pods-MonteCarloSimulatorTests-frameworks.sh */,
+				80A9F6DAE80DEBF0015C794C0DD6B555 /* Pods-MonteCarloSimulatorTests-resources.sh */,
+				FE2B415517562911009373732FD42396 /* Pods-MonteCarloSimulatorTests-umbrella.h */,
+				3143D87860587CA0B91713C8042B5B38 /* Pods-MonteCarloSimulatorTests.debug.xcconfig */,
+				7255E706D7FB96721C23EF40231CC8A5 /* Pods-MonteCarloSimulatorTests.release.xcconfig */,
+			);
+			name = "Pods-MonteCarloSimulatorTests";
+			path = "Target Support Files/Pods-MonteCarloSimulatorTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2F823C4E2FE4CD9A0F569D6E79D199D4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52D73F9274F6F5093A0CD20260B5A990 /* Pods-MonteCarloSimulator-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35CF5A560E291F2BEB0ACC63E3EAC775 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FEE0E105DD63663CB8E06A6EB76DC27 /* StocksKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DAE9F2B6CAF87117A6486B16358D617 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				872417C6BAEDCB3DFF54C5C3D6346083 /* Pods-MonteCarloSimulatorUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A19265A394E91F371D4BC2899E12CA38 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D460DC7540E8A50747419EB6F115473 /* Pods-MonteCarloSimulatorTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0CE31D5F09001E1EBF4FE8CD633512A9 /* Pods-MonteCarloSimulatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94E9D76B232E2718E7838B5475AC4D67 /* Build configuration list for PBXNativeTarget "Pods-MonteCarloSimulatorTests" */;
+			buildPhases = (
+				5EAE7CA6035D4F49E1CF2D9B19805906 /* Sources */,
+				AF77520A14607388755835C38BAF8290 /* Frameworks */,
+				A19265A394E91F371D4BC2899E12CA38 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MonteCarloSimulatorTests";
+			productName = "Pods-MonteCarloSimulatorTests";
+			productReference = 06D8697B978DAA87D1F86EEA0BF048E8 /* Pods_MonteCarloSimulatorTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		276C89555C44952E67EF81F0D7B9C927 /* Pods-MonteCarloSimulatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B29593284BA4F5A46CEB9E138F2F7461 /* Build configuration list for PBXNativeTarget "Pods-MonteCarloSimulatorUITests" */;
+			buildPhases = (
+				5B2BF4CB89674E6CBC84D3E87BD7A68D /* Sources */,
+				ADA499529BD6E2F6648C3F2097047F53 /* Frameworks */,
+				6DAE9F2B6CAF87117A6486B16358D617 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MonteCarloSimulatorUITests";
+			productName = "Pods-MonteCarloSimulatorUITests";
+			productReference = 1264FC6C27004EF1F80E015A8C07BCB0 /* Pods_MonteCarloSimulatorUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4950D0115054646C8216773805AF1A6F /* StocksKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEDE6F34257AA1FF2E544A8A2B5E62EE /* Build configuration list for PBXNativeTarget "StocksKit" */;
+			buildPhases = (
+				F6AD01FF6CD78B7BCD88533CAF02A2B6 /* Sources */,
+				1CDA67873F1064FCEEF7A0ACAE4510DB /* Frameworks */,
+				35CF5A560E291F2BEB0ACC63E3EAC775 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StocksKit;
+			productName = StocksKit;
+			productReference = 2266967493C417439A7D28347EC7656D /* StocksKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FE65CBB0CC250798A332DC1B44B434FF /* Pods-MonteCarloSimulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CE1E9CF8C2989E1B36A294505A0BC3F /* Build configuration list for PBXNativeTarget "Pods-MonteCarloSimulator" */;
+			buildPhases = (
+				22FA514F7EC490AB74C843B46E04660B /* Sources */,
+				6BF87EBF88B7529DA197F277F43EFD20 /* Frameworks */,
+				2F823C4E2FE4CD9A0F569D6E79D199D4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78E04602A7D690A585C046D37B0F5A5B /* PBXTargetDependency */,
+			);
+			name = "Pods-MonteCarloSimulator";
+			productName = "Pods-MonteCarloSimulator";
+			productReference = 0FE2F275D11264DD98F4B977069B2AD4 /* Pods_MonteCarloSimulator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 6B660BAEA40A613674C020A2EDB1BBEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE65CBB0CC250798A332DC1B44B434FF /* Pods-MonteCarloSimulator */,
+				0CE31D5F09001E1EBF4FE8CD633512A9 /* Pods-MonteCarloSimulatorTests */,
+				276C89555C44952E67EF81F0D7B9C927 /* Pods-MonteCarloSimulatorUITests */,
+				4950D0115054646C8216773805AF1A6F /* StocksKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22FA514F7EC490AB74C843B46E04660B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D6D7EDD80D9C0178B527B7BCFFACD44 /* Pods-MonteCarloSimulator-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2BF4CB89674E6CBC84D3E87BD7A68D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				465B5ECEE54E017E3CD8C971D5969A0D /* Pods-MonteCarloSimulatorUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EAE7CA6035D4F49E1CF2D9B19805906 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				903151D85F3E24C68587A1A4CE970DC9 /* Pods-MonteCarloSimulatorTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6AD01FF6CD78B7BCD88533CAF02A2B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69003A269FB3BD9E2291E5D7F7A0ECAC /* ExchangeRate.swift in Sources */,
+				C932B5299DDB1C8BFC8C8112D978741F /* ExchangeRateParser.swift in Sources */,
+				F4D4C2763187D4DD06AAC2657D58A241 /* ExchangeRateResponseSerializer.swift in Sources */,
+				31D71820A855215D6B26DC252C521FDB /* JSONParsingType.swift in Sources */,
+				652BFFE9D2B838D1E907932DF69E9DF2 /* Query.swift in Sources */,
+				19F098431051AAF929C7CEE1752B6827 /* QueryParser.swift in Sources */,
+				ADE7CFFAEC41EF01FA63994A3F5652D3 /* Quote.swift in Sources */,
+				70C3633257F8AAE88C9BD838498D2717 /* QuoteParser.swift in Sources */,
+				E791DDC03F3D46FAB3F6ADE887D41741 /* QuoteResponseSerializer.swift in Sources */,
+				BAF2B440A111ED857E6F1CD713244081 /* QuoteType.swift in Sources */,
+				EC06035FAAC6C2066315C4C0021D20F7 /* ResponseSerializer.swift in Sources */,
+				26229359B0B9BDE784B4FC99A76DFAFF /* Result.swift in Sources */,
+				A0FCA94CEEFB1A36D551654CF0C00428 /* Router.swift in Sources */,
+				818AA23EBCF685048B0DF369BE562247 /* StocksKit-dummy.m in Sources */,
+				027F056DE2EC850D2C3C92E00DDE93B3 /* YahooQueryResponseSerializer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78E04602A7D690A585C046D37B0F5A5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = StocksKit;
+			target = 4950D0115054646C8216773805AF1A6F /* StocksKit */;
+			targetProxy = 1F5EC4CF087776B9C4C4F1C7DEB25943 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09B1C680BE3ED821A4988EE6BF44D449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3733FED9DDE31D01B39D38BCC0DB4D42 /* Pods-MonteCarloSimulator.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MonteCarloSimulator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MonteCarloSimulator/Pods-MonteCarloSimulator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MonteCarloSimulator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0B563153070A21E1595EE88EF33AD639 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E665A4A13B43B03D1794220C30BB8189 /* Pods-MonteCarloSimulator.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MonteCarloSimulator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MonteCarloSimulator/Pods-MonteCarloSimulator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MonteCarloSimulator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3092D9F822F83795B152F4272A01AF20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A47320C578D3221D4ADD368786838A3A /* StocksKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/StocksKit/StocksKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StocksKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/StocksKit/StocksKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = StocksKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		811F08DB2F02DD618C404BD8CC1283E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7255E706D7FB96721C23EF40231CC8A5 /* Pods-MonteCarloSimulatorTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MonteCarloSimulatorTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MonteCarloSimulatorTests/Pods-MonteCarloSimulatorTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MonteCarloSimulatorTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		85C6B01D040BF548E0FCF00A119E0B8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 412077E765BBC4FCFF324A1D4329C9F2 /* Pods-MonteCarloSimulatorUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MonteCarloSimulatorUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MonteCarloSimulatorUITests/Pods-MonteCarloSimulatorUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MonteCarloSimulatorUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AAC82E7DE2117C6DC8A310C64574AA76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3143D87860587CA0B91713C8042B5B38 /* Pods-MonteCarloSimulatorTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MonteCarloSimulatorTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MonteCarloSimulatorTests/Pods-MonteCarloSimulatorTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MonteCarloSimulatorTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AADB9822762AD81BBAE83335B2AB1EB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B1B5EB0850F98CB5AECDB015B690777F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		DF6982001C32ECD9581FEA9FE87B6468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A47320C578D3221D4ADD368786838A3A /* StocksKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/StocksKit/StocksKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StocksKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/StocksKit/StocksKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = StocksKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FF2C5AF882B9BFB74B07A5A8395F7D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2662AD2AE0EE8AE347CB69E2EEDB3561 /* Pods-MonteCarloSimulatorUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MonteCarloSimulatorUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MonteCarloSimulatorUITests/Pods-MonteCarloSimulatorUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MonteCarloSimulatorUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CE1E9CF8C2989E1B36A294505A0BC3F /* Build configuration list for PBXNativeTarget "Pods-MonteCarloSimulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09B1C680BE3ED821A4988EE6BF44D449 /* Debug */,
+				0B563153070A21E1595EE88EF33AD639 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1B5EB0850F98CB5AECDB015B690777F /* Debug */,
+				AADB9822762AD81BBAE83335B2AB1EB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94E9D76B232E2718E7838B5475AC4D67 /* Build configuration list for PBXNativeTarget "Pods-MonteCarloSimulatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAC82E7DE2117C6DC8A310C64574AA76 /* Debug */,
+				811F08DB2F02DD618C404BD8CC1283E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B29593284BA4F5A46CEB9E138F2F7461 /* Build configuration list for PBXNativeTarget "Pods-MonteCarloSimulatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C6B01D040BF548E0FCF00A119E0B8F /* Debug */,
+				FF2C5AF882B9BFB74B07A5A8395F7D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEDE6F34257AA1FF2E544A8A2B5E62EE /* Build configuration list for PBXNativeTarget "StocksKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3092D9F822F83795B152F4272A01AF20 /* Debug */,
+				DF6982001C32ECD9581FEA9FE87B6468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

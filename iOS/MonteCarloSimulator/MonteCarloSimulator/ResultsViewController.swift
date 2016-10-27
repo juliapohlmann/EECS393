@@ -14,7 +14,7 @@ class ResultsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(userDict)
         // Do any additional setup after loading the view.
     }
 
