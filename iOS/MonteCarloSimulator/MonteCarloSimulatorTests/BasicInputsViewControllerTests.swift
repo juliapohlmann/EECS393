@@ -22,7 +22,6 @@ class BasicInputsViewControllerTests: XCTestCase {
     }
     
     //functions that need testing
-    //+ means completed!
     
     //isInputValid      +
     //backClick

@@ -38,6 +38,10 @@ class StockAllocationViewControllerTest: XCTestCase {
     //updateUnallocatedPercentageField
     //backClick
     //loadStocks
+    //numberOfSectionsInTableView
+    //tableView -> Int
+    //tableView -> Cell
+    //displayError
 
     func testIncrementUnallocatedPercentage() {
         class StockAllocationViewControllerMock: StockAllocationViewController {

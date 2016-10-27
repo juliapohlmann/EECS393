@@ -14,6 +14,8 @@
 		BD98E457620CF37F9D99D4B2 /* Pods_MonteCarloSimulatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09732685C9D5418514E21D79 /* Pods_MonteCarloSimulatorUITests.framework */; };
 		DA3EDA331DC116F90050983F /* StocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3EDA321DC116F90050983F /* StocksKit.framework */; };
 		DA8898981DC1733B00BAB43E /* StockAllocationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8898971DC1733B00BAB43E /* StockAllocationViewControllerTests.swift */; };
+		DABA06A41DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA06A31DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift */; };
+		DABA06A61DC242FA00BB1407 /* ResultsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */; };
 		DACC34371DBC136200B7DBF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34361DBC136200B7DBF4 /* AppDelegate.swift */; };
 		DACC34391DBC136200B7DBF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC34381DBC136200B7DBF4 /* ViewController.swift */; };
 		DACC343C1DBC136200B7DBF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACC343A1DBC136200B7DBF4 /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 		D394E49C3CD6448C5709002E /* Pods_MonteCarloSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3EDA321DC116F90050983F /* StocksKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StocksKit.framework; path = "Pods/../build/Debug-iphoneos/StocksKit/StocksKit.framework"; sourceTree = "<group>"; };
 		DA8898971DC1733B00BAB43E /* StockAllocationViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocationViewControllerTests.swift; sourceTree = "<group>"; };
+		DABA06A31DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSelectionTableViewControllerTests.swift; sourceTree = "<group>"; };
+		DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTests.swift; sourceTree = "<group>"; };
 		DACC34331DBC136200B7DBF4 /* MonteCarloSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonteCarloSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACC34361DBC136200B7DBF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DACC34381DBC136200B7DBF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -170,16 +174,16 @@
 				DACC34671DBD019300B7DBF4 /* IntroViewController.swift */,
 				DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */,
 				DAE3AFAC1DC1A8B8004E8206 /* StockSelectionTableViewController.swift */,
+				DAE3AFAE1DC1ABF9004E8206 /* StockSelectionTableViewCell.swift */,
 				DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */,
 				DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */,
+				DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */,
 				1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */,
 				DACC343A1DBC136200B7DBF4 /* Main.storyboard */,
-				DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */,
 				DACC34401DBC136200B7DBF4 /* Assets.xcassets */,
 				DACC34421DBC136200B7DBF4 /* LaunchScreen.storyboard */,
 				DACC34451DBC136200B7DBF4 /* Info.plist */,
 				DACC343D1DBC136200B7DBF4 /* MonteCarloSimulator.xcdatamodeld */,
-				DAE3AFAE1DC1ABF9004E8206 /* StockSelectionTableViewCell.swift */,
 			);
 			path = MonteCarloSimulator;
 			sourceTree = "<group>";
@@ -192,6 +196,8 @@
 				DACC34501DBC136200B7DBF4 /* Info.plist */,
 				DA8898971DC1733B00BAB43E /* StockAllocationViewControllerTests.swift */,
 				DAE3AFAA1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift */,
+				DABA06A31DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift */,
+				DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */,
 			);
 			path = MonteCarloSimulatorTests;
 			sourceTree = "<group>";
@@ -505,6 +511,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DACC344F1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift in Sources */,
+				DABA06A41DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift in Sources */,
+				DABA06A61DC242FA00BB1407 /* ResultsViewControllerTests.swift in Sources */,
 				1CA21CCA1DC13CEF005AB2E3 /* IntroViewControllerTest.swift in Sources */,
 				DAE3AFAB1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift in Sources */,
 				DA8898981DC1733B00BAB43E /* StockAllocationViewControllerTests.swift in Sources */,

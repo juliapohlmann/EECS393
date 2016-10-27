@@ -106,6 +106,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     func removeTicker(ticker: String) {
         let index = findIndexOfTicker(ticker)
         stockTickers.removeAtIndex(index)
+        stockValues.removeAtIndex(index)
         self.tableView.reloadData()
     }
     

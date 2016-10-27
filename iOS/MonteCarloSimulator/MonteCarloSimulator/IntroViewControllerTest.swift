@@ -21,7 +21,11 @@ class IntroViewControllerTest: XCTestCase {
         super.tearDown()
     }
     
-    func testSegue() {
+    //tests for IntroViewController
+    
+    //startButtonclick       +
+    
+    func testStartButtonClick() {
         
         class IntroViewControllerMock: IntroViewController {
             var segueIdentifier: NSString?
