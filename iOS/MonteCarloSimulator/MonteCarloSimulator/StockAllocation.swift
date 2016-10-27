@@ -19,18 +19,34 @@ class StockAllocationViewController: UITableViewController {
     var unallocatedPercentage : Int = 100
     
     var userDict: [String:Int] = [:]
+    var combinedDict: [String : Dictionary<String, AnyObject>] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //change to just setStartingStockPercentages after stock selection works
         loadStocks()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // SERVER FUNCTIONS
+    func getReadyToSendToServer() {
+        
+        var stockDict: [String: Int] = [:]
+        
+        for (index, element) in stockTickers.enumerate()
+        {
+            stockDict[element] = stockPercentages[index]
+        }
+        
+        combinedDict["userData"] = userDict
+        combinedDict["stockData"] = stockDict
+        
     }
-
+    
+    //SETUP FUNCTIONS
+    func loadStocks() {
+        stockTickers += ["AAPL", "ABCD", "EFGH", "IJKL"]
+        setStartingStockPercentages()
+    }
     
     func setStartingStockPercentages() {
         let startingValue = (100 / (stockTickers.count + (stockTickers.count / 2)))
@@ -41,12 +57,18 @@ class StockAllocationViewController: UITableViewController {
         updateUnallocatedPercentageField()
     }
     
-    func loadStocks() {
-        stockTickers += ["AAPL", "ABCD", "EFGH", "IJKL"]
-        setStartingStockPercentages()
-        
+    //BUTTON FUNCTIONS
+    @IBAction func runSimulation(sender: AnyObject) {
+        if(isInputValid()) {
+            performSegueWithIdentifier("stockAllocationNext", sender: sender)
+        }
     }
     
+    @IBAction func backClick(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil);
+    }
+    
+    //TABLE VIEW FUNCTIONS
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -67,28 +89,68 @@ class StockAllocationViewController: UITableViewController {
         return cell
     }
     
-    
-    @IBAction func runSimulation(sender: AnyObject) {
-        if(isInputValid()) {
-            performSegueWithIdentifier("stockAllocationNext", sender: sender)
-        }
+    //VALIDITY FUNTIONS
+    func displayError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    @IBAction func backClick(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil);
+    func validEdit(ticker: String, oldValue: Int, newValue: Int) -> Bool{
+        let index = findIndexOfTicker(ticker)
+        var isValid = true
+        
+        if(newValue <= 0 || newValue >= 100) {
+            isValid = false
+            displayError("Allocation for a stock must be between 0 and 100 percent")
+        } else if((newValue - oldValue) > unallocatedPercentage) {
+            isValid = false
+            displayError("You cannot allocate more than 100% percent")
+        } else{
+            unallocatedPercentage += oldValue - newValue
+        }
+        
+        if(isValid) {
+            stockPercentages[index] = newValue
+            updateUnallocatedPercentageField()
+        } else {
+            stockPercentages[index] = oldValue
+        }
+        
+        return isValid
     }
     
     func isInputValid() -> Bool {
         if(unallocatedPercentage == 0) {
             return true;
         } else {
-            let alert = UIAlertController(title: "Error", message: "You must allocate all 100% percent", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            displayError("You must allocate all 100% percent")
             return false;
         }
         
     }
+    
+    func updateUnallocatedPercentageField() {
+        unallocatedPercentageField.text = String(unallocatedPercentage)
+    }
+    
+    func canDecrementStock(percentage: Int) -> Bool {
+        if(percentage > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    func canIncrementStock() -> Bool {
+        if(unallocatedPercentage > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    //UNALLOCATED PERCENTAGE FUNCTIONS
     
     func decrementUnallocatedPercentage() {
         unallocatedPercentage -= 1
@@ -100,6 +162,7 @@ class StockAllocationViewController: UITableViewController {
         updateUnallocatedPercentageField()
     }
     
+    //STOCK PERCENTAGE FUNCTIONS
     func incrementStockPercentage(ticker: String) -> Bool {
         if(canIncrementStock()) {
             let index = findIndexOfTicker(ticker)
@@ -124,22 +187,6 @@ class StockAllocationViewController: UITableViewController {
         }
     }
     
-    func canDecrementStock(percentage: Int) -> Bool {
-        if(percentage > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    
-    func canIncrementStock() -> Bool {
-        if(unallocatedPercentage > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    
     func findIndexOfTicker(ticker: String) -> Int {
         for i in 0..<stockTickers.count {
             if(ticker == stockTickers[i]) {
@@ -147,35 +194,6 @@ class StockAllocationViewController: UITableViewController {
             }
         }
         return -1
-    }
-    
-    func updateUnallocatedPercentageField() {
-        unallocatedPercentageField.text = String(unallocatedPercentage)
-    }
-    
-    func validEdit(ticker: String, oldValue: Int, newValue: Int) -> Bool{
-        let index = findIndexOfTicker(ticker)
-        var isValid = true
-        
-        if(newValue <= 0 || newValue > 100) {
-            isValid = false
-        } else if((newValue - oldValue) > unallocatedPercentage) {
-            isValid = false
-        } else{
-            unallocatedPercentage += oldValue - newValue
-        }
-        
-        if(isValid) {
-            stockPercentages[index] = newValue
-            updateUnallocatedPercentageField()
-        } else {
-            stockPercentages[index] = oldValue
-            let alert = UIAlertController(title: "Error", message: "You cannot allocate more than 100% percent", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        
-        return isValid
     }
     
 }
