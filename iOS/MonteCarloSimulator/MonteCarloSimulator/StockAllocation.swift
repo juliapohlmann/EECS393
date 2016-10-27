@@ -38,7 +38,7 @@ class StockAllocationViewController: UITableViewController {
             stockPercentages += [startingValue]
             unallocatedPercentage -= startingValue
         }
-        updateUnallocatedPercentage()
+        updateUnallocatedPercentageField()
     }
     
     func loadStocks() {
@@ -92,12 +92,12 @@ class StockAllocationViewController: UITableViewController {
     
     func decrementUnallocatedPercentage() {
         unallocatedPercentage -= 1
-        updateUnallocatedPercentage()
+        updateUnallocatedPercentageField()
     }
     
     func incrementUnallocatedPercentage() {
         unallocatedPercentage += 1
-        updateUnallocatedPercentage()
+        updateUnallocatedPercentageField()
     }
     
     func incrementStockPercentage(ticker: String) -> Bool {
@@ -149,14 +149,7 @@ class StockAllocationViewController: UITableViewController {
         return -1
     }
     
-    func updateUnallocatedPercentage() {
-        //if let _ = unallocatedPercentageField.text {
-//        unallocatedPercentageField.text = String(unallocatedPercentage)
-//    } else {
-//    // abc is nil
-//    unallocatedPercentageField = UITextField()
-//    unallocatedPercentageField.text = String(unallocatedPercentage)
-//    }
+    func updateUnallocatedPercentageField() {
         unallocatedPercentageField.text = String(unallocatedPercentage)
     }
     
@@ -174,7 +167,7 @@ class StockAllocationViewController: UITableViewController {
         
         if(isValid) {
             stockPercentages[index] = newValue
-            updateUnallocatedPercentage()
+            updateUnallocatedPercentageField()
         } else {
             stockPercentages[index] = oldValue
             let alert = UIAlertController(title: "Error", message: "You cannot allocate more than 100% percent", preferredStyle: UIAlertControllerStyle.Alert)
