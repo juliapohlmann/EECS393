@@ -217,6 +217,10 @@ class StockAllocationViewControllerTest: XCTestCase {
         return controller.findIndexOfTicker(ticker)
     }
     
+    func testValidEdit() {
+        testValidEditTrue()
+        testValidEditFalse()
+    }
     
     func testValidEditTrue() {
         //true
@@ -226,8 +230,10 @@ class StockAllocationViewControllerTest: XCTestCase {
     func testValidEditFalse() {
         //false because newValue > 100
         helperValidEdit(false, ticker: "ABCD", oldValue: 25, newValue: 101)
+        
         //false because newValue =  0
         helperValidEdit(false, ticker: "ABCD", oldValue: 25, newValue: 0)
+        
         //false because newValue < 0
         helperValidEdit(false, ticker: "ABCD", oldValue: 25, newValue: -1)
         
@@ -252,6 +258,11 @@ class StockAllocationViewControllerTest: XCTestCase {
         let actualValue = controller.validEdit(ticker, oldValue: oldValue, newValue: newValue)
         
         XCTAssertEqual(expectedValue, actualValue)
+    }
+    
+    func testIsInputValid() {
+        testIsInputValidFalse()
+        testIsInputValidTrue()
     }
     
     func testIsInputValidFalse() {
@@ -283,6 +294,10 @@ class StockAllocationViewControllerTest: XCTestCase {
         XCTAssertEqual(expectedIsValid, controller.isInputValid())
     }
     
+    func testSetStartingStockPercentages() {
+        testSetStartingStockPercentagesEvenNumberOfTickers()
+        testSetStartingStockPercentagesOddNumberOfTickers()
+    }
     
     func testSetStartingStockPercentagesOddNumberOfTickers() {
         class StockAllocationViewControllerMock: StockAllocationViewController {
