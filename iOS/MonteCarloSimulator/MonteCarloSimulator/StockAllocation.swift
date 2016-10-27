@@ -22,7 +22,7 @@ class StockAllocationViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleStocks()
+        loadStocks()
         print(userDict)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -31,16 +31,27 @@ class StockAllocationViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
-    func loadSampleStocks() {
-        stockTickers += ["AAPL", "ABCD", "EFGH"]
+    func setStartingStockPercentages() {
         let startingValue = (100 / (stockTickers.count + (stockTickers.count / 2)))
-        stockPercentages += [startingValue, startingValue, startingValue]
-        
-        for percentage in stockPercentages {
-            unallocatedPercentage -= percentage
+        for _ in stockTickers {
+            stockPercentages += [startingValue]
+            unallocatedPercentage -= startingValue
         }
         updateUnallocatedPercentage()
+    }
+    
+    func loadStocks() {
+        stockTickers += ["AAPL", "ABCD", "EFGH", "IJKL"]
+//        let startingValue = (100 / (stockTickers.count + (stockTickers.count / 2)))
+//        stockPercentages += [startingValue, startingValue, startingValue]
+//        
+//        for percentage in stockPercentages {
+//            unallocatedPercentage -= percentage
+//        }
+//        updateUnallocatedPercentage()
+        setStartingStockPercentages()
         
     }
     
@@ -78,7 +89,7 @@ class StockAllocationViewController: UITableViewController {
         if(unallocatedPercentage == 0) {
             return true;
         } else {
-            print("Error: you must allocate all 100% percent")
+            print("Error")
             //SHOW ERROR
             return false;
         }
@@ -145,6 +156,13 @@ class StockAllocationViewController: UITableViewController {
     }
     
     func updateUnallocatedPercentage() {
+        //if let _ = unallocatedPercentageField.text {
+//        unallocatedPercentageField.text = String(unallocatedPercentage)
+//    } else {
+//    // abc is nil
+//    unallocatedPercentageField = UITextField()
+//    unallocatedPercentageField.text = String(unallocatedPercentage)
+//    }
         unallocatedPercentageField.text = String(unallocatedPercentage)
     }
     
