@@ -3,6 +3,8 @@ package edu.cwru.eecs393.montecarlo.finance;
 import java.util.List;
 import java.util.Map;
 
+import edu.cwru.eecs393.montecarlo.data.FinancialData;
+
 /**
  * Interface for retrieving current financial market data based.
  *
@@ -16,9 +18,8 @@ public interface FinanceHandler {
 	 *
 	 * @param tickers
 	 *            a list containing the tickers for every desired stock
-	 * @return a Map, mapping a ticker to a list of prices, the first being most
-	 *         recent with each subsuquent price moving one year back in time
+	 * @return a map, mapping each ticker to its financial data.
 	 */
-	Map<String, List<Double>> getTickerPrices(List<String> tickers);
+	Map<String, FinancialData> getFinancialData(List<String> tickers);
 
 }

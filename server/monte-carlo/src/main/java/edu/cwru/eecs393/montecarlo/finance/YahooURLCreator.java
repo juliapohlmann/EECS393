@@ -3,9 +3,19 @@ package edu.cwru.eecs393.montecarlo.finance;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
 
 import lombok.NonNull;
+import lombok.extern.java.Log;
 
+/**
+ * Utility class for formatting URLs that will be used to call the Yahoo!
+ * Finance API.
+ *
+ * @author David
+ *
+ */
+@Log
 public final class YahooURLCreator {
 
 	/**
@@ -23,7 +33,7 @@ public final class YahooURLCreator {
 	 * Base URL for retrieving most up to date data about a stock or stocks from
 	 * Yahoo! Finance.
 	 */
-	private static final String baseCurrentURL = "http://download.finance.yahoo.com/d/quotes.csv?s={TICKERS}&f=snabl1";
+	private static final String baseCurrentURL = "http://download.finance.yahoo.com/d/quotes.csv?s={TICKERS}&f=sabl1";
 
 	/**
 	 * Creates a URL that can be used to retrieve historical data about a
@@ -55,8 +65,24 @@ public final class YahooURLCreator {
 		return result;
 	}
 
+	/**
+	 * Creates a URL to get real time data for one or more tickers. <br>
+	 * <br>
+	 * <b>Note:</b> The results from calling this URL are not guaranteed to be
+	 * real time in the sense that they are 100% up to date. Rather they are the
+	 * best possible using the Yahoo! Finance API. <br>
+	 * <br>
+	 * The results from calling this URL will be in CSV format, one line for
+	 * each ticker of the form <br>
+	 * "Ticker",{ask},{bid},{last sale}
+	 *
+	 * @param tickerList
+	 *            the list of tickers to retrieve data for
+	 * @return a properly formatted URL for Yahoo! Finance data.
+	 */
 	public static String formatRealTimeURL(@NonNull List<String> tickerList) {
 		if (tickerList.isEmpty()) {
+			log.log(Level.SEVERE, "Received request for no tickers.");
 			throw new IllegalArgumentException("List of desired tickers was empty.");
 		}
 		String tickers = String.join("+", tickerList);
