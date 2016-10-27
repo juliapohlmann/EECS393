@@ -14,11 +14,10 @@ class StockSelectionViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     var userDict: [String:Int] = [:]
+    var stockTickers = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        getQuoteForAPPL()
-        print(userDict)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -32,9 +31,9 @@ class StockSelectionViewController: UIViewController {
     }
     
     @IBAction func nextClick(sender: AnyObject) {
-        if(isInputValid()) {
+        //if(isInputValid()) {
             performSegueWithIdentifier("stockSelectionNext", sender: sender)
-        }
+        //}
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -48,7 +47,12 @@ class StockSelectionViewController: UIViewController {
     }
     
     func isInputValid() -> Bool {
-        return true;
+        if(stockTickers.count > 15 && stockTickers.count < 100) {
+            return true;
+        } else {
+            return false;
+        }
+        
     }
     
 //    func getQuoteForAPPL() {

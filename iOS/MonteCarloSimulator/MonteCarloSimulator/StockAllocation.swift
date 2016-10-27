@@ -23,7 +23,6 @@ class StockAllocationViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadStocks()
-        print(userDict)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -44,13 +43,6 @@ class StockAllocationViewController: UITableViewController {
     
     func loadStocks() {
         stockTickers += ["AAPL", "ABCD", "EFGH", "IJKL"]
-//        let startingValue = (100 / (stockTickers.count + (stockTickers.count / 2)))
-//        stockPercentages += [startingValue, startingValue, startingValue]
-//        
-//        for percentage in stockPercentages {
-//            unallocatedPercentage -= percentage
-//        }
-//        updateUnallocatedPercentage()
         setStartingStockPercentages()
         
     }

@@ -21,7 +21,6 @@ class BasicInputsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userDict)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
