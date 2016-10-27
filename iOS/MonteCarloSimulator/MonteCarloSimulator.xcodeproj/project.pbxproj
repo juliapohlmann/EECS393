@@ -27,6 +27,7 @@
 		DACC346C1DBD038400B7DBF4 /* StockSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */; };
 		DACC346E1DBD040400B7DBF4 /* StockAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */; };
 		DADFC9101DBFA431009A2C7D /* StockAllocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */; };
+		DAE3AFAB1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3AFAA1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		DACC346B1DBD038400B7DBF4 /* StockSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSelectionViewController.swift; sourceTree = "<group>"; };
 		DACC346D1DBD040400B7DBF4 /* StockAllocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocation.swift; sourceTree = "<group>"; };
 		DADFC90F1DBFA431009A2C7D /* StockAllocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocationTableViewCell.swift; sourceTree = "<group>"; };
+		DAE3AFAA1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInputsViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				DACC344E1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift */,
 				DACC34501DBC136200B7DBF4 /* Info.plist */,
 				DA8898971DC1733B00BAB43E /* StockAllocationViewControllerTests.swift */,
+				DAE3AFAA1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift */,
 			);
 			path = MonteCarloSimulatorTests;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			files = (
 				DACC344F1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift in Sources */,
 				1CA21CCA1DC13CEF005AB2E3 /* IntroViewControllerTest.swift in Sources */,
+				DAE3AFAB1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift in Sources */,
 				DA8898981DC1733B00BAB43E /* StockAllocationViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
