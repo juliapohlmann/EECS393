@@ -66,7 +66,7 @@ public class YahooFinanceHandler implements FinanceHandler {
 	}
 
 	private NavigableSet<HistoricalFinancialData> getHistoricalData(String ticker) {
-		NavigableSet<HistoricalFinancialData> results = new TreeSet<>((o1, o2) -> o1.getDate().compareTo(o2.getDate()));
+		NavigableSet<HistoricalFinancialData> results = new TreeSet<>((o1, o2) -> o2.getDate().compareTo(o1.getDate()));
 		for (int i = 1; i <= 5; i++) {
 			HistoricalFinancialData hist = createHistoricalFinancialData(ticker, i);
 			if (null != hist) {
