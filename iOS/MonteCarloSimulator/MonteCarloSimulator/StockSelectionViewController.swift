@@ -32,6 +32,7 @@ class StockSelectionViewController: UIViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
         let ticker : String = searchBar.text!.uppercaseString
+        searchBar.text = ""
         self.view.userInteractionEnabled = false
         Quote.fetch([ticker]) { result in
             
@@ -39,8 +40,11 @@ class StockSelectionViewController: UIViewController, UISearchBarDelegate {
         
                 case .Success(_):
                     self.view.userInteractionEnabled = true
-                    self.stockTickers.append(ticker)
-                    print(result)
+                    if(self.stockTickers.contains(ticker)) {
+                        self.displayError("This stock is already added")
+                    } else {
+                        self.stockTickers.append(ticker)
+                    }
                     break
                 case .Failure(_):
                     self.view.userInteractionEnabled = true
