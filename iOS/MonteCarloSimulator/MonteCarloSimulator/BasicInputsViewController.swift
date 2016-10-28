@@ -10,13 +10,19 @@ import UIKit
 
 class BasicInputsViewController: UIViewController {
     
+    /// back button on nav bar to go to intro view controller
     @IBOutlet weak var backButton: UIBarButtonItem!
+    /// next button to go to stock selection screen
     @IBOutlet weak var nextButton: UIButton!
     
+    /// text field to put duration of years
     @IBOutlet weak var durationInput: UITextField!
+    /// text field for initial value of investment ($)
     @IBOutlet weak var initialValueInput: UITextField!
+    /// text field for goal value of investment ($)
     @IBOutlet weak var goalValueInput: UITextField!
     
+    /// stores user information
     var userDict: [String:Int] = [:]
     
     override func viewDidLoad() {
@@ -24,10 +30,16 @@ class BasicInputsViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    /// Moves to IntroView screen
+    /// - parameters:
+    ///   - sender: current view controller
     @IBAction func backClick(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil);
     }
     
+    /// Moves to StockSelection screen
+    /// - parameters:
+    ///   - sender: current view controller
     @IBAction func nextClick(sender: AnyObject) {
         if(isInputValid(getInputValues())) {
             userDict["duration"] = Int(durationInput.text!)
@@ -37,6 +49,10 @@ class BasicInputsViewController: UIViewController {
         }
     }
     
+    /// Preprocessing before moving to next view
+    /// - parameters:
+    ///   - segue: segue using to move to view controller
+    ///   - sender: current view controller
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         let navVC = segue.destinationViewController as! UINavigationController
@@ -47,6 +63,9 @@ class BasicInputsViewController: UIViewController {
         
     }
     
+    /// Get values from user input fields
+    /// - returns
+    /// a tuple of integers with the duration, initial value, goal value (in that order)
     func getInputValues() -> (Int?, Int?, Int?) {
         let duration : Int? = Int(durationInput.text!)
         let initialValue : Int? = Int(initialValueInput.text!)
@@ -54,6 +73,11 @@ class BasicInputsViewController: UIViewController {
         return (duration, initialValue, goalValue)
     }
     
+    /// Returns whether input is valid
+    /// - parameters:
+    ///   - tuple: of ints with duration, initial value, goal value (in that order)
+    /// - returns
+    /// Bool: whether input is valid
     func isInputValid(values: (Int?, Int?, Int?)) -> Bool {
         let (duration, initialValue, goalValue) = values
         
@@ -74,6 +98,9 @@ class BasicInputsViewController: UIViewController {
         return true;
     }
     
+    /// Displays an error
+    /// - parameters:
+    ///   - String: message to be displayed
     func displayError(message: String) {
         let alert = UIAlertController(title: "Error", message: "test", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
