@@ -224,35 +224,6 @@ class StockAllocationViewControllerTests: XCTestCase {
         XCTAssertEqual(expected, controller.canDecrementStock(0))
     }
     
-    
-    func testFindIndexOfTicker() {
-        //first
-        XCTAssertEqual(0, helperFindIndexOfTicker("ABCD"))
-        
-        //middle
-        XCTAssertEqual(1, helperFindIndexOfTicker("EFGH"))
-        
-        //last
-        XCTAssertEqual(2, helperFindIndexOfTicker("IJKL"))
-        
-        //not in array
-        XCTAssertEqual(-1, helperFindIndexOfTicker("Z"))
-        
-    }
-    
-    func helperFindIndexOfTicker(ticker: String) -> Int {
-        class StockAllocationTableViewControllerMock: StockAllocationTableViewController {
-            override func updateUnallocatedPercentageField() {
-                //do nothing
-            }
-        }
-        
-        let controller = StockAllocationTableViewController()
-        controller.loadStocks(["ABCD", "EFGH", "IJKL"])
-        
-        return controller.findIndexOfTicker(ticker)
-    }
-    
     func testValidEdit() {
         testValidEditTrue()
         testValidEditFalse()
