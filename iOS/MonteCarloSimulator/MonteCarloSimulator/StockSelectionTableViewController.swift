@@ -35,11 +35,11 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     }
     
     @IBAction func nextClick(sender: AnyObject) {
-        //if(isInputValid()) {
-        performSegueWithIdentifier("stockSelectionNext", sender: sender)
-        //} else {
-//            displayError("You must select between 15 and 100 stocks")
-//        }
+        if(isInputValid()) {
+            performSegueWithIdentifier("stockSelectionNext", sender: sender)
+        } else {
+            displayError("You must select between 15 and 100 stocks")
+        }
     }
     
     //TABLE VIEW FUNCTIONS
@@ -70,6 +70,12 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         let ticker : String = searchBar.text!.uppercaseString
         self.view.userInteractionEnabled = false
+        
+        // the code below is making use of the StocksKit Cocoapod
+        // we pass in the ticker value and it returns a result with 
+        // either success or failure, and we use the successful return
+        // to get the lastTradePrice, which is the most recent price the
+        // stock has been trading at
         Quote.fetch([ticker]) { result in
             
             switch result {
