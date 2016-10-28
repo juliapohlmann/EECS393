@@ -65,8 +65,6 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         return cell
     }
     
-    
-    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         let ticker : String = searchBar.text!.uppercaseString
         self.view.userInteractionEnabled = false
