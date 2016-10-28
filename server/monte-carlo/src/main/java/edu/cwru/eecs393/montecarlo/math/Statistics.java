@@ -6,11 +6,13 @@ public class Statistics {
 	double[] data;
 	int size;
 
+	//constructor takes input of array of doubles
 	public Statistics(double[] data) {
 		this.data = data;
 		size = data.length;
 	}
 
+	//calculate average of  ata
 	public double getMean() {
 		double sum = 0.0;
 		for (double a : data) {
@@ -19,6 +21,7 @@ public class Statistics {
 		return sum / size;
 	}
 
+	//calculate variance of data
 	public double getVariance() {
 		double mean = getMean();
 		double temp = 0;
@@ -28,20 +31,14 @@ public class Statistics {
 		return temp / size;
 	}
 
+	//calculate standard deviation of the data
 	double getStdDev() {
 		return Math.sqrt(getVariance());
 	}
 
-	public double median() {
-		Arrays.sort(data);
-
-		if (data.length % 2 == 0) {
-			return (data[(data.length / 2) - 1] + data[data.length / 2]) / 2.0;
-		} else {
-			return data[data.length / 2];
-		}
-	}
-
+	/*calculates the normInv function: the inverse of the C.D.F for a given probability p
+	Uses a normal distribution where mu is 0 and sigma is 1
+	Open source code form Apahce.org stat pack*/
 	public double normInv(double p, double mu, double sigma) {
 		if (p < 0 || p > 1) {
 			throw new RuntimeException("The probality p must be bigger than 0 and smaller than 1");
