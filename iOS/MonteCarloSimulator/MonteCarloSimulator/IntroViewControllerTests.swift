@@ -9,7 +9,7 @@
 import XCTest
 @testable import MonteCarloSimulator
 
-class IntroViewControllerTest: XCTestCase {
+class IntroViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

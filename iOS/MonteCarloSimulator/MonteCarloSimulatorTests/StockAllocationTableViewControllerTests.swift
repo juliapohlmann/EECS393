@@ -9,7 +9,7 @@
 import XCTest
 @testable import MonteCarloSimulator
 
-class StockAllocationViewControllerTest: XCTestCase {
+class StockAllocationViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -35,14 +35,58 @@ class StockAllocationViewControllerTest: XCTestCase {
     //decrementStockPercentage            +
     //decrementUnallocatedPercentage      +
     //incrementUnallocatedPercentage      +
+    //loadStocks                          +
+    //numberOfSectionsInTableView         +
+    //tableView -> Int                    +
     //updateUnallocatedPercentageField
     //backClick
-    //loadStocks
-    //numberOfSectionsInTableView
-    //tableView -> Int
     //tableView -> Cell
     //displayError
 
+    
+    
+//    func testTableViewCellReturned() {
+//        class StockAllocationTableViewControllerMock: StockAllocationTableViewController {}
+//        let controller = StockAllocationTableViewControllerMock()
+//        controller.loadStocks(["ABCD", "EFGH", "IJKL"])
+//        let indexPath = NSIndexPath(forRow: 1, inSection: 0)
+//        let result : UITableViewCell = controller.tableView(UITableView(), cellForRowAtIndexPath: indexPath)
+//        let actual = result as! StockAllocationTableViewCell
+//
+//        XCTAssertEqual("EFGH", actual.tickerField.text)
+//        XCTAssertEqual("25", actual.percentageField.text)
+//
+//    }
+
+        
+    
+    
+    func testTableViewIntReturned() {
+        class StockAllocationTableViewControllerMock: StockAllocationTableViewController {}
+        let controller = StockAllocationTableViewControllerMock()
+        var expected = 0
+        XCTAssertEqual(expected, controller.tableView(UITableView(), numberOfRowsInSection: 0))
+        expected = 3
+        controller.loadStocks(["ABCD", "EFGH", "IJKL"])
+        XCTAssertEqual(expected, controller.tableView(UITableView(), numberOfRowsInSection: 0))
+    }
+    
+    func testNumberOfSectionsInTableView() {
+        class StockAllocationTableViewControllerMock: StockAllocationTableViewController {}
+        let controller = StockAllocationTableViewControllerMock()
+        let expected = 1
+        XCTAssertEqual(expected, controller.numberOfSectionsInTableView(UITableView()))
+    }
+    
+    func testLoadStocks() {
+        class StockAllocationTableViewControllerMock: StockAllocationTableViewController {}
+        let controller = StockAllocationTableViewControllerMock()
+        controller.loadStocks(["ABCD", "EFGH", "IJKL"])
+        let expected = ["ABCD", "EFGH", "IJKL"]
+        XCTAssertEqual(expected, controller.stockTickers)
+    }
+    
+    
     func testIncrementUnallocatedPercentage() {
         class StockAllocationTableViewControllerMock: StockAllocationTableViewController {
             override func updateUnallocatedPercentageField() {

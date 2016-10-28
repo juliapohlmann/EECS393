@@ -17,6 +17,10 @@ class StockAllocationTableViewCell: UITableViewCell {
     var previousPercentage : Int = 0
     var StockAllocationInstance : StockAllocationTableViewController = StockAllocationTableViewController()
     
+    func setFieldTexts(tickerText: String, percentageText: String) {
+        tickerField.text = tickerText
+        percentageField.text = percentageText
+    }
     
     @IBAction func beginEditingPercentageField(sender: AnyObject) {
         previousPercentage = Int(percentageField.text!)!
