@@ -35,11 +35,11 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     }
     
     @IBAction func nextClick(sender: AnyObject) {
-        //if(isInputValid()) {
-        performSegueWithIdentifier("stockSelectionNext", sender: sender)
-        //} else {
-//            displayError("You must select between 15 and 100 stocks")
-//        }
+        if(isInputValid()) {
+            performSegueWithIdentifier("stockSelectionNext", sender: sender)
+        } else {
+            displayError("You must select between 15 and 100 stocks")
+        }
     }
     
     //TABLE VIEW FUNCTIONS
