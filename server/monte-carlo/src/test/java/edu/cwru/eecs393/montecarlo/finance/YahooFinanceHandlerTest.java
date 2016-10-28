@@ -30,8 +30,6 @@ import edu.cwru.eecs393.montecarlo.data.HistoricalFinancialData.HistoricalFinanc
 @RunWith(PowerMockRunner.class)
 public class YahooFinanceHandlerTest {
 
-	// TODO Tests
-
 	@Test
 	@PrepareForTest(YahooFinanceHandler.class)
 	public void testGetFinancialDataNoDataFromURL() throws Exception {
