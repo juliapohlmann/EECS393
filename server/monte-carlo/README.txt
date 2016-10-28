@@ -33,4 +33,22 @@ a result of all zeros being returned. The correct JSON format is:
 	"years" : int,
 	"startingMoney" : int,
 	"goalMoney" : int
-} 
+}.
+
+The major libraries that our code uses are:
+Spark (Web framework): 
+	http://sparkjava.com/
+Lombok (Quality of life annotations): 
+	https://projectlombok.org/
+Jackson (JSON parsing): 
+	http://wiki.fasterxml.com/JacksonHome
+Yahoo! Finance API: 
+	All calls made by code written by us, but the base URLs are 
+	http://ichart.finance.yahoo.com/table.csv and 
+	http://download.finance.yahoo.com/d/quotes.csv
+Mockito (Mocking library for testing):
+	http://site.mockito.org/
+PowerMock (Extension of Mockito for working with private and static members):
+	https://github.com/jayway/powermock
+	
+The remainder of the code in this repository uses built in Java1.8 libraries.
