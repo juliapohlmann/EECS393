@@ -48,7 +48,8 @@ public class SimulationBuilder {
 
 	private Simulation buildMonteCarloSimulation() throws IllegalStateException {
 		// TODO check fields, throw exception if needed
-		return new MonteCarloSimulation();
+		// return new MonteCarloSimulation();
+		return null;
 	}
 
 }
