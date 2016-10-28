@@ -1,4 +1,4 @@
-package edu.cwru.eecs393.montecarlo.simulation;
+package edu.cwru.eecs393.montecarlo.math;
 
 import java.util.Arrays;
 
@@ -11,7 +11,7 @@ public class Statistics {
 		size = data.length;
 	}
 
-	double getMean() {
+	public double getMean() {
 		double sum = 0.0;
 		for (double a : data) {
 			sum += a;
@@ -19,7 +19,7 @@ public class Statistics {
 		return sum / size;
 	}
 
-	double getVariance() {
+	public double getVariance() {
 		double mean = getMean();
 		double temp = 0;
 		for (double a : data) {

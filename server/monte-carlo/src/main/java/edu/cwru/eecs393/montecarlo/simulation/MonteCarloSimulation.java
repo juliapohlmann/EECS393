@@ -7,6 +7,7 @@ import edu.cwru.eecs393.montecarlo.data.FinancialData;
 import edu.cwru.eecs393.montecarlo.data.SimulationParameters;
 import edu.cwru.eecs393.montecarlo.data.SimulationResult;
 import edu.cwru.eecs393.montecarlo.data.Stock;
+import edu.cwru.eecs393.montecarlo.math.Statistics;
 import lombok.extern.java.Log;
 
 /**
