@@ -17,6 +17,9 @@ class IntroViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    /// Moves to BasicInputs Screen
+    /// - parameters:
+    ///   - sender: current view controller
     @IBAction func startButtonClick(sender: AnyObject) {
         performSegueWithIdentifier("startSimulation", sender: sender)
     }
