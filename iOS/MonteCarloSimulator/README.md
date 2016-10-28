@@ -4,6 +4,8 @@ The Swift version we used is older than 2.3, but if you update the code to 2.3 a
 
 It is important that you open this file and not the file named "MonteCarloSimulator.xcodeproj" as we are utilizing CocoaPods and the CocoaPod set-up is specified in the .xcworkspace file. 
 
+To view the storyboard, make sure to change the settings at the bottom bar to w="Compact" h="Regular"
+
 To build, use ⌘ + B
 To run, use an iPhone 6 simulator and use ⌘ + R
 To test, use ⌘ + U
