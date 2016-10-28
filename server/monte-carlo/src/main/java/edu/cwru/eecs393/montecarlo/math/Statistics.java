@@ -1,4 +1,4 @@
-package edu.cwru.eecs393.montecarlo.simulation;
+package edu.cwru.eecs393.montecarlo.math;
 
 import java.util.Arrays;
 
@@ -13,7 +13,7 @@ public class Statistics {
 	}
 
 	//calculate average of  ata
-	double getMean() {
+	public double getMean() {
 		double sum = 0.0;
 		for (double a : data) {
 			sum += a;
@@ -22,7 +22,7 @@ public class Statistics {
 	}
 
 	//calculate variance of data
-	double getVariance() {
+	public double getVariance() {
 		double mean = getMean();
 		double temp = 0;
 		for (double a : data) {

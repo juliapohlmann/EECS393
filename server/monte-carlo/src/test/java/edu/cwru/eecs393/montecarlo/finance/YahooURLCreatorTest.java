@@ -47,7 +47,7 @@ public class YahooURLCreatorTest {
 		List<String> ticker = new ArrayList<>();
 		ticker.add("GOOG");
 		String result = YahooURLCreator.formatRealTimeURL(ticker);
-		String expected = "http://download.finance.yahoo.com/d/quotes.csv?s=GOOG&f=snabl1";
+		String expected = "http://download.finance.yahoo.com/d/quotes.csv?s=GOOG&f=sabl1";
 		TestCase.assertEquals(expected, result);
 	}
 
@@ -57,7 +57,7 @@ public class YahooURLCreatorTest {
 		tickers.add("GOOG");
 		tickers.add("AAPL");
 		String result = YahooURLCreator.formatRealTimeURL(tickers);
-		String expected = "http://download.finance.yahoo.com/d/quotes.csv?s=GOOG+AAPL&f=snabl1";
+		String expected = "http://download.finance.yahoo.com/d/quotes.csv?s=GOOG+AAPL&f=sabl1";
 		TestCase.assertEquals(expected, result);
 	}
 
