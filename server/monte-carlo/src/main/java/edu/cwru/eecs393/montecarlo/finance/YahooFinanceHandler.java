@@ -34,7 +34,7 @@ public class YahooFinanceHandler implements FinanceHandler {
 
 	@Override
 	public Map<String, FinancialData> getFinancialData(List<String> tickers) {
-		if (tickers.isEmpty()) {
+		if (null == tickers || tickers.isEmpty()) {
 			log.log(Level.SEVERE, "Received an empty list of tickers.");
 			throw new IllegalArgumentException("List of tickers must not be empty.");
 		}
@@ -55,7 +55,7 @@ public class YahooFinanceHandler implements FinanceHandler {
 			bldr.ask(Float.parseFloat(values[1]));
 			bldr.bid(Float.parseFloat(values[2]));
 			bldr.lastSale(Float.parseFloat(values[3]));
-			bldr.historicalData(getHistoricalData(ticker));
+			bldr.historicalData(getAllHistoricalData(ticker));
 			FinancialData financialData = bldr.build();
 			results.put(ticker, financialData);
 		}
@@ -63,11 +63,13 @@ public class YahooFinanceHandler implements FinanceHandler {
 		return results;
 	}
 
+	// Trim quotes from around ticker
 	private String trim(String string) {
 		return string.substring(1, string.length() - 1);
 	}
 
-	private NavigableSet<HistoricalFinancialData> getHistoricalData(String ticker) {
+	// get ordered set of HistoricalData for a ticker. Newest data first
+	private NavigableSet<HistoricalFinancialData> getAllHistoricalData(String ticker) {
 		NavigableSet<HistoricalFinancialData> results = new TreeSet<>((o1, o2) -> o2.getDate().compareTo(o1.getDate()));
 		for (int i = 1; i <= 5; i++) {
 			HistoricalFinancialData hist = createHistoricalFinancialData(ticker, i);
@@ -78,6 +80,8 @@ public class YahooFinanceHandler implements FinanceHandler {
 		return results;
 	}
 
+	// gets the historical data for a specific ticker a certain number of years
+	// ago
 	private HistoricalFinancialData createHistoricalFinancialData(String ticker, int yearsAgo) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(new Date());
@@ -87,6 +91,7 @@ public class YahooFinanceHandler implements FinanceHandler {
 		return buildHFD(cal.getTime(), data);
 	}
 
+	// Build the historical data from the results of the call
 	private HistoricalFinancialData buildHFD(Date time, String data) {
 		if (null == data || data.isEmpty()) {
 			return null;
@@ -103,6 +108,8 @@ public class YahooFinanceHandler implements FinanceHandler {
 		}
 	}
 
+	// Filters out the unused historical columns and sets the fields in the
+	// object
 	private HistoricalFinancialData buildFromCSV(String[] values, String[] headers, Date time) {
 		HistoricalFinancialDataBuilder bldr = HistoricalFinancialData.builder();
 		bldr.date(time);
@@ -132,6 +139,7 @@ public class YahooFinanceHandler implements FinanceHandler {
 		return bldr.build();
 	}
 
+	// make a get request for a specific URL and return the data
 	private String getDataFromURL(String urlToRead) {
 		try {
 			StringBuilder result = new StringBuilder();
