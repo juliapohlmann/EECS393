@@ -11,12 +11,18 @@ import StocksKit
 
 class StockSelectionTableViewController: UITableViewController, UISearchBarDelegate {
     
+    /// search bar to be displayed on screen
     @IBOutlet weak var searchBar: UISearchBar!
+    /// back button to be displayed on nav bar
     @IBOutlet weak var backButton: UIBarButtonItem!
+    /// next button to be displayed at bottom of the screen
     @IBOutlet weak var nextButton: UIButton!
     
+    /// stores user information
     var userDict: [String:Int] = [:]
+    /// stores tickers of stocks
     var stockTickers = [String]()
+    /// stores values of stocks
     var stockValues = [NSDecimalNumber]()
     
     override func viewDidLoad() {
@@ -24,21 +30,19 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         searchBar.delegate = self
     }
     
-    func displayError(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
+    /// Moves to IntroView screen
+    /// - parameters:
+    ///   - sender: current view controller
     @IBAction func backClick(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil);
     }
     
+    /// Moves to StockSelection screen
+    /// - parameters:
+    ///   - sender: current view controller
     @IBAction func nextClick(sender: AnyObject) {
         if(isInputValid()) {
             performSegueWithIdentifier("stockSelectionNext", sender: sender)
-        } else {
-            displayError("You must select between 15 and 100 stocks")
         }
     }
     
@@ -65,6 +69,9 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         return cell
     }
     
+    /// From SearchBar delegate, check if search button has been clicked
+    /// - parameters:
+    ///   - UISearchBar: current search bar
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         let ticker : String = searchBar.text!.uppercaseString
         self.view.userInteractionEnabled = false
@@ -97,20 +104,14 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
             
             }.resume()
     }
-    
-    func findIndexOfTicker(ticker: String) -> Int {
-        for i in 0..<stockTickers.count {
-            if(ticker == stockTickers[i]) {
-                return i
-            }
-        }
-        return -1
-    }
-    
+
+    /// removes ticker if user clicks "Remove" button
+    /// - parameters:
+    ///   - String: ticker to remove!
     func removeTicker(ticker: String) {
-        let index = findIndexOfTicker(ticker)
-        stockTickers.removeAtIndex(index)
-        stockValues.removeAtIndex(index)
+        let index = stockTickers.indexOf((ticker))
+        stockTickers.removeAtIndex(index!)
+        stockValues.removeAtIndex(index!)
         self.tableView.reloadData()
     }
     
@@ -123,13 +124,26 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         destinationVC.loadStocks(stockTickers)
     }
     
+    /// checks if between 15 and 100 stocks have been added
+    /// - return:
+    /// Bool indicating whether the input is valid
     func isInputValid() -> Bool {
-        if(stockTickers.count > 15 && stockTickers.count < 100) {
+        if(stockTickers.count >= 15 && stockTickers.count <= 100) {
             return true;
         } else {
+            displayError("You must select between 15 and 100 stocks")
             return false;
         }
         
+    }
+    
+    /// Displays an error - will be made a class later
+    /// - parameters:
+    ///   - String: message to be displayed
+    func displayError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     

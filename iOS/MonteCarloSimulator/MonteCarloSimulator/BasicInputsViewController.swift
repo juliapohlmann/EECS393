@@ -98,7 +98,7 @@ class BasicInputsViewController: UIViewController {
         return true;
     }
     
-    /// Displays an error
+    /// Displays an error - will be made a class later
     /// - parameters:
     ///   - String: message to be displayed
     func displayError(message: String) {
