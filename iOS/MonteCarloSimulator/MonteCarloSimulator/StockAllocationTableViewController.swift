@@ -80,8 +80,9 @@ class StockAllocationTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! StockAllocationTableViewCell
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.tickerField.text = stockTickers[indexPath.row]
-        cell.percentageField.text = String(stockPercentages[indexPath.row])
+        cell.setFieldTexts(stockTickers[indexPath.row], percentageText: String(stockPercentages[indexPath.row]))
+//        cell.tickerField.text = stockTickers[indexPath.row]
+//        cell.percentageField.text = String(stockPercentages[indexPath.row])
         cell.StockAllocationInstance = self
         
         return cell
