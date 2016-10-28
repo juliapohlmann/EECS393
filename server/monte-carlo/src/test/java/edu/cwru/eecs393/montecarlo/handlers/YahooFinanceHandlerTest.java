@@ -2,9 +2,11 @@ package edu.cwru.eecs393.montecarlo.handlers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 
+import edu.cwru.eecs393.montecarlo.data.FinancialData;
 import edu.cwru.eecs393.montecarlo.finance.YahooFinanceHandler;
 
 public class YahooFinanceHandlerTest {
@@ -26,7 +28,7 @@ public class YahooFinanceHandlerTest {
 		tickers.add("DELL");
 		tickers.add("DE");
 		long start = System.nanoTime();
-		handler.getFinancialData(tickers);
+		Map<String, FinancialData> data = handler.getFinancialData(tickers);
 		long end = System.nanoTime();
 		System.out.println("Nanos: " + (end - start));
 	}
