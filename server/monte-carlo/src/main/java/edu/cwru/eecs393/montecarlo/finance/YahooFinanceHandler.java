@@ -30,8 +30,6 @@ import lombok.extern.java.Log;
 @Log
 public class YahooFinanceHandler implements FinanceHandler {
 
-	// TODO Javadocs and Test class
-
 	@Override
 	public Map<String, FinancialData> getFinancialData(List<String> tickers) {
 		if (null == tickers || tickers.isEmpty()) {
@@ -153,11 +151,7 @@ public class YahooFinanceHandler implements FinanceHandler {
 			}
 			rd.close();
 			String data = result.toString();
-			if (data.contains("404 Not Found")) {
-				return "";
-			} else {
-				return data;
-			}
+			return data;
 		} catch (Exception e) {
 			log.log(Level.SEVERE, "Exception occurred while getting historical data.", e);
 			return "";
