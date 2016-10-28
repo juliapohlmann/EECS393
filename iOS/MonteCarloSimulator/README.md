@@ -1,5 +1,7 @@
 To view the MonteCarloSimulator project, open the file named "MonteCarloSimulator.xcworkspace". 
 
+The Swift version we used is older than 2.3, but if you update the code to 2.3 automatically when opening xcode, it still functions as expected. 
+
 It is important that you open this file and not the file named "MonteCarloSimulator.xcodeproj" as we are utilizing CocoaPods and the CocoaPod set-up is specified in the .xcworkspace file. 
 
 To build, use ⌘ + B
