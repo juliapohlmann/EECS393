@@ -30,6 +30,8 @@ import lombok.extern.java.Log;
 @Log
 public class YahooFinanceHandler implements FinanceHandler {
 
+	// TODO Javadocs and Test class
+
 	@Override
 	public Map<String, FinancialData> getFinancialData(List<String> tickers) {
 		if (tickers.isEmpty()) {
