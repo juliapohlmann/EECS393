@@ -29,6 +29,14 @@ class StockSelectionTableViewControllerTests: XCTestCase {
         return stockTickers
     }
     
+    func generateStockValues(stockTickers : [String]) -> [NSDecimalNumber] {
+        var stockValues = [NSDecimalNumber]()
+        for ticker in stockTickers {
+            stockValues.append(NSDecimalNumber.init(string: ticker))
+        }
+        return stockValues
+    }
+    
     //tests for StockSelectionTableViewControllerTests
     
     //displayError
@@ -39,7 +47,7 @@ class StockSelectionTableViewControllerTests: XCTestCase {
     //tableView -> Cell
     //searchBarSearchButtonClicked
     //findIndexOfTicker
-    //removeTicker
+    //removeTicker                      +
     //prepareForSegue
     //isInputValid                      +
     
@@ -81,6 +89,34 @@ class StockSelectionTableViewControllerTests: XCTestCase {
         controller.stockTickers.appendContentsOf(generateStockTickers(87))
         XCTAssertFalse(controller.isInputValid())
     }
+    
+    func testRemoveTicker() {
+        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
+            override func reloadData() {
+                //do nothing
+            }
+        }
+        let controller = StockSelectionTableViewControllerMock()
+        controller.stockTickers.appendContentsOf(generateStockTickers(15))
+        controller.stockValues.appendContentsOf(generateStockValues(controller.stockTickers))
+        
+        //remove first
+        controller.removeTicker(controller.stockTickers[0])
+        XCTAssertEqual(14, controller.stockValues.count)
+        XCTAssertEqual(14, controller.stockTickers.count)
+        
+        //remove middle
+        controller.removeTicker(controller.stockTickers[controller.stockTickers.count/2])
+        XCTAssertEqual(13, controller.stockValues.count)
+        XCTAssertEqual(13, controller.stockTickers.count)
+        
+        //remove last
+        controller.removeTicker(controller.stockTickers[controller.stockTickers.count - 1])
+        XCTAssertEqual(12, controller.stockValues.count)
+        XCTAssertEqual(12, controller.stockTickers.count)
+    }
+    
+    
     
     
 }

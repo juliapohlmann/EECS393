@@ -93,7 +93,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
                 } else {
                     self.stockTickers += [ticker]
                     self.stockValues += [quotes[0].lastTradePrice]
-                    self.tableView.reloadData()
+                    self.reloadData()
                 }
                 break
             case .Failure(_):
@@ -112,6 +112,10 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         let index = stockTickers.indexOf((ticker))
         stockTickers.removeAtIndex(index!)
         stockValues.removeAtIndex(index!)
+        self.reloadData()
+    }
+    
+    func reloadData() {
         self.tableView.reloadData()
     }
     
