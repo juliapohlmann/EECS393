@@ -46,7 +46,6 @@ class StockSelectionTableViewControllerTests: XCTestCase {
     //numberOfSectionsInTableView
     //tableView -> Cell
     //searchBarSearchButtonClicked
-    //findIndexOfTicker
     //removeTicker                      +
     //prepareForSegue
     //isInputValid                      +
@@ -115,6 +114,85 @@ class StockSelectionTableViewControllerTests: XCTestCase {
         XCTAssertEqual(12, controller.stockValues.count)
         XCTAssertEqual(12, controller.stockTickers.count)
     }
+    
+    func testSearchBarSearchButtonClickedValidTicker() {
+        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
+            var tickerValue: String?
+            var reloadedData: Bool? = false
+            var disableInteractions: Bool? = false
+            var errorMessage: String? = ""
+            override func getStockQuote(ticker: String) -> Bool {
+                tickerValue = ticker
+                return true
+            }
+            override func displayError(message: String) {
+                errorMessage = message
+            }
+            override func reloadData() {
+                reloadedData = true
+            }
+            override func disableUserInteraction() {
+                disableInteractions = true
+            }
+        }
+        var controller = StockSelectionTableViewControllerMock()
+        
+        class UISearchBarMock: UISearchBar {}
+        let searchBar = UISearchBarMock()
+        
+        //VALID STOCK TICKER
+        searchBar.text = "AbcD"
+        controller.searchBarSearchButtonClicked(searchBar)
+        XCTAssertEqual("ABCD", controller.tickerValue)
+        XCTAssertEqual(controller.reloadedData, true)
+        XCTAssertEqual(controller.disableInteractions, true)
+        
+        //Already added stock ticker
+        controller = StockSelectionTableViewControllerMock()
+        controller.stockTickers.append("AAAA")
+        searchBar.text = "aaaa"
+        controller.searchBarSearchButtonClicked(searchBar)
+        XCTAssertEqual(controller.errorMessage, "This stock is already added")
+        XCTAssertEqual(controller.reloadedData, false)
+        XCTAssertEqual(controller.disableInteractions, true)
+
+    }
+    
+    func testSearchBarSearchButtonClickedInvalidTicker() {
+        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
+            var tickerValue: String?
+            var reloadedData: Bool? = false
+            var disableInteractions: Bool? = false
+            var errorMessage: String? = ""
+            override func getStockQuote(ticker: String) -> Bool {
+                tickerValue = ticker
+                return false
+            }
+            override func displayError(message: String) {
+                errorMessage = message
+            }
+            override func reloadData() {
+                reloadedData = true
+            }
+            override func disableUserInteraction() {
+                disableInteractions = true
+            }
+        }
+        let controller = StockSelectionTableViewControllerMock()
+        
+        class UISearchBarMock: UISearchBar {}
+        let searchBar = UISearchBarMock()
+        
+        //INVALID STOCK TICKER
+        searchBar.text = "AAPL"
+        controller.searchBarSearchButtonClicked(searchBar)
+        XCTAssertEqual("AAPL", controller.tickerValue)
+        XCTAssertEqual(controller.reloadedData, false)
+        XCTAssertEqual(controller.disableInteractions, true)
+        XCTAssertEqual(controller.errorMessage, "Not a valid stock ticker")
+        
+    }
+
     
     
     

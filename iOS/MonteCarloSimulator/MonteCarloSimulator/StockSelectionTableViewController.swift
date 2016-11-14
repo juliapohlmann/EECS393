@@ -74,35 +74,44 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     ///   - UISearchBar: current search bar
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         let ticker : String = searchBar.text!.uppercaseString
-        self.view.userInteractionEnabled = false
+        disableUserInteraction()
         
+        if(self.stockTickers.contains(ticker)) {
+            self.displayError("This stock is already added")
+        } else {
+            if(getStockQuote(ticker)) {
+                searchBar.text = ""
+                self.reloadData()
+            } else {
+                self.displayError("Not a valid stock ticker")
+            }
+        }
+    }
+    
+    func disableUserInteraction() {
+        self.view.userInteractionEnabled = false
+    }
+    
+    func getStockQuote(ticker: String) -> Bool {
+        var returnValue = false
         // the code below is making use of the StocksKit Cocoapod
-        // we pass in the ticker value and it returns a result with 
+        // we pass in the ticker value and it returns a result with
         // either success or failure, and we use the successful return
         // to get the lastTradePrice, which is the most recent price the
         // stock has been trading at
         Quote.fetch([ticker]) { result in
-            
             switch result {
-            
-            case .Success(let quotes):
-                self.view.userInteractionEnabled = true
-                searchBar.text = ""
-                if(self.stockTickers.contains(ticker)) {
-                    self.displayError("This stock is already added")
-                } else {
+                case .Success(let quotes):
+                    self.view.userInteractionEnabled = true
                     self.stockTickers += [ticker]
                     self.stockValues += [quotes[0].lastTradePrice]
-                    self.reloadData()
-                }
-                break
-            case .Failure(_):
-                self.view.userInteractionEnabled = true
-                self.displayError("Not a valid stock ticker")
-                break
+                    returnValue = true
+                case .Failure(_):
+                    self.view.userInteractionEnabled = true
+                    returnValue = false
             }
-            
-            }.resume()
+        }.resume()
+        return returnValue
     }
 
     /// removes ticker if user clicks "Remove" button
