@@ -134,7 +134,6 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
             displayError("You must select between 15 and 100 stocks")
             return false;
         }
-        
     }
     
     /// Displays an error - will be made a class later

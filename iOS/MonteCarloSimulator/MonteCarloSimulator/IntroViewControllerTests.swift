@@ -26,7 +26,7 @@ class IntroViewControllerTests: XCTestCase {
     //startButtonclick       +
     
     func testStartButtonClick() {
-        
+        //mock IntroViewController
         class IntroViewControllerMock: IntroViewController {
             var segueIdentifier: NSString?
             
@@ -36,7 +36,6 @@ class IntroViewControllerTests: XCTestCase {
         }
         
         let controller = IntroViewControllerMock()
-        
         controller.startButtonClick(self)
         
         if let identifier = controller.segueIdentifier {
@@ -45,9 +44,6 @@ class IntroViewControllerTests: XCTestCase {
         else {
             XCTFail("Segue should be performed")
         }
-        
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
