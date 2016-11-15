@@ -68,49 +68,19 @@ class StockAllocationTableViewController: UITableViewController {
     /// - parameters:
     ///   - AnyObject: button object that was clicked
     @IBAction func runSimulation(sender: AnyObject) {
-        //if(isInputValid()) {
+        if(isInputValid()) {
             performSegueWithIdentifier("stockAllocationNext", sender: sender)
             //run the simulation by passing JSON object to server
             //will be implemented for second demo
-        //}
+        }
     }
     
-    func submitAction(sender: AnyObject) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
-        do {
-            
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(userDict, options: .PrettyPrinted)
-            
-            // create post request
-            let url = NSURL(string: "https://...appspot.com/_ah/api/activityendpoint/v1/activity")!
-            let request = NSMutableURLRequest(URL: url)
-            request.HTTPMethod = "POST"
-            
-            // insert json data to the request
-            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-            request.HTTPBody = jsonData
-            
-            let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
-                if error != nil{
-                    print("Error -> \(error)")
-                    return
-                }
-                
-                do {
-                    let result = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject]
-                    
-                    print("Result -> \(result)")
-                    
-                } catch {
-                    print("Error -> \(error)")
-                }
-            }
-            
-            task.resume()
-            
-        } catch {
-            print(error)
-        }
+        let navVC = segue.destinationViewController as! UINavigationController
+        let destinationVC = navVC.viewControllers.first as! LoadingViewController
+        
+        destinationVC.combinedDict = combinedDict
         
     }
     
@@ -122,7 +92,6 @@ class StockAllocationTableViewController: UITableViewController {
     }
     
     //TABLE VIEW FUNCTIONS
-    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

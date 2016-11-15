@@ -398,7 +398,7 @@
                         <outlet property="backButton" destination="bdC-ah-UFR" id="Blu-SO-I1f"/>
                         <outlet property="runSimulation" destination="abq-ar-Hmo" id="Dfg-fD-lgY"/>
                         <outlet property="unallocatedPercentageField" destination="EAj-rJ-4ZI" id="o5U-Cl-Cts"/>
-                        <segue destination="rmz-2K-fHH" kind="show" identifier="stockAllocationNext" id="5lk-pD-N4H"/>
+                        <segue destination="TPc-sS-ZdN" kind="show" identifier="stockAllocationNext" id="NEM-3K-bH2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMd-sv-kfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -422,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76q-0M-xrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8625" y="423.75"/>
+            <point key="canvasLocation" x="8751" y="447"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ahB-yW-WWa">
@@ -550,6 +550,27 @@
             </objects>
             <point key="canvasLocation" x="3105" y="436.5"/>
         </scene>
+        <!--Running The Simulation!-->
+        <scene sceneID="IFg-fc-L3O">
+            <objects>
+                <viewController id="yjG-Xo-4yY" customClass="LoadingViewController" customModule="MonteCarloSimulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sLT-mC-dS1"/>
+                        <viewControllerLayoutGuide type="bottom" id="4LK-qM-STj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9hJ-9h-3se">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Running The Simulation!" id="Sy7-hU-JFx"/>
+                    <connections>
+                        <segue destination="rmz-2K-fHH" kind="show" identifier="loadingNext" id="IbX-gG-aEn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTM-Cw-gFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7096.5" y="447"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="rVa-Kk-ath">
             <objects>
@@ -566,7 +587,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXG-m2-Ho8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7695" y="423.75"/>
+            <point key="canvasLocation" x="7941" y="447"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kaq-EG-7ci">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TPc-sS-ZdN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UJX-Lm-IPz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yjG-Xo-4yY" kind="relationship" relationship="rootViewController" id="M9v-ce-qb1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dsq-Si-biT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6322.5" y="447"/>
         </scene>
     </scenes>
 </document>
