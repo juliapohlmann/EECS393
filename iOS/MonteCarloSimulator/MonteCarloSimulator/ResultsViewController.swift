@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftCharts
 
 class ResultsViewController: UIViewController {
 
@@ -15,6 +16,12 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(userDict)
+        
+        let chartConfig = BarsChartConfig(
+            valsAxisConfig: ChartAxisConfig(from: 0, to: 8, by: 2)
+        )
+
+        
         // Do any additional setup after loading the view.
     }
 

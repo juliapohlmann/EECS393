@@ -1,12 +1,15 @@
 PODS:
   - StocksKit (1.0.2)
+  - SwiftCharts (0.3)
 
 DEPENDENCIES:
   - StocksKit
+  - SwiftCharts (~> 0.2)
 
 SPEC CHECKSUMS:
   StocksKit: 43edb30336133170baa157d3c14ab0223c09d15b
+  SwiftCharts: c66a449d58f9c811c467f865a47b1b6136b49499
 
-PODFILE CHECKSUM: acfb40e49550616b28017c498eba581ea82d1168
+PODFILE CHECKSUM: 9edca2146e6dab385ba2eafa8fcc03e446529ed1
 
 COCOAPODS: 1.1.1
