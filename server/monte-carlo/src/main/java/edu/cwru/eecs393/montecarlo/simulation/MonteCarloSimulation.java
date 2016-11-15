@@ -23,6 +23,8 @@ public class MonteCarloSimulation implements Simulation {
 	double goalValue;      //goal, or target, amount of money at the end of the duration
 	List<Stock> portfolio; //list of type Stock that makes up the portfolio
 	int numStocks;         //number of stocks in the portfolio
+	double forecast[][];
+	int numTrials = 10000;
 
 	public MonteCarloSimulation(SimulationParameters simParameters, Map<String, FinancialData> financialData) {
 		initialValue = simParameters.getStartingMoney();
@@ -37,6 +39,30 @@ public class MonteCarloSimulation implements Simulation {
 
 	@Override
 	public SimulationResult runSimulation() {
+		double bestTrial = 0;
+		double worstTrial = 0;
+		int successfulTrials = 0;
+		for(int i = 0; i < numTrials; i++){
+			forecastAllStocks();
+			double result = calculateReturns();
+			
+			if(i == 0){
+				bestTrial = result;
+				worstTrial = result;
+			}
+			
+			if(result > bestTrial){
+				bestTrial = result;
+			}
+			
+			if(result < worstTrial){
+				worstTrial = result;
+			}
+			
+			if(result >= goalValue){
+				successfulTrials++;
+			}
+		}
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -46,12 +72,23 @@ public class MonteCarloSimulation implements Simulation {
 		return SimulationType.MONTE_CARLO;
 	}
 
+	public double calculateReturns(){
+		double endValue = 0;
+		for(int i = 0; i < numStocks; i++){
+			double alloc = portfolio.get(i).getAllocation();
+			double price = portfolio.get(i).getCurrentPrice();
+			double shareCount = (alloc * initialValue) / price;
+			endValue += shareCount * forecast[i][duration + 1];
+		}
+		return endValue;
+	}
+	
 	/*Forecasts the entire portfolio for entire duration
 	 * Creates a matrix of number of stocks by duration, with the forecasted price of each stock
 	 * for each year of the simulation
 	 */
 	public void forecastAllStocks() {
-		double forecast[][] = new double[numStocks][duration+1];
+		forecast = new double[numStocks][duration+1];
 		for (int i = 0; i < portfolio.size(); i++) {
 			Stock s = portfolio.get(i);
 			forecast[i] = forecast(s);

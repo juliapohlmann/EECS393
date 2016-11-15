@@ -10,20 +10,13 @@ import UIKit
 
 class LoadingViewController: UIViewController {
 
-    var combinedDict: [String : Dictionary<String, AnyObject>] = [:]
+    var userDict: [String : AnyObject] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("yo")
         
         submitAction()
         
-        print("yo2")
-
-        performSegueWithIdentifier("loadingNext", sender: nil)
-        
-        print("yo3")
         // Do any additional setup after loading the view.
     }
 
@@ -36,7 +29,7 @@ class LoadingViewController: UIViewController {
         
         do {
             
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(combinedDict, options: .PrettyPrinted)
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(userDict, options: .PrettyPrinted)
             
             // create post request
             let url = NSURL(string: "http://acm-people.case.edu:4567/simulation")!
@@ -57,6 +50,7 @@ class LoadingViewController: UIViewController {
                     let result = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject]
                     
                     print("Result -> \(result)")
+                    self.performSegueWithIdentifier("loadingNext", sender: nil)
                     
                 } catch {
                     print("Error -> \(error)")
