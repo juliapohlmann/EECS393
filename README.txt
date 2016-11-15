@@ -8,5 +8,4 @@ The Simulation is based on the Efficient Market Hypothesis.  Forecasted stock pr
 
 The Monte Carlo Simulator is intended to be used for academic purposes.  It is a tool for those interested in investing to learn about portfolio allocation, compounding returns, and investing.   
 
-
 For information on how to run the application, please consult the read me files in the subfolders for the server and client. 

@@ -75,6 +75,15 @@ class StockAllocationTableViewController: UITableViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        let navVC = segue.destinationViewController as! UINavigationController
+        let destinationVC = navVC.viewControllers.first as! LoadingViewController
+        
+        destinationVC.combinedDict = combinedDict
+        
+    }
+    
     /// IBAction when back button is clicked
     /// - parameters:
     ///   - AnyObject: button object that was clicked
@@ -83,7 +92,6 @@ class StockAllocationTableViewController: UITableViewController {
     }
     
     //TABLE VIEW FUNCTIONS
-    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
