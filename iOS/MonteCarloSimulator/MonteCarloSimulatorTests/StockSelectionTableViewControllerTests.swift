@@ -45,7 +45,8 @@ class StockSelectionTableViewControllerTests: XCTestCase {
     //tableView -> Int
     //numberOfSectionsInTableView
     //tableView -> Cell
-    //searchBarSearchButtonClicked
+    //searchBarSearchButtonClicked      +
+    //getStockQuote
     //removeTicker                      +
     //prepareForSegue
     //isInputValid                      +
@@ -131,7 +132,7 @@ class StockSelectionTableViewControllerTests: XCTestCase {
             override func reloadData() {
                 reloadedData = true
             }
-            override func disableUserInteraction() {
+            override func setUserInteraction(value: Bool) {
                 disableInteractions = true
             }
         }
@@ -174,7 +175,7 @@ class StockSelectionTableViewControllerTests: XCTestCase {
             override func reloadData() {
                 reloadedData = true
             }
-            override func disableUserInteraction() {
+            override func setUserInteraction(value: Bool) {
                 disableInteractions = true
             }
         }
@@ -190,10 +191,19 @@ class StockSelectionTableViewControllerTests: XCTestCase {
         XCTAssertEqual(controller.reloadedData, false)
         XCTAssertEqual(controller.disableInteractions, true)
         XCTAssertEqual(controller.errorMessage, "Not a valid stock ticker")
-        
     }
 
-    
+//    func testGetStockQuote() {
+//        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
+//            override func setUserInteraction(value: Bool) {
+//                //do nothing
+//            }
+//        }
+//        let controller = StockSelectionTableViewControllerMock()
+//        
+//        let result = controller.getStockQuote("MSFT")
+//        XCTAssertEqual(result, false)
+//    }
     
     
     
