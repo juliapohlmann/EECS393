@@ -19,7 +19,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     @IBOutlet weak var nextButton: UIButton!
     
     /// stores user information
-    var userDict: [String:Int] = [:]
+    var userDict: [String:AnyObject] = [:]
     /// stores tickers of stocks
     var stockTickers = [String]()
     /// stores values of stocks
