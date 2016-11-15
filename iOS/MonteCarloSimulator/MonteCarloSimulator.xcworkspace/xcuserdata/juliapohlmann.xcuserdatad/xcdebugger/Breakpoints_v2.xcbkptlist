@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulatorTests/StockSelectionTableViewControllerTests.swift"
-            timestampString = "500841798.763365"
+            timestampString = "500850821.754689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "testIsInputValidFalse()"
             landmarkType = "5">
          </BreakpointContent>

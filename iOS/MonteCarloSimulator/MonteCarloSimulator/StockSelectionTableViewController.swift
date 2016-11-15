@@ -74,7 +74,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     ///   - UISearchBar: current search bar
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         let ticker : String = searchBar.text!.uppercaseString
-        disableUserInteraction()
+        setUserInteraction(false)
         
         if(self.stockTickers.contains(ticker)) {
             self.displayError("This stock is already added")
@@ -88,12 +88,13 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         }
     }
     
-    func disableUserInteraction() {
-        self.view.userInteractionEnabled = false
+    func setUserInteraction(value: Bool) {
+        self.view.userInteractionEnabled = value
     }
     
     func getStockQuote(ticker: String) -> Bool {
         var returnValue = false
+        
         // the code below is making use of the StocksKit Cocoapod
         // we pass in the ticker value and it returns a result with
         // either success or failure, and we use the successful return
@@ -102,18 +103,18 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         Quote.fetch([ticker]) { result in
             switch result {
                 case .Success(let quotes):
-                    self.view.userInteractionEnabled = true
+                    self.setUserInteraction(true)
                     self.stockTickers += [ticker]
                     self.stockValues += [quotes[0].lastTradePrice]
                     returnValue = true
                 case .Failure(_):
-                    self.view.userInteractionEnabled = true
+                    self.setUserInteraction(true)
                     returnValue = false
             }
         }.resume()
         return returnValue
     }
-
+    
     /// removes ticker if user clicks "Remove" button
     /// - parameters:
     ///   - String: ticker to remove!
