@@ -52,8 +52,17 @@ public abstract class AbstractRequestHandler implements RequestHandler {
 	 * @return true if the params are valid, false otherwise.
 	 */
 	public static boolean isValidParams(SimulationParameters params) {
-		return null != params.getTickerToAllocation() && !params.getTickerToAllocation().isEmpty()
-				&& 0 < params.getYears() && params.getStartingMoney() != 0 && params.getGoalMoney() != 0;
+		double sum = sumAllocations(params);
+		return null != params.getTickerToAllocation() && params.getTickerToAllocation().size() > 14 && sum > 99
+				&& sum < 101 && 0 < params.getYears() && params.getStartingMoney() != 0 && params.getGoalMoney() != 0;
+	}
+
+	private static double sumAllocations(SimulationParameters params) {
+		if (null == params.getTickerToAllocation()) {
+			return 0;
+		} else {
+			return params.getTickerToAllocation().values().stream().mapToDouble(value -> value).sum();
+		}
 	}
 
 }
