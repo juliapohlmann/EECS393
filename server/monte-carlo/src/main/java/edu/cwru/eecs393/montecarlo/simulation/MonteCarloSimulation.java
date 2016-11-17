@@ -43,6 +43,7 @@ public class MonteCarloSimulation implements Simulation {
 
 	@Override
 	public SimulationResult runSimulation() {
+		SimulationResult simResult = new SimulationResult();
 		double bestTrial = 0;
 		double worstTrial = 0;
 		int successfulTrials = 0;
@@ -67,8 +68,12 @@ public class MonteCarloSimulation implements Simulation {
 				successfulTrials++;
 			}
 		}
+		simResult.setMaxValue(bestTrial);
+		simResult.setMinValue(worstTrial);
+		simResult.setPercentGoalReached(successfulTrials*(1.0) / numTrials);
+		simResult.setValueToPercent(null);
 		// TODO Auto-generated method stub
-		return null;
+		return simResult;
 	}
 
 	@Override
