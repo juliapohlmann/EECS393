@@ -104,27 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulatorTests/StockSelectionTableViewControllerTests.swift"
-            timestampString = "500871528.366894"
+            timestampString = "501097186.918589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "reloadData()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MonteCarloSimulatorTests/StockSelectionTableViewControllerTests.swift"
-            timestampString = "500871528.366894"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "StockSelectionTableViewControllerTests"
             landmarkType = "3">
             <Locations>
@@ -183,11 +167,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulatorTests/StockSelectionTableViewControllerTests.swift"
-            timestampString = "500871528.366894"
+            timestampString = "501097186.918589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "StockSelectionTableViewControllerTests"
             landmarkType = "3">
             <Locations>
@@ -246,27 +230,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulator/StockSelectionTableViewController.swift"
-            timestampString = "500871019.066362"
+            timestampString = "501097017.55933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "getStockQuote(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MonteCarloSimulator/StockSelectionTableViewController.swift"
-            timestampString = "500875864.412573"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "getStockQuote(_:searchBar:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -277,29 +245,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MonteCarloSimulatorTests/StockSelectionTableViewControllerTests.swift"
-            timestampString = "500871528.366894"
+            filePath = "MonteCarloSimulator/StockSelectionTableViewController.swift"
+            timestampString = "501097017.55933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "StockSelectionTableViewControllerMock"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MonteCarloSimulatorTests/StockSelectionTableViewControllerTests.swift"
-            timestampString = "500871528.366894"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "testSearchBarSearchButtonClickedInvalidTicker()"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "getStockQuote(_:searchBar:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
