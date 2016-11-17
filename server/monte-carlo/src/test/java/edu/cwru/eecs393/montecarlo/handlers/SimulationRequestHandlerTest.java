@@ -79,7 +79,7 @@ public class SimulationRequestHandlerTest extends TestCase {
 		verify(res).status(200);
 		// verify that a SimulationResult in JSON form was returned
 		SimulationResult simResult = new ObjectMapper().readValue(result, SimulationResult.class);
-		// assertNotNull(simResult);
+		assertNotNull(simResult);
 	}
 
 }
