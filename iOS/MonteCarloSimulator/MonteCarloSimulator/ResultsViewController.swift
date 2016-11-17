@@ -13,7 +13,8 @@ class ResultsViewController: UIViewController {
 
     var chart: Chart?
     
-    // var userDict: [String:Int] = [:]
+    var userDict: [String : AnyObject] = [:]
+    var results: [String : AnyObject] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,23 @@ class ResultsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        if(segue.identifier == "rerun") {
+            let navVC = segue.destinationViewController as! UINavigationController
+            let destinationVC = navVC.viewControllers.first as! LoadingViewController
+            
+            destinationVC.userDict = userDict
+            destinationVC.navigationItem.setHidesBackButton(true, animated: false)
+        }else if(segue.identifier == "restart") {
+            let navVC = segue.destinationViewController as! UINavigationController
+            let destinationVC = navVC.viewControllers.first as! IntroViewController
+            destinationVC.navigationItem.setHidesBackButton(true, animated: false)
+        }
+    }
+    
+    
 
     /*
     // MARK: - Navigation

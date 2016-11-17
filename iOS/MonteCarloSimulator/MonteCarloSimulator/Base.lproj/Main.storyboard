@@ -416,7 +416,41 @@
                     <view key="view" contentMode="scaleToFill" id="iPZ-mW-9JC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSQ-ft-fpw">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Restart"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="208" y="533" width="172" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="abf-je-lCU" kind="show" identifier="restart" id="OwT-84-auI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-hy-fLb">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Re-Run"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="533" width="180" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="TPc-sS-ZdN" kind="show" identifier="rerun" id="kkZ-Pe-lfX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="HSQ-ft-fpw"/>
+                                <exclude reference="i3e-hy-fLb"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="HSQ-ft-fpw"/>
+                                <include reference="i3e-hy-fLb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Results" id="4fd-cQ-9ox"/>
                 </viewController>
@@ -609,4 +643,7 @@
             <point key="canvasLocation" x="6322.5" y="447"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kkZ-Pe-lfX"/>
+    </inferredMetricsTieBreakers>
 </document>

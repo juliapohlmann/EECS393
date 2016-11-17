@@ -11,6 +11,7 @@ import UIKit
 class LoadingViewController: UIViewController {
 
     var userDict: [String : AnyObject] = [:]
+    var results: [String : AnyObject] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,15 @@ class LoadingViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        let navVC = segue.destinationViewController as! UINavigationController
+        let destinationVC = navVC.viewControllers.first as! ResultsViewController
+        
+        destinationVC.userDict = userDict
+        destinationVC.results = results
     }
     
     func submitAction() {
@@ -50,6 +60,7 @@ class LoadingViewController: UIViewController {
                     let result = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject]
                     
                     print("Result -> \(result)")
+                    self.results = result!
                     self.performSegueWithIdentifier("loadingNext", sender: nil)
                     
                 } catch {
