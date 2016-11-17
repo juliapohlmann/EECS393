@@ -47,9 +47,75 @@ public class AbstractRequestHandlerTest extends TestCase {
 		params.setStartingMoney(10);
 		params.setYears(5);
 		Map<String, Double> tickerToAllocation = new HashMap<>();
-		tickerToAllocation.put("T", 100.0);
+		tickerToAllocation.put("A", 6.66);
+		tickerToAllocation.put("B", 6.66);
+		tickerToAllocation.put("C", 6.66);
+		tickerToAllocation.put("D", 6.66);
+		tickerToAllocation.put("E", 6.66);
+		tickerToAllocation.put("F", 6.66);
+		tickerToAllocation.put("G", 6.66);
+		tickerToAllocation.put("H", 6.66);
+		tickerToAllocation.put("I", 6.66);
+		tickerToAllocation.put("K", 6.66);
+		tickerToAllocation.put("L", 6.66);
+		tickerToAllocation.put("M", 6.66);
+		tickerToAllocation.put("N", 6.66);
+		tickerToAllocation.put("O", 6.66);
+		tickerToAllocation.put("T", 6.66);
 		params.setTickerToAllocation(tickerToAllocation);
 		assertTrue(AbstractRequestHandler.isValidParams(params));
+	}
+
+	@Test
+	public void testIsValidOver100() {
+		SimulationParameters params = new SimulationParameters();
+		params.setGoalMoney(1000);
+		params.setStartingMoney(10);
+		params.setYears(5);
+		Map<String, Double> tickerToAllocation = new HashMap<>();
+		tickerToAllocation.put("A", 50.0);
+		tickerToAllocation.put("B", 6.66);
+		tickerToAllocation.put("C", 6.66);
+		tickerToAllocation.put("D", 6.66);
+		tickerToAllocation.put("E", 6.66);
+		tickerToAllocation.put("F", 6.66);
+		tickerToAllocation.put("G", 6.66);
+		tickerToAllocation.put("H", 6.66);
+		tickerToAllocation.put("I", 6.66);
+		tickerToAllocation.put("K", 6.66);
+		tickerToAllocation.put("L", 6.66);
+		tickerToAllocation.put("M", 6.66);
+		tickerToAllocation.put("N", 6.66);
+		tickerToAllocation.put("O", 6.66);
+		tickerToAllocation.put("T", 6.66);
+		params.setTickerToAllocation(tickerToAllocation);
+		assertFalse(AbstractRequestHandler.isValidParams(params));
+	}
+
+	@Test
+	public void testIsValidUnder99() {
+		SimulationParameters params = new SimulationParameters();
+		params.setGoalMoney(1000);
+		params.setStartingMoney(10);
+		params.setYears(5);
+		Map<String, Double> tickerToAllocation = new HashMap<>();
+		tickerToAllocation.put("A", 1.0);
+		tickerToAllocation.put("B", 6.66);
+		tickerToAllocation.put("C", 6.66);
+		tickerToAllocation.put("D", 6.66);
+		tickerToAllocation.put("E", 6.66);
+		tickerToAllocation.put("F", 6.66);
+		tickerToAllocation.put("G", 6.66);
+		tickerToAllocation.put("H", 6.66);
+		tickerToAllocation.put("I", 6.66);
+		tickerToAllocation.put("K", 6.66);
+		tickerToAllocation.put("L", 6.66);
+		tickerToAllocation.put("M", 6.66);
+		tickerToAllocation.put("N", 6.66);
+		tickerToAllocation.put("O", 6.66);
+		tickerToAllocation.put("T", 6.66);
+		params.setTickerToAllocation(tickerToAllocation);
+		assertFalse(AbstractRequestHandler.isValidParams(params));
 	}
 
 	@Test
@@ -67,13 +133,42 @@ public class AbstractRequestHandlerTest extends TestCase {
 	}
 
 	@Test
+	public void testIsValidLessThan15() {
+		SimulationParameters params = new SimulationParameters();
+		params.setGoalMoney(1000);
+		params.setStartingMoney(10);
+		params.setYears(5);
+		Map<String, Double> tickerToAllocation = new HashMap<>();
+		tickerToAllocation.put("A", 25.0);
+		tickerToAllocation.put("B", 25.0);
+		tickerToAllocation.put("C", 25.0);
+		tickerToAllocation.put("D", 25.0);
+		params.setTickerToAllocation(tickerToAllocation);
+		assertFalse(AbstractRequestHandler.isValidParams(params));
+	}
+
+	@Test
 	public void testIsValidZeros() {
 		SimulationParameters params = new SimulationParameters();
 		params.setGoalMoney(0);
 		params.setStartingMoney(10);
 		params.setYears(5);
 		Map<String, Double> tickerToAllocation = new HashMap<>();
-		tickerToAllocation.put("T", 100.0);
+		tickerToAllocation.put("A", 6.66);
+		tickerToAllocation.put("B", 6.66);
+		tickerToAllocation.put("C", 6.66);
+		tickerToAllocation.put("D", 6.66);
+		tickerToAllocation.put("E", 6.66);
+		tickerToAllocation.put("F", 6.66);
+		tickerToAllocation.put("G", 6.66);
+		tickerToAllocation.put("H", 6.66);
+		tickerToAllocation.put("I", 6.66);
+		tickerToAllocation.put("K", 6.66);
+		tickerToAllocation.put("L", 6.66);
+		tickerToAllocation.put("M", 6.66);
+		tickerToAllocation.put("N", 6.66);
+		tickerToAllocation.put("O", 6.66);
+		tickerToAllocation.put("T", 6.66);
 		params.setTickerToAllocation(tickerToAllocation);
 
 		assertFalse(AbstractRequestHandler.isValidParams(params));
