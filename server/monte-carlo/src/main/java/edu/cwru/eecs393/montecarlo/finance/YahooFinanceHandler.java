@@ -5,9 +5,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.NavigableSet;
 import java.util.Scanner;
@@ -31,7 +31,7 @@ import lombok.extern.java.Log;
 public class YahooFinanceHandler implements FinanceHandler {
 
 	@Override
-	public Map<String, FinancialData> getFinancialData(List<String> tickers) {
+	public Map<String, FinancialData> getFinancialData(Collection<String> tickers) {
 		if (null == tickers || tickers.isEmpty()) {
 			log.log(Level.SEVERE, "Received an empty list of tickers.");
 			throw new IllegalArgumentException("List of tickers must not be empty.");

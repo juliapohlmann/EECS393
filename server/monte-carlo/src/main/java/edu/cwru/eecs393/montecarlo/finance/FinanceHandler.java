@@ -1,6 +1,6 @@
 package edu.cwru.eecs393.montecarlo.finance;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.Map;
 
 import edu.cwru.eecs393.montecarlo.data.FinancialData;
@@ -20,6 +20,6 @@ public interface FinanceHandler {
 	 *            a list containing the tickers for every desired stock
 	 * @return a map, mapping each ticker to its financial data.
 	 */
-	Map<String, FinancialData> getFinancialData(List<String> tickers);
+	Map<String, FinancialData> getFinancialData(Collection<String> tickers);
 
 }
