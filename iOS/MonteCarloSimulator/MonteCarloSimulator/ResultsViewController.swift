@@ -7,16 +7,63 @@
 //
 
 import UIKit
+import SwiftCharts
 
 class ResultsViewController: UIViewController {
 
-    var userDict: [String:Int] = [:]
+    var chart: Chart?
+    
+    var userDict: [String : AnyObject] = [:]
+    var results: [String : AnyObject] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userDict)
+        
+        self.navigationItem.setHidesBackButton(true, animated:true);
+        
+        let chartConfig = BarsChartConfig(
+            valsAxisConfig: ChartAxisConfig(from: 0, to: 8, by: 2)
+        )
+        
+        let chart = BarsChart(
+            frame: CGRectMake(0, 70, 300, 500),
+            chartConfig: chartConfig,
+            xTitle: "X axis",
+            yTitle: "Y axis",
+            bars: [
+                ("A", 2),
+                ("B", 4.5),
+                ("C", 3),
+                ("D", 5.4),
+                ("E", 6.8),
+                ("F", 0.5)
+            ],
+            color: UIColor.redColor(),
+            barWidth: 20
+        )
+        
+        self.view.addSubview(chart.view)
+        self.chart = chart
+        
         // Do any additional setup after loading the view.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        if(segue.identifier == "rerun") {
+            let navVC = segue.destinationViewController as! UINavigationController
+            let destinationVC = navVC.viewControllers.first as! LoadingViewController
+            
+            destinationVC.userDict = userDict
+            destinationVC.navigationItem.setHidesBackButton(true, animated: false)
+        }else if(segue.identifier == "restart") {
+            let navVC = segue.destinationViewController as! UINavigationController
+            let destinationVC = navVC.viewControllers.first as! IntroViewController
+            destinationVC.navigationItem.setHidesBackButton(true, animated: false)
+        }
+    }
+    
+    
 
     /*
     // MARK: - Navigation

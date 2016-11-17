@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="abf-je-lCU">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="abf-je-lCU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -398,7 +398,7 @@
                         <outlet property="backButton" destination="bdC-ah-UFR" id="Blu-SO-I1f"/>
                         <outlet property="runSimulation" destination="abq-ar-Hmo" id="Dfg-fD-lgY"/>
                         <outlet property="unallocatedPercentageField" destination="EAj-rJ-4ZI" id="o5U-Cl-Cts"/>
-                        <segue destination="9h1-kh-KX9" kind="show" identifier="stockAllocationNext" id="h3R-ns-qpU"/>
+                        <segue destination="TPc-sS-ZdN" kind="show" identifier="stockAllocationNext" id="NEM-3K-bH2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMd-sv-kfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -406,24 +406,57 @@
             <point key="canvasLocation" x="5505" y="441.75"/>
         </scene>
         <!--Results-->
-        <scene sceneID="eX4-mC-Cen">
+        <scene sceneID="Hcf-gm-dqm">
             <objects>
-                <viewController id="v7Y-9B-F2f" customClass="ResultsViewController" sceneMemberID="viewController">
+                <viewController title="Results" id="ibJ-KC-l7l" customClass="ResultsViewController" customModule="MonteCarloSimulator" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JZq-MM-txQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="qqj-hY-GbS"/>
+                        <viewControllerLayoutGuide type="top" id="zye-Wq-Dd5"/>
+                        <viewControllerLayoutGuide type="bottom" id="P1l-8d-Zkp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0dy-Lc-Are">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                    <view key="view" contentMode="scaleToFill" id="iPZ-mW-9JC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSQ-ft-fpw">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Restart"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="208" y="533" width="172" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="abf-je-lCU" kind="show" identifier="restart" id="OwT-84-auI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-hy-fLb">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Re-Run"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="533" width="180" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="TPc-sS-ZdN" kind="show" identifier="rerun" id="kkZ-Pe-lfX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="HSQ-ft-fpw"/>
+                                <exclude reference="i3e-hy-fLb"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="HSQ-ft-fpw"/>
+                                <include reference="i3e-hy-fLb"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Results" id="Jfo-Gr-fz6"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationItem key="navigationItem" title="Results" id="4fd-cQ-9ox"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jr2-ij-7H8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="76q-0M-xrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7173" y="436.5"/>
+            <point key="canvasLocation" x="8751" y="447"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ahB-yW-WWa">
@@ -442,24 +475,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIB-0d-756" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4659" y="441.75"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="56K-Yv-98e">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9h1-kh-KX9" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WsS-j7-gke">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="v7Y-9B-F2f" kind="relationship" relationship="rootViewController" id="VOv-Fc-GKp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qej-IK-lYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6315" y="441.75"/>
         </scene>
         <!--Stock Selection-->
         <scene sceneID="UbJ-sx-KS6">
@@ -569,5 +584,66 @@
             </objects>
             <point key="canvasLocation" x="3105" y="436.5"/>
         </scene>
+        <!--Running The Simulation!-->
+        <scene sceneID="IFg-fc-L3O">
+            <objects>
+                <viewController id="yjG-Xo-4yY" customClass="LoadingViewController" customModule="MonteCarloSimulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sLT-mC-dS1"/>
+                        <viewControllerLayoutGuide type="bottom" id="4LK-qM-STj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9hJ-9h-3se">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Running The Simulation!" id="Sy7-hU-JFx"/>
+                    <connections>
+                        <segue destination="rmz-2K-fHH" kind="show" identifier="loadingNext" id="IbX-gG-aEn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTM-Cw-gFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7096.5" y="447"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rVa-Kk-ath">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rmz-2K-fHH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7xC-FD-1eL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ibJ-KC-l7l" kind="relationship" relationship="rootViewController" id="WmZ-0m-slm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jXG-m2-Ho8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7941" y="447"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kaq-EG-7ci">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TPc-sS-ZdN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UJX-Lm-IPz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yjG-Xo-4yY" kind="relationship" relationship="rootViewController" id="M9v-ce-qb1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dsq-Si-biT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6322.5" y="447"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kkZ-Pe-lfX"/>
+    </inferredMetricsTieBreakers>
 </document>

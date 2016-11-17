@@ -18,8 +18,7 @@ class StockAllocationTableViewController: UITableViewController {
     var stockPercentages = [Int]()
     var unallocatedPercentage : Int = 100
     
-    var userDict: [String:Int] = [:]
-    var combinedDict: [String : Dictionary<String, AnyObject>] = [:]
+    var userDict: [String:AnyObject] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +37,9 @@ class StockAllocationTableViewController: UITableViewController {
             stockDict[element] = stockPercentages[index]
         }
         
-        combinedDict["userData"] = userDict
-        combinedDict["stockData"] = stockDict
+        userDict["tickerToAllocation"] = stockDict
         
+        print(userDict)
     }
     
     //SETUP FUNCTIONS
@@ -75,6 +74,17 @@ class StockAllocationTableViewController: UITableViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        getReadyToSendToServer()
+        
+        let navVC = segue.destinationViewController as! UINavigationController
+        let destinationVC = navVC.viewControllers.first as! LoadingViewController
+        
+        destinationVC.userDict = userDict
+        
+    }
+    
     /// IBAction when back button is clicked
     /// - parameters:
     ///   - AnyObject: button object that was clicked
@@ -83,7 +93,6 @@ class StockAllocationTableViewController: UITableViewController {
     }
     
     //TABLE VIEW FUNCTIONS
-    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

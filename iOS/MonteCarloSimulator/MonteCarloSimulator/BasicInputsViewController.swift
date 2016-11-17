@@ -23,7 +23,7 @@ class BasicInputsViewController: UIViewController {
     @IBOutlet weak var goalValueInput: UITextField!
     
     /// stores user information
-    var userDict: [String:Int] = [:]
+    var userDict: [String:AnyObject] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +42,9 @@ class BasicInputsViewController: UIViewController {
     ///   - sender: current view controller
     @IBAction func nextClick(sender: AnyObject) {
         if(isInputValid(getInputValues())) {
-            userDict["duration"] = Int(durationInput.text!)
-            userDict["initialValue"] = Int(initialValueInput.text!)
-            userDict["goalValue"] = Int(goalValueInput.text!)
+            userDict["years"] = Int(durationInput.text!)
+            userDict["startingMoney"] = Int(initialValueInput.text!)
+            userDict["goalMoney"] = Int(goalValueInput.text!)
             performSegueWithIdentifier("basicInputsNext", sender: sender)
         }
     }

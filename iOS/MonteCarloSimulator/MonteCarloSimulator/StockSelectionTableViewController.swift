@@ -19,7 +19,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     @IBOutlet weak var nextButton: UIButton!
     
     /// stores user information
-    var userDict: [String:Int] = [:]
+    var userDict: [String:AnyObject] = [:]
     /// stores tickers of stocks
     var stockTickers = [String]()
     /// stores values of stocks
@@ -41,9 +41,9 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     /// - parameters:
     ///   - sender: current view controller
     @IBAction func nextClick(sender: AnyObject) {
-        if(isInputValid()) {
+        //if(isInputValid()) {
             performSegueWithIdentifier("stockSelectionNext", sender: sender)
-        }
+        //}
     }
     
     //TABLE VIEW FUNCTIONS
@@ -77,14 +77,9 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         setUserInteraction(false)
         
         if(self.stockTickers.contains(ticker)) {
-            self.displayError("This stock is already added")
+            self.displayError("This stock has already been added")
         } else {
-            if(getStockQuote(ticker)) {
-                searchBar.text = ""
-                self.reloadData()
-            } else {
-                self.displayError("Not a valid stock ticker")
-            }
+            getStockQuote(ticker, searchBar: searchBar)
         }
     }
     
@@ -92,8 +87,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         self.view.userInteractionEnabled = value
     }
     
-    func getStockQuote(ticker: String) -> Bool {
-        var returnValue = false
+    func getStockQuote(ticker: String, searchBar: UISearchBar) {
         
         // the code below is making use of the StocksKit Cocoapod
         // we pass in the ticker value and it returns a result with
@@ -103,16 +97,18 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         Quote.fetch([ticker]) { result in
             switch result {
                 case .Success(let quotes):
+                    searchBar.text = ""
                     self.setUserInteraction(true)
                     self.stockTickers += [ticker]
                     self.stockValues += [quotes[0].lastTradePrice]
-                    returnValue = true
+                    self.reloadData()
+                    break
                 case .Failure(_):
                     self.setUserInteraction(true)
-                    returnValue = false
+                    self.displayError("Not a valid stock ticker")
+                    break
             }
         }.resume()
-        return returnValue
     }
     
     /// removes ticker if user clicks "Remove" button
