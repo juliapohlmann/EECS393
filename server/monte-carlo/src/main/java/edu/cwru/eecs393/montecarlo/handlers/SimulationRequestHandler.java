@@ -1,13 +1,18 @@
 package edu.cwru.eecs393.montecarlo.handlers;
 
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.cwru.eecs393.montecarlo.data.FinancialData;
 import edu.cwru.eecs393.montecarlo.data.SimulationParameters;
 import edu.cwru.eecs393.montecarlo.data.SimulationResult;
+import edu.cwru.eecs393.montecarlo.finance.FinanceHandler;
+import edu.cwru.eecs393.montecarlo.finance.YahooFinanceHandler;
+import edu.cwru.eecs393.montecarlo.simulation.MonteCarloSimulation;
+import edu.cwru.eecs393.montecarlo.simulation.Simulation;
 import lombok.extern.java.Log;
 import spark.Request;
 import spark.Response;
@@ -33,8 +38,12 @@ public class SimulationRequestHandler extends AbstractRequestHandler {
 			}
 			res.status(HTTP_OK);
 			res.type("application/json");
-			// TODO call simulation here
-			return dataToJson(new SimulationResult(0, 0, 0, new HashMap<>()));
+			FinanceHandler financeHandler = new YahooFinanceHandler();
+			Map<String, FinancialData> financialData = financeHandler
+					.getFinancialData(params.getTickerToAllocation().keySet());
+			Simulation simulation = new MonteCarloSimulation(params, financialData);
+			SimulationResult simulationResult = simulation.runSimulation();
+			return dataToJson(simulationResult);
 		} catch (IOException jpe) {
 			log.log(Level.WARNING, "Exception occurred while handing simulation request.", jpe);
 			res.status(HTTP_BAD_REQUEST);

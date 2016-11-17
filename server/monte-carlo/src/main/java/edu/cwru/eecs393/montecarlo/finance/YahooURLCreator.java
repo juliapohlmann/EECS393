@@ -1,8 +1,8 @@
 package edu.cwru.eecs393.montecarlo.finance;
 
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import java.util.logging.Level;
 
 import lombok.NonNull;
@@ -80,7 +80,7 @@ public final class YahooURLCreator {
 	 *            the list of tickers to retrieve data for
 	 * @return a properly formatted URL for Yahoo! Finance data.
 	 */
-	public static String formatRealTimeURL(@NonNull List<String> tickerList) {
+	public static String formatRealTimeURL(@NonNull Collection<String> tickerList) {
 		if (tickerList.isEmpty()) {
 			log.log(Level.SEVERE, "Received request for no tickers.");
 			throw new IllegalArgumentException("List of desired tickers was empty.");
