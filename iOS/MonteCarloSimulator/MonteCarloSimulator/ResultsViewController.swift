@@ -58,7 +58,7 @@ class ResultsViewController: UIViewController {
         
         let minValue = "\(results["minValue"]!)"
         let maxValue = "\(results["maxValue"]!)"
-        let percentReached = "\(results["percentGoalReached"]!)"
+        let percentReached = String(Int(results["percentGoalReached"]! as! NSNumber) * 100)
         
         self.minValue.text = "Min Value: " + minValue
         self.maxValue.text = "Max Value: " + maxValue

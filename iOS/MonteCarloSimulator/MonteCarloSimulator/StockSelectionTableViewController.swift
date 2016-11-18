@@ -78,6 +78,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         
         if(self.stockTickers.contains(ticker)) {
             self.displayError("This stock has already been added")
+            setUserInteraction(true)
         } else {
             getStockQuote(ticker, searchBar: searchBar)
         }

@@ -53,7 +53,7 @@ class StockAllocationTableViewController: UITableViewController {
     
     /// allocates a portion of the 100% to each stock
     func setStartingStockPercentages() {
-        let startingValue = (100 / (stockTickers.count + (stockTickers.count / 2)))
+        let startingValue = Int(floor(100.0 / Double(stockTickers.count)))
         for _ in stockTickers {
             stockPercentages += [startingValue]
             unallocatedPercentage -= startingValue
