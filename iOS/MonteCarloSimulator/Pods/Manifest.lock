@@ -1,15 +1,18 @@
 PODS:
+  - Gifu (1.0.1)
   - StocksKit (1.0.2)
   - SwiftCharts (0.3)
 
 DEPENDENCIES:
+  - Gifu
   - StocksKit
   - SwiftCharts (~> 0.2)
 
 SPEC CHECKSUMS:
+  Gifu: bf7a99fe9f20a1dc18c3cb4289aebc922a2ad419
   StocksKit: 43edb30336133170baa157d3c14ab0223c09d15b
   SwiftCharts: c66a449d58f9c811c467f865a47b1b6136b49499
 
-PODFILE CHECKSUM: 9edca2146e6dab385ba2eafa8fcc03e446529ed1
+PODFILE CHECKSUM: 45ece6a6885311cb128fd54e53748c3190881273
 
 COCOAPODS: 1.1.1

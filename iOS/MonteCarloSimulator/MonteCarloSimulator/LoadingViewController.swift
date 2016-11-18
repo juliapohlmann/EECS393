@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import Gifu
 
 class LoadingViewController: UIViewController {
 
     var userDict: [String : AnyObject] = [:]
     var results: [String : AnyObject] = [:]
     
+    @IBOutlet weak var gifView: AnimatableImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         submitAction()
-        
+        gifView.animateWithImage(named: "money.gif")
+
         // Do any additional setup after loading the view.
     }
 

@@ -364,6 +364,21 @@ class StockAllocationViewControllerTests: XCTestCase {
         }
     }
     
+    func testDisplayError() {
+        class StockAllocationTableViewControllerMock: StockAllocationTableViewController {
+            var alert: UIAlertController!
+            
+            override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
+                alert = viewControllerToPresent as! UIAlertController
+            }
+            
+        }
+        let controller = StockAllocationTableViewControllerMock()
+        controller.displayError("ABC")
+        XCTAssertEqual("ABC", controller.alert.message)
+        XCTAssertEqual("Error", controller.alert.title)
+    }
+    
     //
     //    func testPerformanceExample() {
     //        // This is an example of a performance test case.

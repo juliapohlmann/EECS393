@@ -4,48 +4,45 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Gifu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MonteCarloSimulator.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>Pods-MonteCarloSimulatorTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>Pods-MonteCarloSimulatorUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>StocksKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>SwiftCharts.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CE31D5F09001E1EBF4FE8CD633512A9</key>
+		<key>086993FF8A0FBB961A479367FBC039F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>125BBEE991A980A65D1153924E3D84A0</key>
+		<key>0CE31D5F09001E1EBF4FE8CD633512A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -55,32 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>30CC451A9BCC429580D668792A4469F8</key>
+		<key>7E8CED214270756740E353EB98D80194</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4950D0115054646C8216773805AF1A6F</key>
+		<key>A3C5DFD89EC922189BB42B595045DD32</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8843312F55B5D4E01A4A911EC839B87C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9D04FC9A140604967A7B9C100E75297C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B54D20295DE83645C045EE7A8228329A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE65CBB0CC250798A332DC1B44B434FF</key>
+		<key>AEA56EBE1B518C71721209FB26701898</key>
 		<dict>
 			<key>primary</key>
 			<true/>
