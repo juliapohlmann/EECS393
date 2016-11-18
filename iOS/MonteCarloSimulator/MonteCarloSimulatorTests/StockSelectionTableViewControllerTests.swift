@@ -150,81 +150,41 @@ class StockSelectionTableViewControllerTests: XCTestCase {
         XCTAssertEqual("This stock has already been added", controller.errorMessage)
     }
     
-    
-    
-//    
-//    func testSearchBarSearchButtonClickedValidTicker() {
+//    func testGetStockQuote() {
 //        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
+//            var errorMessage: String? = ""
 //            var tickerValue: String?
 //            var reloadedData: Bool? = false
-//            var disableInteractions: Bool? = false
-//            var errorMessage: String? = ""
-//            override func getStockQuote(ticker: String, searchBar: UISearchBar) {
-//                tickerValue = ticker
-//            }
+//            var setUserInteract: Bool?
+//            
 //            override func displayError(message: String) {
 //                errorMessage = message
 //            }
-//            override func reloadData() {
-//                reloadedData = true
-//            }
 //            override func setUserInteraction(value: Bool) {
-//                disableInteractions = true
-//            }
-//        }
-//        var controller = StockSelectionTableViewControllerMock()
-//        
-//        class UISearchBarMock: UISearchBar {}
-//        let searchBar = UISearchBarMock()
-//        
-//        //VALID STOCK TICKER
-//        searchBar.text = "AbcD"
-//        controller.searchBarSearchButtonClicked(searchBar)
-//        XCTAssertEqual("ABCD", controller.tickerValue)
-//        
-//        //Already added stock ticker
-//        controller = StockSelectionTableViewControllerMock()
-//        controller.stockTickers.append("AAAA")
-//        searchBar.text = "aaaa"
-//        controller.searchBarSearchButtonClicked(searchBar)
-//        XCTAssertEqual(controller.errorMessage, "This stock is already added")
-//        XCTAssertEqual(controller.reloadedData, false)
-//        XCTAssertEqual(controller.disableInteractions, true)
-//
-//    }
-//    
-//    func testSearchBarSearchButtonClickedInvalidTicker() {
-//        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
-//            var tickerValue: String?
-//            var reloadedData: Bool? = false
-//            var disableInteractions: Bool? = false
-//            var errorMessage: String? = ""
-//            override func getStockQuote(ticker: String, searchBar: UISearchBar) {
-//                tickerValue = ticker
-//            }
-//            override func displayError(message: String) {
-//                errorMessage = message
+//                //do nothing
+//                setUserInteract = value
 //            }
 //            override func reloadData() {
+//                //do nothing
 //                reloadedData = true
-//            }
-//            override func setUserInteraction(value: Bool) {
-//                disableInteractions = true
 //            }
 //        }
 //        let controller = StockSelectionTableViewControllerMock()
-//        
 //        class UISearchBarMock: UISearchBar {}
 //        let searchBar = UISearchBarMock()
 //        
-//        //INVALID STOCK TICKER
-//        searchBar.text = "Qe"
-//        controller.searchBarSearchButtonClicked(searchBar)
-//        XCTAssertEqual("QE", controller.tickerValue)
-//        XCTAssertEqual(controller.reloadedData, false)
-//        XCTAssertEqual(controller.disableInteractions, true)
-//        XCTAssertEqual(controller.errorMessage, "Not a valid stock ticker")
+//        //test success 
+//        searchBar.text = "aBCd"
+//        controller.getStockQuote("AAPL", searchBar: searchBar)
+//        sleep(30)
+//        XCTAssertEqual(true, controller.setUserInteract)
+//        XCTAssertEqual("AAPL", controller.stockTickers[0])
+//        XCTAssertEqual(1, controller.stockValues.count)
+//        XCTAssertEqual("", searchBar.text)
+//        XCTAssertEqual(true, controller.reloadedData)
+//        //test failure
 //    }
+    
 
 //    func testGetStockQuote() {
 //        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
@@ -237,7 +197,7 @@ class StockSelectionTableViewControllerTests: XCTestCase {
 //        let result = controller.getStockQuote("MSFT")
 //        XCTAssertEqual(result, false)
 //    }
-    
+//    
     
     
 }
