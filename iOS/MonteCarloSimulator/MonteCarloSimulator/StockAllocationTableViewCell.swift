@@ -31,7 +31,6 @@ class StockAllocationTableViewCell: UITableViewCell {
         if(!StockAllocationInstance.validEdit(tickerField.text!, oldValue: previousPercentage, newValue: newValue)) {
             percentageField.text = String(previousPercentage)
         }
-        
     }
     
     @IBAction func minusClick(sender: AnyObject) {
