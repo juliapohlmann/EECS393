@@ -27,7 +27,7 @@ class BasicInputsViewControllerTests: XCTestCase {
     //backClick
     //nextClick
     //displayError
-    //getInputValues
+    //getInputValues    +
     
     func testIsInputValid() {
         testValid()
@@ -71,6 +71,26 @@ class BasicInputsViewControllerTests: XCTestCase {
         class BasicInputsViewControllerMock: BasicInputsViewController {}
         let controller = BasicInputsViewControllerMock()
         return controller.isInputValid(values)
+    }
+    
+    func testGetInputValues() {
+        class BasicInputsViewControllerMock: BasicInputsViewController {}
+        let controller = BasicInputsViewControllerMock()
+        controller.durationInput = UITextField()
+        controller.durationInput.text = "22"
+        controller.initialValueInput = UITextField()
+        controller.initialValueInput.text = "33"
+        controller.goalValueInput = UITextField()
+        controller.goalValueInput.text = "55"
+        
+        let (durationValue, initialValue, goalValue) = controller.getInputValues()
+        
+        XCTAssertEqual(22, durationValue)
+        XCTAssertEqual(33, initialValue)
+        XCTAssertEqual(55, goalValue)
+
+        
+
     }
     
 }
