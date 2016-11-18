@@ -437,22 +437,60 @@
                                     <segue destination="TPc-sS-ZdN" kind="show" identifier="rerun" id="kkZ-Pe-lfX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zO-L0-8uB">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="571" width="221" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J05-kJ-3x9">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="600" width="221" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phj-c1-PiH">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="629" width="221" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="HSQ-ft-fpw"/>
                                 <exclude reference="i3e-hy-fLb"/>
+                                <exclude reference="6zO-L0-8uB"/>
+                                <exclude reference="J05-kJ-3x9"/>
+                                <exclude reference="Phj-c1-PiH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="HSQ-ft-fpw"/>
                                 <include reference="i3e-hy-fLb"/>
+                                <include reference="6zO-L0-8uB"/>
+                                <include reference="J05-kJ-3x9"/>
+                                <include reference="Phj-c1-PiH"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Results" id="4fd-cQ-9ox"/>
+                    <connections>
+                        <outlet property="maxValue" destination="J05-kJ-3x9" id="0gW-FN-N4f"/>
+                        <outlet property="minValue" destination="6zO-L0-8uB" id="gKe-lZ-Fin"/>
+                        <outlet property="percentReached" destination="Phj-c1-PiH" id="JPe-z3-aU4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76q-0M-xrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

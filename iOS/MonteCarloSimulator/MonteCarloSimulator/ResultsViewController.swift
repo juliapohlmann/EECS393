@@ -16,10 +16,16 @@ class ResultsViewController: UIViewController {
     var userDict: [String : AnyObject] = [:]
     var results: [String : AnyObject] = [:]
 
+    @IBOutlet var minValue: UILabel!
+    @IBOutlet var maxValue: UILabel!
+    @IBOutlet var percentReached: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.setHidesBackButton(true, animated:true);
+        
+        setLabels()
         
         let chartConfig = BarsChartConfig(
             valsAxisConfig: ChartAxisConfig(from: 0, to: 8, by: 2)
@@ -46,6 +52,18 @@ class ResultsViewController: UIViewController {
         self.chart = chart
         
         // Do any additional setup after loading the view.
+    }
+    
+    func setLabels() {
+        
+        let minValue = "\(results["minValue"]!)"
+        let maxValue = "\(results["maxValue"]!)"
+        let percentReached = "\(results["percentGoalReached"]!)"
+        
+        self.minValue.text = "Min Value: " + minValue
+        self.maxValue.text = "Max Value: " + maxValue
+        self.percentReached.text = "Percent Goal Reached: " + percentReached
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
