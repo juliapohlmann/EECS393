@@ -13,9 +13,9 @@
 		1CA21CCA1DC13CEF005AB2E3 /* IntroViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA21CC91DC13CEF005AB2E3 /* IntroViewControllerTests.swift */; };
 		34110C3B97536C8322EC39F7 /* Pods_MonteCarloSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0BB019AF49CC91B64EDD25 /* Pods_MonteCarloSimulatorTests.framework */; };
 		BD98E457620CF37F9D99D4B2 /* Pods_MonteCarloSimulatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09732685C9D5418514E21D79 /* Pods_MonteCarloSimulatorUITests.framework */; };
+		DA255C441DECC963006E9D00 /* money.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA255C431DECC963006E9D00 /* money.gif */; };
 		DA2BCC091DDF841C00FE627F /* Gifu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2BCC081DDF841C00FE627F /* Gifu.framework */; };
 		DA2BCC0B1DDF855000FE627F /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BCC0A1DDF855000FE627F /* AppDelegateTests.swift */; };
-		DA2BCC0D1DDF8CF700FE627F /* money.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA2BCC0C1DDF8CF700FE627F /* money.gif */; };
 		DA3EDA331DC116F90050983F /* StocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3EDA321DC116F90050983F /* StocksKit.framework */; };
 		DA5CFA5D1DDE7714005EA4A1 /* StockAllocationTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5CFA5C1DDE7714005EA4A1 /* StockAllocationTableViewCellTests.swift */; };
 		DA5CFA5F1DDE7E01005EA4A1 /* StockSelectionTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5CFA5E1DDE7E01005EA4A1 /* StockSelectionTableViewCellTests.swift */; };
@@ -68,9 +68,9 @@
 		94ABAAA55777096FC0E70685 /* Pods-MonteCarloSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulator/Pods-MonteCarloSimulator.debug.xcconfig"; sourceTree = "<group>"; };
 		CF74FBF98E2472CB7F30F0F5 /* Pods-MonteCarloSimulatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorUITests/Pods-MonteCarloSimulatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D394E49C3CD6448C5709002E /* Pods_MonteCarloSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA255C431DECC963006E9D00 /* money.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = money.gif; path = ../../assets/money.gif; sourceTree = "<group>"; };
 		DA2BCC081DDF841C00FE627F /* Gifu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gifu.framework; path = "Pods/../build/Debug-iphoneos/Gifu/Gifu.framework"; sourceTree = "<group>"; };
 		DA2BCC0A1DDF855000FE627F /* AppDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
-		DA2BCC0C1DDF8CF700FE627F /* money.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = money.gif; path = ../../../../../Documents/money.gif; sourceTree = "<group>"; };
 		DA3EDA321DC116F90050983F /* StocksKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StocksKit.framework; path = "Pods/../build/Debug-iphoneos/StocksKit/StocksKit.framework"; sourceTree = "<group>"; };
 		DA5CFA5C1DDE7714005EA4A1 /* StockAllocationTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocationTableViewCellTests.swift; sourceTree = "<group>"; };
 		DA5CFA5E1DDE7E01005EA4A1 /* StockSelectionTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSelectionTableViewCellTests.swift; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 		DACC34351DBC136200B7DBF4 /* MonteCarloSimulator */ = {
 			isa = PBXGroup;
 			children = (
-				DA2BCC0C1DDF8CF700FE627F /* money.gif */,
+				DA255C431DECC963006E9D00 /* money.gif */,
 				DACC34361DBC136200B7DBF4 /* AppDelegate.swift */,
 				DACC34671DBD019300B7DBF4 /* IntroViewController.swift */,
 				DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */,
@@ -341,7 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DACC34441DBC136200B7DBF4 /* LaunchScreen.storyboard in Resources */,
-				DA2BCC0D1DDF8CF700FE627F /* money.gif in Resources */,
+				DA255C441DECC963006E9D00 /* money.gif in Resources */,
 				DACC34411DBC136200B7DBF4 /* Assets.xcassets in Resources */,
 				DACC343C1DBC136200B7DBF4 /* Main.storyboard in Resources */,
 			);

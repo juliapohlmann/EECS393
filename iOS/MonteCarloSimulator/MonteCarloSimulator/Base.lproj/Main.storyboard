@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Monte Carlo Simulator-->
@@ -17,19 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gua-US-rWb">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <state key="normal" title="Continue">
-                                    <color key="titleColor" red="0.058823529409999999" green="0.44705882349999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="159" y="690" width="74" height="48"/>
-                                </variation>
-                                <connections>
-                                    <action selector="startButtonClick:" destination="vSh-be-VPV" eventType="touchUpInside" id="Ry4-te-sN1"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjn-rG-tsv">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,28 +77,64 @@
                                     <rect key="frame" x="0.0" y="499" width="392" height="31"/>
                                 </variation>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gua-US-rWb">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.058823529409999999" green="0.44705882349999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="21"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonClick:" destination="vSh-be-VPV" eventType="touchUpInside" id="Ry4-te-sN1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gua-US-rWb" firstAttribute="leading" secondItem="G2u-HH-Dxa" secondAttribute="leadingMargin" constant="-20" id="AHY-wj-DbP"/>
+                            <constraint firstItem="TIB-Yk-qQ8" firstAttribute="top" secondItem="gua-US-rWb" secondAttribute="bottom" constant="15" id="HlZ-Zn-drQ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="TIB-Yk-qQ8" firstAttribute="top" secondItem="gua-US-rWb" secondAttribute="bottom" constant="112" id="Qjg-KK-ySo">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="gua-US-rWb" firstAttribute="centerX" secondItem="G2u-HH-Dxa" secondAttribute="centerX" id="ZJK-de-Wra"/>
+                            <constraint firstItem="gua-US-rWb" firstAttribute="centerX" secondItem="G2u-HH-Dxa" secondAttribute="centerX" id="dAM-Wo-PID"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="gua-US-rWb"/>
                                 <exclude reference="Kjn-rG-tsv"/>
                                 <exclude reference="pBH-nL-IBn"/>
                                 <exclude reference="8iK-hl-vd3"/>
                                 <exclude reference="Ady-Ob-Pk0"/>
                                 <exclude reference="7Jy-5i-GCF"/>
                                 <exclude reference="SGH-2j-dMk"/>
+                                <exclude reference="gua-US-rWb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="AHY-wj-DbP"/>
+                                <exclude reference="ZJK-de-Wra"/>
+                                <exclude reference="dAM-Wo-PID"/>
+                                <exclude reference="HlZ-Zn-drQ"/>
+                                <exclude reference="Qjg-KK-ySo"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="gua-US-rWb"/>
                                 <include reference="Kjn-rG-tsv"/>
                                 <include reference="pBH-nL-IBn"/>
                                 <include reference="8iK-hl-vd3"/>
                                 <include reference="Ady-Ob-Pk0"/>
                                 <include reference="7Jy-5i-GCF"/>
                                 <include reference="SGH-2j-dMk"/>
+                                <include reference="gua-US-rWb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="AHY-wj-DbP"/>
+                                <include reference="ZJK-de-Wra"/>
+                                <exclude reference="dAM-Wo-PID"/>
+                                <exclude reference="HlZ-Zn-drQ"/>
+                                <include reference="Qjg-KK-ySo"/>
                             </mask>
                         </variation>
                     </view>
