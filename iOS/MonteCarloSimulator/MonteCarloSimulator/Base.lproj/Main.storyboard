@@ -456,7 +456,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vo6-JF-gVf">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vo6-JF-gVf" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="65" width="380" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -485,6 +485,7 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Results" id="4fd-cQ-9ox"/>
                     <connections>
+                        <outlet property="barChartView" destination="Vo6-JF-gVf" id="pIr-uH-mhL"/>
                         <outlet property="maxValue" destination="J05-kJ-3x9" id="0gW-FN-N4f"/>
                         <outlet property="minValue" destination="6zO-L0-8uB" id="gKe-lZ-Fin"/>
                         <outlet property="percentReached" destination="Phj-c1-PiH" id="JPe-z3-aU4"/>

@@ -9,15 +9,16 @@ import Charts
 
 class ResultsViewController: UIViewController {
     
-    @IBOutlet var chartView: UIView!
-    
-    var chart: Chart?
+    @IBOutlet var barChartView: BarChartView!
+    //@IBOutlet var chartView: UIView!
+    //var chart: Chart?
     
     var userDict: [String : AnyObject] = [:]
     var results: [String : AnyObject] = [:]
     
     var graphValues: [Int: Float] = [:]
     var sortedKeys: [Int] = []
+    var sortedValues: [Float] = []
     
     var max:Int = 0
     
@@ -30,36 +31,87 @@ class ResultsViewController: UIViewController {
         
         self.navigationItem.setHidesBackButton(true, animated:true);
         
+        print(userDict)
+        print(results)
         print(results["valueToPercent"] as? [String:AnyObject])
         
         self.graphValues = convertGraphValues((results["valueToPercent"] as? [String:AnyObject])!)
         
         setLabels()
-                
-        let chartConfig = BarsChartConfig(
-            valsAxisConfig: ChartAxisConfig(from: 0, to: Double(max), by: Double(max)/4)
-        )
         
-        let chart = BarsChart(
-            frame: CGRectMake(5, 5, 400, 400),
-            chartConfig: chartConfig,
-            xTitle: "$",
-            yTitle: "Percent Reached",
-            bars: [
-                (String(sortedKeys[0]), Double(graphValues[sortedKeys[0]]!)),
-                (String(sortedKeys[1]), Double(graphValues[sortedKeys[1]]!)),
-                (String(sortedKeys[2]), Double(graphValues[sortedKeys[2]]!)),
-                (String(sortedKeys[3]), Double(graphValues[sortedKeys[3]]!)),
-                (String(sortedKeys[4]), Double(graphValues[sortedKeys[4]]!))
-            ],
-            color: UIColor.redColor(),
-            barWidth: 30
-        )
+        setChart(sortedKeys, values: sortedValues)
         
-        self.chartView.addSubview(chart.view)
-        self.chart = chart
+//        let chartConfig = BarsChartConfig(
+//            valsAxisConfig: ChartAxisConfig(from: 0, to: Double(max), by: Double(max)/4)
+//        )
+//        
+//        let chart = BarsChart(
+//            frame: CGRectMake(5, 5, 400, 400),
+//            chartConfig: chartConfig,
+//            xTitle: "$",
+//            yTitle: "Percent Reached",
+//            bars: [
+//                (String(sortedKeys[0]), Double(graphValues[sortedKeys[0]]!)),
+//                (String(sortedKeys[1]), Double(graphValues[sortedKeys[1]]!)),
+//                (String(sortedKeys[2]), Double(graphValues[sortedKeys[2]]!)),
+//                (String(sortedKeys[3]), Double(graphValues[sortedKeys[3]]!)),
+//                (String(sortedKeys[4]), Double(graphValues[sortedKeys[4]]!))
+//            ],
+//            color: UIColor.redColor(),
+//            barWidth: 30
+//        )
+//        
+//        self.chartView.addSubview(chart.view)
+//        self.chart = chart
         
         // Do any additional setup after loading the view.
+    }
+    
+    func setChart(dataPoints: [Int], values: [Float]) {
+        
+        //set data
+        var dataEntries: [BarChartDataEntry] = []
+        
+        for i in 0..<values.count {
+            let dataEntry = BarChartDataEntry(value: Double(values[i]), xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Steps Walked")
+        chartDataSet.axisDependency = .Left;
+        chartDataSet.valueTextColor = UIColor.whiteColor()
+        let chartData = BarChartData(xVals: dataPoints, dataSet: chartDataSet)
+        barChartView.data = chartData
+        
+        //set colors
+        chartDataSet.colors = ChartColorTemplates.joyful()
+        self.barChartView.gridBackgroundColor = UIColor.blackColor()
+        
+        //set animation
+        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        
+        //set description
+        barChartView.descriptionText = ""
+        
+        //set target
+        //let ll = ChartLimitLine(limit: Double(stepGoal), label: "")
+        //barChartView.rightAxis.addLimitLine(ll)
+        
+        //change x axis
+        barChartView.xAxis.labelPosition = .Bottom
+        barChartView.xAxis.drawGridLinesEnabled = false;
+        barChartView.xAxis.setLabelsToSkip(0)
+        barChartView.xAxis.labelTextColor = UIColor.whiteColor()
+        
+        //change y axis
+        barChartView.rightAxis.enabled = false;
+        barChartView.leftAxis.enabled = false;
+        
+        //change label color
+        barChartView.legend.textColor = UIColor.whiteColor()
+        
+        barChartView.scaleXEnabled = false;
+        barChartView.scaleYEnabled = false;
     }
     
     func convertGraphValues(oldGraphValues: [String: AnyObject]) -> [Int: Float] {
@@ -94,6 +146,8 @@ class ResultsViewController: UIViewController {
             if(Int(ceil(valuesDictPercent[key]!)) > max) {
                 max = Int(ceil(valuesDictPercent[key]!))
             }
+            
+            sortedValues.append(valuesDictPercent[key]!)
             
         }
         
