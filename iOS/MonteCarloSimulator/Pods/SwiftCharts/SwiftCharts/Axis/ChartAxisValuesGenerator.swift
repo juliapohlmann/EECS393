@@ -27,7 +27,7 @@ public struct ChartAxisValuesGenerator {
             return axisPicker(obj1).scalar < axisPicker(obj2).scalar
         }
         
-        if let first = sortedChartPoints.first, last = sortedChartPoints.last {
+        if let first = sortedChartPoints.first, let last = sortedChartPoints.last {
             return self.generateAxisValuesWithChartPoints(axisPicker(first).scalar, last: axisPicker(last).scalar, minSegmentCount: minSegmentCount, maxSegmentCount: maxSegmentCount, multiple: multiple, axisValueGenerator: axisValueGenerator, addPaddingSegmentIfEdge: addPaddingSegmentIfEdge)
             
         } else {
@@ -64,7 +64,7 @@ public struct ChartAxisValuesGenerator {
         }
         segmentCount = ceil(segmentCount)
         while segmentCount < minSegmentCount {
-            segmentCount++
+            segmentCount += 1
         }
         segmentSize = currentMultiple
         

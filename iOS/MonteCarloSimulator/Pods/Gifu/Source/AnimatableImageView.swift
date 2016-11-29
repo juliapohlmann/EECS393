@@ -5,7 +5,7 @@ public class AnimatableImageView: UIImageView {
   /// An `Animator` instance that holds the frames of a specific image in memory.
   var animator: Animator?
   /// A display link that keeps calling the `updateFrame` method on every screen refresh.
-  lazy var displayLink: CADisplayLink = CADisplayLink(target: self, selector: Selector("updateFrame"))
+  lazy var displayLink: CADisplayLink = CADisplayLink(target: self, selector: #selector(AnimatableImageView.updateFrame))
 
   /// The size of the frame cache.
   public var framePreloadCount = 50
@@ -21,7 +21,7 @@ public class AnimatableImageView: UIImageView {
   /// - parameter imageName: The name of the GIF file. The method looks for the file in the app bundle.
   public func prepareForAnimation(imageNamed imageName: String) {
     let imagePath = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent(imageName)
-    prepareForAnimation <^> NSData(contentsOfURL: imagePath)
+    prepareForAnimation <^> NSData(contentsOfURL: imagePath!)
   }
 
   /// Prepares the frames using raw GIF image data, without starting the animation.
