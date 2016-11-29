@@ -27,15 +27,30 @@ class ResultsViewController: UIViewController {
         
         self.navigationItem.setHidesBackButton(true, animated:true);
         
-        print(userDict)
-        print(results)
-        print(results["valueToPercent"] as? [String:AnyObject])
-        
         convertGraphValues((results["valueToPercent"] as? [String:AnyObject])!)
         setLabels()
         setChart(sortedKeys, values: sortedValues)
 
         // Do any additional setup after loading the view.
+    }
+    
+    func handleE(s: String) -> String {
+        
+        if(s.containsString("E")) {
+            
+            let nums = s.characters.split{$0 == "E"}.map(String.init)
+            
+            let total = Float(nums[0])! * pow(10, Float(nums[1])!)
+            
+            return String(total)
+            
+            
+        } else {
+            
+            return s
+            
+        }
+        
     }
     
     func setChart(dataPoints: [String], values: [Float]) {
@@ -65,8 +80,8 @@ class ResultsViewController: UIViewController {
         barChartView.descriptionText = ""
         
         //set target
-        let ll = ChartLimitLine(limit: (userDict["goalMoney"] as? Double)!, label: "Goal Value")
-        barChartView.xAxis.addLimitLine(ll)
+        //let ll = ChartLimitLine(limit: (userDict["goalMoney"] as? Double)!, label: "Goal Value")
+        //barChartView.xAxis.addLimitLine(ll)
         
         //change x axis
         barChartView.xAxis.labelPosition = .Bottom
@@ -96,16 +111,11 @@ class ResultsViewController: UIViewController {
         // convert all values to ints
         for (key, value) in oldGraphValues {
             
-            //if value.rangeOfString("E") != nil {
-                
-            //}
-            valuesDict[Int(floor(Float(key)!))] = Float(value as! NSNumber)
+            let updatedKey = handleE(key)
             
+            valuesDict[Int(floor(Float(updatedKey)!))] = Float(value as! NSNumber)
         }
-        
-        print("convert")
-        print(valuesDict)
-        
+
         // sort the values
         // and recalculate percentages
         
@@ -128,20 +138,20 @@ class ResultsViewController: UIViewController {
             self.sortedKeys.append("$" + String(key))
         }
         
-        print(sortedKeys)
-        print(sortedValues)
-        
     }
     
     func setLabels() {
         
-        let minValue = results["minValue"] as? Int
-        let maxValue = results["maxValue"] as? Int
-        let percentReached = String(Int(results["percentGoalReached"]! as! NSNumber) * 100)
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         
-        self.minValue.text = "Min Value: $" + String(minValue!)
-        self.maxValue.text = "Max Value: $" + String(maxValue!)
-        self.percentReached.text = "Percent Goal Reached: " + percentReached + "%"
+        let minValue = formatter.stringFromNumber(results["minValue"] as! NSNumber)
+        let maxValue = formatter.stringFromNumber(results["maxValue"] as! NSNumber)
+        let percentReached = Int(results["percentGoalReached"]! as! Double * 100)
+        
+        self.minValue.text = "Min Value: " + minValue!
+        self.maxValue.text = "Max Value: " + maxValue!
+        self.percentReached.text = "Percent Goal Reached: " + String(percentReached) + "%"
         
     }
     
