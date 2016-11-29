@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import SwiftCharts
 import Charts
 
 class ResultsViewController: UIViewController {
@@ -97,6 +96,9 @@ class ResultsViewController: UIViewController {
         // convert all values to ints
         for (key, value) in oldGraphValues {
             
+            //if value.rangeOfString("E") != nil {
+                
+            //}
             valuesDict[Int(floor(Float(key)!))] = Float(value as! NSNumber)
             
         }
