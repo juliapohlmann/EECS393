@@ -14,7 +14,7 @@ class ResultsViewController: UIViewController {
     var userDict: [String : AnyObject] = [:]
     var results: [String : AnyObject] = [:]
     
-    var sortedKeys: [Int] = []
+    var sortedKeys: [String] = []
     var sortedValues: [Float] = []
     
     var max:Int = 0
@@ -39,7 +39,7 @@ class ResultsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func setChart(dataPoints: [Int], values: [Float]) {
+    func setChart(dataPoints: [String], values: [Float]) {
         
         //set data
         var dataEntries: [BarChartDataEntry] = []
@@ -66,18 +66,19 @@ class ResultsViewController: UIViewController {
         barChartView.descriptionText = ""
         
         //set target
-        let ll = ChartLimitLine(limit: (userDict["goalMoney"] as? Double)!, label: "")
+        let ll = ChartLimitLine(limit: (userDict["goalMoney"] as? Double)!, label: "Goal Value")
         barChartView.xAxis.addLimitLine(ll)
         
         //change x axis
         barChartView.xAxis.labelPosition = .Bottom
         barChartView.xAxis.drawGridLinesEnabled = false
-        // barChartView.xAxis.setLabelsToSkip(0)
+        barChartView.xAxis.setLabelsToSkip(2)
         barChartView.xAxis.labelTextColor = UIColor.blackColor()
         
         //change y axis
         barChartView.rightAxis.enabled = false;
-        barChartView.leftAxis.enabled = false;
+        barChartView.leftAxis.enabled = true;
+        barChartView.leftAxis.drawGridLinesEnabled = false
         barChartView.rightAxis.labelTextColor = UIColor.blackColor()
         
         //change label color
@@ -107,7 +108,7 @@ class ResultsViewController: UIViewController {
         // and recalculate percentages
         
         let unsortedKeys = Array(valuesDict.keys)
-        sortedKeys = unsortedKeys.sort(<)
+        let sortedKeys = unsortedKeys.sort(<)
         
         var total = Float(1.0)
         for key in sortedKeys {
@@ -121,8 +122,8 @@ class ResultsViewController: UIViewController {
                 max = Int(ceil(valuePercent))
             }
             
-            sortedValues.append(valuePercent)
-            
+            self.sortedValues.append(valuePercent)
+            self.sortedKeys.append("$" + String(key))
         }
         
         print(sortedKeys)
@@ -136,9 +137,9 @@ class ResultsViewController: UIViewController {
         let maxValue = results["maxValue"] as? Int
         let percentReached = String(Int(results["percentGoalReached"]! as! NSNumber) * 100)
         
-        self.minValue.text = "Min Value: $" + String(minValue)
-        self.maxValue.text = "Max Value: $" + String(maxValue)
-        self.percentReached.text = "Percent Goal Reached: " + percentReached
+        self.minValue.text = "Min Value: $" + String(minValue!)
+        self.maxValue.text = "Max Value: $" + String(maxValue!)
+        self.percentReached.text = "Percent Goal Reached: " + percentReached + "%"
         
     }
     
