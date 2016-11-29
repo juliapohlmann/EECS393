@@ -10,13 +10,10 @@ import Charts
 class ResultsViewController: UIViewController {
     
     @IBOutlet var barChartView: BarChartView!
-    //@IBOutlet var chartView: UIView!
-    //var chart: Chart?
     
     var userDict: [String : AnyObject] = [:]
     var results: [String : AnyObject] = [:]
     
-    var graphValues: [Int: Float] = [:]
     var sortedKeys: [Int] = []
     var sortedValues: [Float] = []
     
@@ -35,35 +32,10 @@ class ResultsViewController: UIViewController {
         print(results)
         print(results["valueToPercent"] as? [String:AnyObject])
         
-        self.graphValues = convertGraphValues((results["valueToPercent"] as? [String:AnyObject])!)
-        
+        convertGraphValues((results["valueToPercent"] as? [String:AnyObject])!)
         setLabels()
-        
         setChart(sortedKeys, values: sortedValues)
-        
-//        let chartConfig = BarsChartConfig(
-//            valsAxisConfig: ChartAxisConfig(from: 0, to: Double(max), by: Double(max)/4)
-//        )
-//        
-//        let chart = BarsChart(
-//            frame: CGRectMake(5, 5, 400, 400),
-//            chartConfig: chartConfig,
-//            xTitle: "$",
-//            yTitle: "Percent Reached",
-//            bars: [
-//                (String(sortedKeys[0]), Double(graphValues[sortedKeys[0]]!)),
-//                (String(sortedKeys[1]), Double(graphValues[sortedKeys[1]]!)),
-//                (String(sortedKeys[2]), Double(graphValues[sortedKeys[2]]!)),
-//                (String(sortedKeys[3]), Double(graphValues[sortedKeys[3]]!)),
-//                (String(sortedKeys[4]), Double(graphValues[sortedKeys[4]]!))
-//            ],
-//            color: UIColor.redColor(),
-//            barWidth: 30
-//        )
-//        
-//        self.chartView.addSubview(chart.view)
-//        self.chart = chart
-        
+
         // Do any additional setup after loading the view.
     }
     
@@ -77,7 +49,7 @@ class ResultsViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Steps Walked")
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Percent Reached")
         chartDataSet.axisDependency = .Left;
         chartDataSet.valueTextColor = UIColor.whiteColor()
         let chartData = BarChartData(xVals: dataPoints, dataSet: chartDataSet)
@@ -85,7 +57,7 @@ class ResultsViewController: UIViewController {
         
         //set colors
         chartDataSet.colors = ChartColorTemplates.joyful()
-        self.barChartView.gridBackgroundColor = UIColor.blackColor()
+        self.barChartView.gridBackgroundColor = UIColor.whiteColor()
         
         //set animation
         barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
@@ -94,27 +66,30 @@ class ResultsViewController: UIViewController {
         barChartView.descriptionText = ""
         
         //set target
-        //let ll = ChartLimitLine(limit: Double(stepGoal), label: "")
-        //barChartView.rightAxis.addLimitLine(ll)
+        let ll = ChartLimitLine(limit: (userDict["goalMoney"] as? Double)!, label: "")
+        barChartView.xAxis.addLimitLine(ll)
         
         //change x axis
         barChartView.xAxis.labelPosition = .Bottom
-        barChartView.xAxis.drawGridLinesEnabled = false;
-        barChartView.xAxis.setLabelsToSkip(0)
-        barChartView.xAxis.labelTextColor = UIColor.whiteColor()
+        barChartView.xAxis.drawGridLinesEnabled = false
+        // barChartView.xAxis.setLabelsToSkip(0)
+        barChartView.xAxis.labelTextColor = UIColor.blackColor()
         
         //change y axis
         barChartView.rightAxis.enabled = false;
         barChartView.leftAxis.enabled = false;
+        barChartView.rightAxis.labelTextColor = UIColor.blackColor()
         
         //change label color
-        barChartView.legend.textColor = UIColor.whiteColor()
+        barChartView.legend.textColor = UIColor.blackColor()
         
         barChartView.scaleXEnabled = false;
         barChartView.scaleYEnabled = false;
     }
     
-    func convertGraphValues(oldGraphValues: [String: AnyObject]) -> [Int: Float] {
+    // the goal of this method is to populate
+    // sorted keys and sorted values to graph
+    func convertGraphValues(oldGraphValues: [String: AnyObject]) {
         
         var valuesDict: [Int: Float] = [:]
         
@@ -130,7 +105,6 @@ class ResultsViewController: UIViewController {
         
         // sort the values
         // and recalculate percentages
-        var valuesDictPercent: [Int: Float] = [:]
         
         let unsortedKeys = Array(valuesDict.keys)
         sortedKeys = unsortedKeys.sort(<)
@@ -139,34 +113,31 @@ class ResultsViewController: UIViewController {
         for key in sortedKeys {
             
             // multiply by 100 to get it into percentage form
-            valuesDictPercent[key] = (total - valuesDict[key]!) * 100
+            let valuePercent = (total - valuesDict[key]!) * 100
             total = valuesDict[key]!
             
             // keep max for the graph
-            if(Int(ceil(valuesDictPercent[key]!)) > max) {
-                max = Int(ceil(valuesDictPercent[key]!))
+            if(Int(ceil(valuePercent)) > max) {
+                max = Int(ceil(valuePercent))
             }
             
-            sortedValues.append(valuesDictPercent[key]!)
+            sortedValues.append(valuePercent)
             
         }
         
-        print(max)
-        print("percentages")
-        print(valuesDictPercent)
-        
-        return valuesDictPercent
+        print(sortedKeys)
+        print(sortedValues)
         
     }
     
     func setLabels() {
         
-        let minValue = "\(results["minValue"]!)"
-        let maxValue = "\(results["maxValue"]!)"
+        let minValue = results["minValue"] as? Int
+        let maxValue = results["maxValue"] as? Int
         let percentReached = String(Int(results["percentGoalReached"]! as! NSNumber) * 100)
         
-        self.minValue.text = "Min Value: " + minValue
-        self.maxValue.text = "Max Value: " + maxValue
+        self.minValue.text = "Min Value: $" + String(minValue)
+        self.maxValue.text = "Max Value: $" + String(maxValue)
         self.percentReached.text = "Percent Goal Reached: " + percentReached
         
     }
@@ -179,23 +150,12 @@ class ResultsViewController: UIViewController {
             
             destinationVC.userDict = userDict
             destinationVC.navigationItem.setHidesBackButton(true, animated: false)
-        }else if(segue.identifier == "restart") {
+        } else if(segue.identifier == "restart") {
             let navVC = segue.destinationViewController as! UINavigationController
             let destinationVC = navVC.viewControllers.first as! IntroViewController
             destinationVC.navigationItem.setHidesBackButton(true, animated: false)
         }
+        
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
