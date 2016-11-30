@@ -2,11 +2,13 @@ package edu.cwru.eecs393.montecarlo.handlers;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.logging.Level;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
 import edu.cwru.eecs393.montecarlo.data.SimulationParameters;
+import lombok.extern.java.Log;
 
 /**
  * Abstract base class for all implementations of {@link RequestHandler}.
@@ -14,6 +16,7 @@ import edu.cwru.eecs393.montecarlo.data.SimulationParameters;
  * @author David
  *
  */
+@Log
 public abstract class AbstractRequestHandler implements RequestHandler {
 
 	/**
@@ -42,7 +45,8 @@ public abstract class AbstractRequestHandler implements RequestHandler {
 			return sw.toString();
 		} catch (IOException e) {
 			// Should not be possible
-			throw new RuntimeException("IOException from a StringWriter?");
+			log.log(Level.SEVERE, "An IOException was thrown by a StringWriter, something is fishy.", e);
+			throw new IllegalStateException("IOException from a StringWriter?");
 		}
 	}
 
