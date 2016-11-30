@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.cwru.eecs393.montecarlo.data.FinancialData;
+import edu.cwru.eecs393.montecarlo.data.HistoricalFinancialData;
 import edu.cwru.eecs393.montecarlo.data.SimulationParameters;
 import edu.cwru.eecs393.montecarlo.data.SimulationResult;
 import edu.cwru.eecs393.montecarlo.data.Stock;
@@ -23,23 +24,24 @@ public class MonteCarloSimulation implements Simulation {
 
 	// TODO fields and constructor with everything that is needed for this
 	// simulation
-	int duration; // number of years money is invested
-	double initialValue; // beginning portfolio balance
-	double goalValue; // goal, or target, amount of money at the end of the duration
-	List<Stock> portfolio; // list of type Stock that makes up the portfolio
-	int numStocks; // number of stocks in the portfolio
-	double forecast[][];  //the annual price forcast for each stock in the portfolio
-	int numTrials = 10000;  //number of trials the simulation runs
-	List<Double> results = new ArrayList();  //list of ending values from each trial
+	private int duration; // number of years money is invested
+	private double initialValue; // beginning portfolio balance
+	private double goalValue; // goal, or target, amount of money at the end of the duration
+	private List<FinancialData> portfolio; // list of type Stock that makes up the portfolio
+	private int numStocks; // number of stocks in the portfolio
+	private double forecast[][];  //the annual price forcast for each stock in the portfolio
+	private int numTrials = 10000;  //number of trials the simulation runs
+	private List<Double> results = new ArrayList();  //list of ending values from each trial
+	private SimulationParameters simParameters;
 
 	public MonteCarloSimulation(SimulationParameters simParameters, Map<String, FinancialData> financialData) {
+		this.simParameters = simParameters;
 		initialValue = simParameters.getStartingMoney();
 		goalValue = simParameters.getGoalMoney();
 		duration = simParameters.getYears();
 		portfolio = new ArrayList<>(financialData.size());
 		for (FinancialData fd : financialData.values()) {
-			portfolio.add(new Stock(fd.getTicker(), fd.getBid(), fd.getHistoricalData().first().getClose(),
-					simParameters.getTickerToAllocation().get(fd.getTicker())));
+			portfolio.add(fd);
 		}
 		numStocks = portfolio.size();
 	}
@@ -52,7 +54,7 @@ public class MonteCarloSimulation implements Simulation {
 		int successfulTrials = 0;
 		for (int i = 0; i < numTrials; i++) {
 			forecastAllStocks();
-			double result = calculateReturns();
+			double result = calculateReturns(simParameters);
 			results.add(result);
 
 			if (result >= goalValue) {
@@ -97,11 +99,11 @@ public class MonteCarloSimulation implements Simulation {
 	 * Then, multiplies share count by the price in the final year of forecast to get a final
 	 * value for that stock
 	 */
-	public double calculateReturns() {
+	public double calculateReturns(SimulationParameters simParameters) {
 		double endValue = 0;
 		for (int i = 0; i < numStocks; i++) {
-			double alloc = portfolio.get(i).getAllocation();
-			double price = portfolio.get(i).getCurrentPrice();
+			double alloc = simParameters.getTickerToAllocation().get(portfolio.get(i).getTicker());
+			double price = portfolio.get(i).getAsk();
 			double shareCount = (alloc * initialValue) / price;
 			endValue += shareCount * forecast[i][duration];
 		}
@@ -116,7 +118,7 @@ public class MonteCarloSimulation implements Simulation {
 	public void forecastAllStocks() {
 		forecast = new double[numStocks][duration + 1];
 		for (int i = 0; i < portfolio.size(); i++) {
-			Stock s = portfolio.get(i);
+			FinancialData s = portfolio.get(i);
 			forecast[i] = forecast(s);
 		}
 	}
@@ -124,21 +126,30 @@ public class MonteCarloSimulation implements Simulation {
 	/*
 	 * Forecast a stock price each year for the number of years of the duration
 	 */
-	public double[] forecast(Stock stock) {
-		double currentPrice = stock.getCurrentPrice();
-		double prevYearPrice = stock.getPrevPrice();
-		// will be expanded in later versions to include up to 5 years of
-		// historic prices
-		double periodicReturns[] = new double[1];
+	public double[] forecast(FinancialData stock) {
+		double currentPrice = stock.getAsk();
+		double prevYearPrice = stock.getHistoricalData().first().getClose();
+		double periodicReturns[] = new double[stock.getHistoricalData().size()-1];
+		double annualPrices[] = new double[stock.getHistoricalData().size()];
 
-		periodicReturns[0] = periodicAnnualReturn(currentPrice, prevYearPrice);
+		Iterator<HistoricalFinancialData> iter = stock.getHistoricalData().iterator();
+		int i = 0;
+		while(iter.hasNext()){
+			annualPrices[i] = iter.next().getClose();
+			i++;
+		}
+		
+		for(int j = 0; j < stock.getHistoricalData().size()-1; j++){
+			periodicReturns[j] = periodicAnnualReturn(annualPrices[j],annualPrices[j+1]);
+		}
+
 
 		Statistics stat = new Statistics(periodicReturns);
 
 		double aveAnnualReturn = stat.getMean();
 		double variance = stat.getVariance();
 		double drift = drift(aveAnnualReturn, variance);
-		double stdDev = 1;
+		double stdDev = stat.getStdDev();
 
 		double forecastedPrice[] = new double[duration + 1]; // duration + 1 to
 																// include price
@@ -150,10 +161,10 @@ public class MonteCarloSimulation implements Simulation {
 		 * drift of annual returns and a random variable Assumes stocks follow a
 		 * "Random Walk" and employs random, Brownian Motion
 		 */
-		for (int i = 1; i <= duration; i++) {
+		for (int j = 1; j <= duration; j++) {
 			double randomValue = randomValue(stdDev, stat);
-			forecastedPrice[i] = nextYearPrice(currentPrice, drift, randomValue);
-			currentPrice = forecastedPrice[i];
+			forecastedPrice[j] = nextYearPrice(currentPrice, drift, randomValue);
+			currentPrice = forecastedPrice[j];
 		}
 
 		return forecastedPrice;
@@ -180,6 +191,7 @@ public class MonteCarloSimulation implements Simulation {
 	// the current price * e ^ (drift + random Value)
 	public double nextYearPrice(double today, double drift, double randomValue) {
 		return today * Math.exp(drift + randomValue);
+		//return today * Math.exp(randomValue);
 	}
 
 }
