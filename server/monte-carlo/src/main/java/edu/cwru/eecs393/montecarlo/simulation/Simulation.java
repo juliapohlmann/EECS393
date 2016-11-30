@@ -19,7 +19,7 @@ public interface Simulation {
 
 	/**
 	 * Gets the type of simulation this object will run.
-	 * 
+	 *
 	 * @return an enum indicating the simulation type
 	 */
 	SimulationType getSimulationType();
