@@ -11,8 +11,9 @@ import edu.cwru.eecs393.montecarlo.data.SimulationParameters;
 import edu.cwru.eecs393.montecarlo.data.SimulationResult;
 import edu.cwru.eecs393.montecarlo.finance.FinanceHandler;
 import edu.cwru.eecs393.montecarlo.finance.YahooFinanceHandler;
-import edu.cwru.eecs393.montecarlo.simulation.MonteCarloSimulation;
 import edu.cwru.eecs393.montecarlo.simulation.Simulation;
+import edu.cwru.eecs393.montecarlo.simulation.SimulationBuilder;
+import edu.cwru.eecs393.montecarlo.simulation.SimulationType;
 import lombok.extern.java.Log;
 import spark.Request;
 import spark.Response;
@@ -41,7 +42,9 @@ public class SimulationRequestHandler extends AbstractRequestHandler {
 			FinanceHandler financeHandler = new YahooFinanceHandler();
 			Map<String, FinancialData> financialData = financeHandler
 					.getFinancialData(params.getTickerToAllocation().keySet());
-			Simulation simulation = new MonteCarloSimulation(params, financialData);
+			SimulationBuilder bldr = new SimulationBuilder();
+			Simulation simulation = bldr.simulationType(SimulationType.MONTE_CARLO).financialDataMap(financialData)
+					.simulationParameters(params).buildSimulation();
 			SimulationResult simulationResult = simulation.runSimulation();
 			return dataToJson(simulationResult);
 		} catch (IOException jpe) {

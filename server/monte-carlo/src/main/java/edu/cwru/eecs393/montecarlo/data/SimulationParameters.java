@@ -17,6 +17,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SimulationParameters {
 
+	// TODO in the future when there is more than one simulation type, this is
+	// where the type should come from. Will require changes on iOS app as well.
+	// private SimulationType simulationType;
 	private Map<String, Double> tickerToAllocation;
 	private int startingMoney;
 	private int years;
