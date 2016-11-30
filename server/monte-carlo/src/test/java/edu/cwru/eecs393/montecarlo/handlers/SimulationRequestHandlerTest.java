@@ -67,8 +67,8 @@ public class SimulationRequestHandlerTest extends TestCase {
 		tickerToAllocation.put("T", 6.66);
 		params.setTickerToAllocation(tickerToAllocation);
 		params.setGoalMoney(10000);
-		params.setStartingMoney(100);
-		params.setYears(5);
+		params.setStartingMoney(1000);
+		params.setYears(20);
 		Request req = mock(Request.class);
 		Response res = mock(Response.class);
 		when(req.body()).thenReturn(AbstractRequestHandler.dataToJson(params));
