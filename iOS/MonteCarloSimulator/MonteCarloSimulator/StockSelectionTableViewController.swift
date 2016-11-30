@@ -60,7 +60,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! StockSelectionTableViewCell
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        let stockInfoText = stockTickers[indexPath.row] + " (" + String(stockValues[indexPath.row]) + ")"
+        let stockInfoText = stockTickers[indexPath.row] + " ($" + String(stockValues[indexPath.row]) + ")"
         cell.StockInfo.text = stockInfoText
         cell.StockSelectionInstance = self
         cell.ticker = stockTickers[indexPath.row]

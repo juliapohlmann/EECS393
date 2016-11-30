@@ -170,7 +170,7 @@ class StockAllocationTableViewController: UITableViewController {
     
     /// updates the unallocatedPercentageField to the value of the unallocatedPercentage field
     func updateUnallocatedPercentageField() {
-        unallocatedPercentageField.text = String(unallocatedPercentage)
+        unallocatedPercentageField.text = String(unallocatedPercentage) + "% left to allocate"
     }
     
     /// checks if it is valid to decrement a stock percentage

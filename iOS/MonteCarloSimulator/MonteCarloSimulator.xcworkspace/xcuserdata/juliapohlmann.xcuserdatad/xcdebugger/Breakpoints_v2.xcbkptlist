@@ -93,8 +93,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
             endingLineNumber = "93"
-            landmarkName = "getStockQuote(_:searchBar:)"
-            landmarkType = "5">
+            landmarkName = "getStockQuote(ticker:searchBar:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -109,8 +109,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
             endingLineNumber = "101"
-            landmarkName = "getStockQuote(_:searchBar:)"
-            landmarkType = "5">
+            landmarkName = "getStockQuote(ticker:searchBar:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -125,8 +125,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
             endingLineNumber = "98"
-            landmarkName = "getStockQuote(_:searchBar:)"
-            landmarkType = "5">
+            landmarkName = "getStockQuote(ticker:searchBar:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -141,8 +141,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "getStockQuote(_:searchBar:)"
-            landmarkType = "5">
+            landmarkName = "getStockQuote(ticker:searchBar:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -157,8 +157,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "getStockQuote(_:searchBar:)"
-            landmarkType = "5">
+            landmarkName = "getStockQuote(ticker:searchBar:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -221,8 +221,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
             endingLineNumber = "158"
-            landmarkName = "presentViewController(_:animated:completion:)"
-            landmarkType = "5">
+            landmarkName = "presentViewController(viewControllerToPresent:animated:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -270,7 +270,7 @@
             startingLineNumber = "153"
             endingLineNumber = "153"
             landmarkName = "testDisplayError()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
