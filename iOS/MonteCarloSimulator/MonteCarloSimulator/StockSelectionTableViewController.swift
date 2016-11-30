@@ -41,9 +41,9 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     /// - parameters:
     ///   - sender: current view controller
     @IBAction func nextClick(sender: AnyObject) {
-        //if(isInputValid()) {
+        if(isInputValid()) {
             performSegueWithIdentifier("stockSelectionNext", sender: sender)
-        //}
+        }
     }
     
     //TABLE VIEW FUNCTIONS
@@ -78,6 +78,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         
         if(self.stockTickers.contains(ticker)) {
             self.displayError("This stock has already been added")
+            setUserInteraction(true)
         } else {
             getStockQuote(ticker, searchBar: searchBar)
         }

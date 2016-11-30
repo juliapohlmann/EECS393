@@ -13,9 +13,14 @@
 		1CA21CCA1DC13CEF005AB2E3 /* IntroViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA21CC91DC13CEF005AB2E3 /* IntroViewControllerTests.swift */; };
 		34110C3B97536C8322EC39F7 /* Pods_MonteCarloSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0BB019AF49CC91B64EDD25 /* Pods_MonteCarloSimulatorTests.framework */; };
 		BD98E457620CF37F9D99D4B2 /* Pods_MonteCarloSimulatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09732685C9D5418514E21D79 /* Pods_MonteCarloSimulatorUITests.framework */; };
+		DA255C441DECC963006E9D00 /* money.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA255C431DECC963006E9D00 /* money.gif */; };
+		DA2BCC091DDF841C00FE627F /* Gifu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2BCC081DDF841C00FE627F /* Gifu.framework */; };
+		DA2BCC0B1DDF855000FE627F /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BCC0A1DDF855000FE627F /* AppDelegateTests.swift */; };
 		DA3EDA331DC116F90050983F /* StocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3EDA321DC116F90050983F /* StocksKit.framework */; };
 		DA5CFA5D1DDE7714005EA4A1 /* StockAllocationTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5CFA5C1DDE7714005EA4A1 /* StockAllocationTableViewCellTests.swift */; };
 		DA5CFA5F1DDE7E01005EA4A1 /* StockSelectionTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5CFA5E1DDE7E01005EA4A1 /* StockSelectionTableViewCellTests.swift */; };
+		DA66C6C71DEF45F60019759E /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA66C6C01DEF45E10019759E /* Charts.framework */; };
+		DA66C6C81DEF45F60019759E /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA66C6C01DEF45E10019759E /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA8898981DC1733B00BAB43E /* StockAllocationTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8898971DC1733B00BAB43E /* StockAllocationTableViewControllerTests.swift */; };
 		DABA06A41DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA06A31DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift */; };
 		DABA06A61DC242FA00BB1407 /* ResultsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */; };
@@ -36,6 +41,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DA66C6BF1DEF45E10019759E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA66C6B81DEF45E00019759E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		DA66C6C11DEF45E10019759E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA66C6B81DEF45E00019759E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		DA66C6C31DEF45E10019759E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA66C6B81DEF45E00019759E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		DA66C6C51DEF45E10019759E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA66C6B81DEF45E00019759E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120FF1D811F1600D14B02;
+			remoteInfo = ChartsRealmTests;
+		};
+		DA66C6C91DEF45F60019759E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA66C6B81DEF45E00019759E /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 		DACC344B1DBC136200B7DBF4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DACC342B1DBC136200B7DBF4 /* Project object */;
@@ -52,6 +92,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1CEEBCCE1DED17E300EDD9BD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DA66C6C81DEF45F60019759E /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		05BD6DAF7CE4FA61C4B334CE /* Pods-MonteCarloSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorTests/Pods-MonteCarloSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		09732685C9D5418514E21D79 /* Pods_MonteCarloSimulatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,9 +119,13 @@
 		94ABAAA55777096FC0E70685 /* Pods-MonteCarloSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulator/Pods-MonteCarloSimulator.debug.xcconfig"; sourceTree = "<group>"; };
 		CF74FBF98E2472CB7F30F0F5 /* Pods-MonteCarloSimulatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorUITests/Pods-MonteCarloSimulatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D394E49C3CD6448C5709002E /* Pods_MonteCarloSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA255C431DECC963006E9D00 /* money.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = money.gif; path = ../../assets/money.gif; sourceTree = "<group>"; };
+		DA2BCC081DDF841C00FE627F /* Gifu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gifu.framework; path = "Pods/../build/Debug-iphoneos/Gifu/Gifu.framework"; sourceTree = "<group>"; };
+		DA2BCC0A1DDF855000FE627F /* AppDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 		DA3EDA321DC116F90050983F /* StocksKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StocksKit.framework; path = "Pods/../build/Debug-iphoneos/StocksKit/StocksKit.framework"; sourceTree = "<group>"; };
 		DA5CFA5C1DDE7714005EA4A1 /* StockAllocationTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocationTableViewCellTests.swift; sourceTree = "<group>"; };
 		DA5CFA5E1DDE7E01005EA4A1 /* StockSelectionTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSelectionTableViewCellTests.swift; sourceTree = "<group>"; };
+		DA66C6B81DEF45E00019759E /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-2.3.0/Charts.xcodeproj"; sourceTree = "<group>"; };
 		DA8898971DC1733B00BAB43E /* StockAllocationTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockAllocationTableViewControllerTests.swift; sourceTree = "<group>"; };
 		DABA06A31DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSelectionTableViewControllerTests.swift; sourceTree = "<group>"; };
 		DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTests.swift; sourceTree = "<group>"; };
@@ -98,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2BCC091DDF841C00FE627F /* Gifu.framework in Frameworks */,
+				DA66C6C71DEF45F60019759E /* Charts.framework in Frameworks */,
 				DA3EDA331DC116F90050983F /* StocksKit.framework in Frameworks */,
 				187878160C2E9ED1A4CCD504 /* Pods_MonteCarloSimulator.framework in Frameworks */,
 			);
@@ -125,6 +185,7 @@
 		535F2417CA6A3053B6BFBED1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA2BCC081DDF841C00FE627F /* Gifu.framework */,
 				DA3EDA321DC116F90050983F /* StocksKit.framework */,
 				D394E49C3CD6448C5709002E /* Pods_MonteCarloSimulator.framework */,
 				5C0BB019AF49CC91B64EDD25 /* Pods_MonteCarloSimulatorTests.framework */,
@@ -146,9 +207,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DA66C6B91DEF45E00019759E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA66C6C01DEF45E10019759E /* Charts.framework */,
+				DA66C6C21DEF45E10019759E /* ChartsTests.xctest */,
+				DA66C6C41DEF45E10019759E /* ChartsRealm.framework */,
+				DA66C6C61DEF45E10019759E /* ChartsRealmTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		DACC342A1DBC136200B7DBF4 = {
 			isa = PBXGroup;
 			children = (
+				DA66C6B81DEF45E00019759E /* Charts.xcodeproj */,
 				DACC34351DBC136200B7DBF4 /* MonteCarloSimulator */,
 				DACC344D1DBC136200B7DBF4 /* MonteCarloSimulatorTests */,
 				DACC34581DBC136200B7DBF4 /* MonteCarloSimulatorUITests */,
@@ -171,6 +244,7 @@
 		DACC34351DBC136200B7DBF4 /* MonteCarloSimulator */ = {
 			isa = PBXGroup;
 			children = (
+				DA255C431DECC963006E9D00 /* money.gif */,
 				DACC34361DBC136200B7DBF4 /* AppDelegate.swift */,
 				DACC34671DBD019300B7DBF4 /* IntroViewController.swift */,
 				DACC34691DBD024C00B7DBF4 /* BasicInputsViewController.swift */,
@@ -201,6 +275,7 @@
 				DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */,
 				DA5CFA5C1DDE7714005EA4A1 /* StockAllocationTableViewCellTests.swift */,
 				DA5CFA5E1DDE7E01005EA4A1 /* StockSelectionTableViewCellTests.swift */,
+				DA2BCC0A1DDF855000FE627F /* AppDelegateTests.swift */,
 			);
 			path = MonteCarloSimulatorTests;
 			sourceTree = "<group>";
@@ -227,10 +302,12 @@
 				DACC34311DBC136200B7DBF4 /* Resources */,
 				EE41B1554E6F89D6F851B2A1 /* [CP] Embed Pods Frameworks */,
 				E73DB65BDB09A9A4DF699587 /* [CP] Copy Pods Resources */,
+				1CEEBCCE1DED17E300EDD9BD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DA66C6CA1DEF45F60019759E /* PBXTargetDependency */,
 			);
 			name = MonteCarloSimulator;
 			productName = MonteCarloSimulator;
@@ -291,16 +368,18 @@
 				TargetAttributes = {
 					DACC34321DBC136200B7DBF4 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = N8H54VZ747;
+						LastSwiftMigration = 0810;
 					};
 					DACC34491DBC136200B7DBF4 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = N8H54VZ747;
+						LastSwiftMigration = 0810;
 						TestTargetID = DACC34321DBC136200B7DBF4;
 					};
 					DACC34541DBC136200B7DBF4 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = N8H54VZ747;
+						LastSwiftMigration = 0810;
 						TestTargetID = DACC34321DBC136200B7DBF4;
 					};
 				};
@@ -316,6 +395,12 @@
 			mainGroup = DACC342A1DBC136200B7DBF4;
 			productRefGroup = DACC34341DBC136200B7DBF4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DA66C6B91DEF45E00019759E /* Products */;
+					ProjectRef = DA66C6B81DEF45E00019759E /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DACC34321DBC136200B7DBF4 /* MonteCarloSimulator */,
@@ -325,12 +410,44 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		DA66C6C01DEF45E10019759E /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = DA66C6BF1DEF45E10019759E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DA66C6C21DEF45E10019759E /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = DA66C6C11DEF45E10019759E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DA66C6C41DEF45E10019759E /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = DA66C6C31DEF45E10019759E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DA66C6C61DEF45E10019759E /* ChartsRealmTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsRealmTests.xctest;
+			remoteRef = DA66C6C51DEF45E10019759E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		DACC34311DBC136200B7DBF4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DACC34441DBC136200B7DBF4 /* LaunchScreen.storyboard in Resources */,
+				DA255C441DECC963006E9D00 /* money.gif in Resources */,
 				DACC34411DBC136200B7DBF4 /* Assets.xcassets in Resources */,
 				DACC343C1DBC136200B7DBF4 /* Main.storyboard in Resources */,
 			);
@@ -513,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DACC344F1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift in Sources */,
+				DA2BCC0B1DDF855000FE627F /* AppDelegateTests.swift in Sources */,
 				DA5CFA5F1DDE7E01005EA4A1 /* StockSelectionTableViewCellTests.swift in Sources */,
 				DA5CFA5D1DDE7714005EA4A1 /* StockAllocationTableViewCellTests.swift in Sources */,
 				DABA06A41DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift in Sources */,
@@ -534,6 +652,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DA66C6CA1DEF45F60019759E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = DA66C6C91DEF45F60019759E /* PBXContainerItemProxy */;
+		};
 		DACC344C1DBC136200B7DBF4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DACC34321DBC136200B7DBF4 /* MonteCarloSimulator */;
@@ -653,16 +776,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94ABAAA55777096FC0E70685 /* Pods-MonteCarloSimulator.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/StocksKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Gifu",
 				);
 				INFOPLIST_FILE = MonteCarloSimulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -670,16 +797,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B86C38997E14A7516E6617A /* Pods-MonteCarloSimulator.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/StocksKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Gifu",
 				);
 				INFOPLIST_FILE = MonteCarloSimulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -692,6 +823,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonteCarloSimulator.app/MonteCarloSimulator";
 			};
 			name = Debug;
@@ -705,6 +837,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonteCarloSimulator.app/MonteCarloSimulator";
 			};
 			name = Release;
@@ -717,6 +850,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = MonteCarloSimulator;
 				USES_XCTRUNNER = YES;
 			};
@@ -730,6 +864,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EECS393.MonteCarloSimulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = MonteCarloSimulator;
 				USES_XCTRUNNER = YES;
 			};

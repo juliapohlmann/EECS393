@@ -1,12 +1,10 @@
 package edu.cwru.eecs393.montecarlo.math;
 
-import java.util.Arrays;
-
 public class Statistics {
 	double[] data;
 	int size;
 
-	//constructor takes input of array of doubles
+	// constructor takes input of array of doubles
 	public Statistics(double[] data) {
 		this.data = data;
 		size = data.length;
@@ -21,7 +19,7 @@ public class Statistics {
 		return sum / size;
 	}
 
-	//calculate variance of data
+	// calculate variance of data
 	public double getVariance() {
 		double mean = getMean();
 		double temp = 0;
@@ -31,14 +29,17 @@ public class Statistics {
 		return temp / size;
 	}
 
-	//calculate standard deviation of the data
+
+	// calculate standard deviation of the data
 	public double getStdDev() {
 		return Math.sqrt(getVariance());
 	}
 
-	/*calculates the normInv function: the inverse of the C.D.F for a given probability p
-	Uses a normal distribution where mu is 0 and sigma is 1
-	Open source code form Apahce.org stat pack*/
+	/*
+	 * calculates the normInv function: the inverse of the C.D.F for a given
+	 * probability p Uses a normal distribution where mu is 0 and sigma is 1
+	 * Open source code form Apahce.org stat pack
+	 */
 	public double normInv(double p, double mu, double sigma) {
 		if (p < 0 || p > 1) {
 			throw new RuntimeException("The probality p must be bigger than 0 and smaller than 1");

@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let navigationBarAppearance = UINavigationBar.appearance()
+        
+        navigationBarAppearance.tintColor = UIColor(hue: 0.9972, saturation: 0, brightness: 1, alpha: 1.0) /* #ffffff */
+        navigationBarAppearance.barTintColor = UIColor(hue: 0.3111, saturation: 1, brightness: 0.45, alpha: 1.0) /* #0f7200 */
+        navigationBarAppearance.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 20)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         return true
     }
 

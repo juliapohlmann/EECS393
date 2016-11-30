@@ -39,7 +39,7 @@ class StockSelectionTableViewControllerTests: XCTestCase {
     
     //tests for StockSelectionTableViewControllerTests
     
-    //displayError
+    //displayError                      +
     //backClick
     //nextClick
     //tableView -> Int
@@ -148,6 +148,21 @@ class StockSelectionTableViewControllerTests: XCTestCase {
         searchBar.text = "AbcD"
         controller.searchBarSearchButtonClicked(searchBar)
         XCTAssertEqual("This stock has already been added", controller.errorMessage)
+    }
+    
+    func testDisplayError() {
+        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
+            var alert: UIAlertController!
+            
+            override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
+                alert = viewControllerToPresent as! UIAlertController
+            }
+            
+        }
+        let controller = StockSelectionTableViewControllerMock()
+        controller.displayError("ABC")
+        XCTAssertEqual("ABC", controller.alert.message)
+        XCTAssertEqual("Error", controller.alert.title)
     }
     
 //    func testGetStockQuote() {

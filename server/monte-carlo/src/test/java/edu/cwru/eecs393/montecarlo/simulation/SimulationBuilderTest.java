@@ -1,5 +1,7 @@
 package edu.cwru.eecs393.montecarlo.simulation;
 
+import java.util.HashMap;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.mockito.PowerMockito;
@@ -7,6 +9,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.reflect.Whitebox;
 
+import edu.cwru.eecs393.montecarlo.data.SimulationParameters;
 import junit.framework.TestCase;
 
 @RunWith(PowerMockRunner.class)
@@ -42,11 +45,25 @@ public class SimulationBuilderTest extends TestCase {
 	@Test
 	public void testMonteCarloSimulation() {
 		// TODO test after implememnting builder
-		// SimulationBuilder bldr = new SimulationBuilder();
-		// Simulation sim =
-		// bldr.simulationType(SimulationType.MONTE_CARLO).buildSimulation();
-		// assertEquals(sim.getSimulationType(), SimulationType.MONTE_CARLO);
-		// assertEquals(sim.getClass(), MonteCarloSimulation.class);
+		SimulationBuilder bldr = new SimulationBuilder();
+		Simulation sim = bldr.simulationType(SimulationType.MONTE_CARLO)
+				.simulationParameters(new SimulationParameters()).financialDataMap(new HashMap<>()).buildSimulation();
+		assertEquals(sim.getSimulationType(), SimulationType.MONTE_CARLO);
+		assertEquals(sim.getClass(), MonteCarloSimulation.class);
+	}
+
+	@Test(expected = IllegalStateException.class)
+	public void testMonteCarloSimulationNullParams() {
+		SimulationBuilder bldr = new SimulationBuilder();
+		bldr.simulationType(SimulationType.MONTE_CARLO).simulationParameters(null).financialDataMap(new HashMap<>())
+				.buildSimulation();
+	}
+
+	@Test(expected = IllegalStateException.class)
+	public void testMonteCarloSimulationNullFinancialData() {
+		SimulationBuilder bldr = new SimulationBuilder();
+		bldr.simulationType(SimulationType.MONTE_CARLO).simulationParameters(new SimulationParameters())
+				.financialDataMap(null).buildSimulation();
 	}
 
 }

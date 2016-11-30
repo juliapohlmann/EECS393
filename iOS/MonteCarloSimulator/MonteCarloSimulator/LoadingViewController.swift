@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import Gifu
 
 class LoadingViewController: UIViewController {
 
     var userDict: [String : AnyObject] = [:]
     var results: [String : AnyObject] = [:]
     
+    @IBOutlet weak var gifView: AnimatableImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         submitAction()
-        
+        gifView.animateWithImage(named: "money.gif")
+
         // Do any additional setup after loading the view.
     }
 
@@ -75,18 +79,4 @@ class LoadingViewController: UIViewController {
         }
         
     }
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

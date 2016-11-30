@@ -6,7 +6,7 @@ target 'MonteCarloSimulator' do
   use_frameworks!
 
   pod 'SwiftCharts', '~> 0.2'
-
+  pod ‘Gifu’
   # Pods for MonteCarloSimulator
   pod 'StocksKit'
   target 'MonteCarloSimulatorTests' do

@@ -88,9 +88,21 @@ class BasicInputsViewControllerTests: XCTestCase {
         XCTAssertEqual(22, durationValue)
         XCTAssertEqual(33, initialValue)
         XCTAssertEqual(55, goalValue)
-
-        
-
+    }
+    
+    func testDisplayError() {
+        class BasicInputsViewControllerMock: BasicInputsViewController {
+            var alert: UIAlertController!
+            
+            override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
+                alert = viewControllerToPresent as! UIAlertController
+            }
+            
+        }
+        let controller = BasicInputsViewControllerMock()
+        controller.displayError("ABC")
+        XCTAssertEqual("ABC", controller.alert.message)
+        XCTAssertEqual("Error", controller.alert.title)
     }
     
 }

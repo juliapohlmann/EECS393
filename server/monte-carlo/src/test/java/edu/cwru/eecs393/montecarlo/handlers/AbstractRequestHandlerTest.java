@@ -4,12 +4,17 @@
 package edu.cwru.eecs393.montecarlo.handlers;
 
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareOnlyThisForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -23,6 +28,7 @@ import lombok.Data;
  * @author David
  *
  */
+@RunWith(PowerMockRunner.class)
 public class AbstractRequestHandlerTest extends TestCase {
 
 	@Test
@@ -38,6 +44,22 @@ public class AbstractRequestHandlerTest extends TestCase {
 		ObjectMapper mapper = new ObjectMapper();
 		TestData readVersion = mapper.readValue(json, TestData.class);
 		assertEquals(data, readVersion);
+	}
+
+	@PrepareOnlyThisForTest(AbstractRequestHandler.class)
+	@Test(expected = IllegalStateException.class)
+	public void testDataToJsonException() throws Exception {
+		// Since StringWriter should never throw an IOException, mock the
+		// constructor and force it to
+		PowerMockito.whenNew(StringWriter.class).withNoArguments().thenThrow(new IOException());
+		List<String> list = new ArrayList<>();
+		list.add("a");
+		list.add("b");
+		TestData data = new TestData();
+		data.setName("name");
+		data.setNum(1);
+		data.setList(list);
+		AbstractRequestHandler.dataToJson(data);
 	}
 
 	@Test

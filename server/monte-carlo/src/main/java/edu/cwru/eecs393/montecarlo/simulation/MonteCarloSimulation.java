@@ -34,6 +34,7 @@ public class MonteCarloSimulation implements Simulation {
 	private List<Double> results = new ArrayList();  //list of ending values from each trial
 	private SimulationParameters simParameters;
 
+
 	public MonteCarloSimulation(SimulationParameters simParameters, Map<String, FinancialData> financialData) {
 		this.simParameters = simParameters;
 		initialValue = simParameters.getStartingMoney();
@@ -61,13 +62,13 @@ public class MonteCarloSimulation implements Simulation {
 				successfulTrials++;
 			}
 		}
-		
+
 		Collections.sort(results);
-		bestTrial = results.get(results.size()-1);
+		bestTrial = results.get(results.size() - 1);
 		worstTrial = results.get(0);
 		simResult.setMaxValue(bestTrial);
 		simResult.setMinValue(worstTrial);
-		simResult.setPercentGoalReached(successfulTrials*(1.0) / numTrials);
+		simResult.setPercentGoalReached(successfulTrials * (1.0) / numTrials);
 		simResult.setValueToPercent(getMap(worstTrial, bestTrial));
 		return simResult;
 	}
@@ -76,11 +77,11 @@ public class MonteCarloSimulation implements Simulation {
 	public SimulationType getSimulationType() {
 		return SimulationType.MONTE_CARLO;
 	}
-	
-	public Map<Double,Double> getMap(double min, double max){
+
+	public Map<Double, Double> getMap(double min, double max) {
 		double increment = (results.get(results.size() / 2) - min) / 10;
-		Map<Double,Double> m = new HashMap<Double, Double>();
-		for(int i = 1; i <= 10; i++){
+		Map<Double, Double> m = new HashMap<>();
+		for (int i = 1; i <= 10; i++) {
 			double x = min + (i * increment);
 			double y = find(x);
 			m.put(x, y);
@@ -88,16 +89,16 @@ public class MonteCarloSimulation implements Simulation {
 		return m;
 	}
 
-	public double find(double x){
+	public double find(double x) {
 		int count = Math.abs(Collections.binarySearch(results, x));
 		count = results.size() - count;
-		return (count*1.0) / results.size();
+		return (count * 1.0) / results.size();
 	}
-	
+
 	/*
-	 * Calculates the number of shares purchased by dividing # dollars allocated by current price.
-	 * Then, multiplies share count by the price in the final year of forecast to get a final
-	 * value for that stock
+	 * Calculates the number of shares purchased by dividing # dollars allocated
+	 * by current price. Then, multiplies share count by the price in the final
+	 * year of forecast to get a final value for that stock
 	 */
 	public double calculateReturns(SimulationParameters simParameters) {
 		double endValue = 0;
