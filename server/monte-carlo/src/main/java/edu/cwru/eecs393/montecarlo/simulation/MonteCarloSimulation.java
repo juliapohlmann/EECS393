@@ -63,8 +63,8 @@ public class MonteCarloSimulation implements Simulation {
 		}
 
 		Collections.sort(results);
-		bestTrial = results.get(results.size() - 1);
-		worstTrial = results.get(0);
+		bestTrial = results.get((int) (results.size() * 0.85));
+		worstTrial = results.get((int) (results.size() * 0.15));
 		simResult.setMaxValue(bestTrial);
 		simResult.setMinValue(worstTrial);
 		simResult.setPercentGoalReached(successfulTrials * (1.0) / numTrials);
@@ -78,7 +78,7 @@ public class MonteCarloSimulation implements Simulation {
 	}
 
 	public Map<Double, Double> getMap(double min, double max) {
-		double increment = (results.get(results.size() / 2) - min) / 10;
+		double increment = (max - min) / 10;
 		Map<Double, Double> m = new HashMap<>();
 		for (int i = 1; i <= 10; i++) {
 			double x = min + (i * increment);
