@@ -90,8 +90,8 @@ class ResultsViewController: UIViewController {
         barChartView.xAxis.setLabelsToSkip(2)
         barChartView.xAxis.labelTextColor = UIColor.blackColor()
         
-        let percentFormatter            = NSNumberFormatter()
-        percentFormatter.numberStyle    = NSNumberFormatterStyle.PercentStyle
+        let percentFormatter = NSNumberFormatter()
+        percentFormatter.numberStyle = NSNumberFormatterStyle.PercentStyle
 
         //change y axis
         barChartView.rightAxis.enabled = false;
@@ -127,6 +127,9 @@ class ResultsViewController: UIViewController {
         let unsortedKeys = Array(valuesDict.keys)
         let sortedKeys = unsortedKeys.sort(<)
         
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        
         var total = Float(1.0)
         for key in sortedKeys {
             
@@ -140,7 +143,7 @@ class ResultsViewController: UIViewController {
             }
             
             self.sortedValues.append(valuePercent)
-            self.sortedKeys.append("$" + String(key))
+            self.sortedKeys.append(formatter.stringFromNumber(key as NSNumber)!)
         }
         
     }
