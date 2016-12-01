@@ -10,8 +10,8 @@ import UIKit
 
 class StockSelectionTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var StockInfo: UITextField!
     @IBOutlet weak var removeButton: UIButton!
+    @IBOutlet weak var StockInfo: UILabel!
     
     var StockSelectionInstance : StockSelectionTableViewController = StockSelectionTableViewController()
     var ticker : String = ""

@@ -9,10 +9,11 @@
 import UIKit
 class StockAllocationTableViewController: UITableViewController {
     
-    //ba
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var runSimulation: UIButton!
-    @IBOutlet weak var unallocatedPercentageField: UITextField!
+    @IBOutlet weak var unallocatedPercentageField: UILabel!
+    
+//    @IBOutlet weak var unallocatedPercentageField: UITextField!
     
     var stockTickers = [String]()
     var stockPercentages = [Int]()
@@ -178,7 +179,7 @@ class StockAllocationTableViewController: UITableViewController {
     ///   - Int: percentage values to check
     /// - returns: true if valid to decrement, false if not
     func canDecrementStock(percentage: Int) -> Bool {
-        if(percentage > 0) {
+        if(percentage > 1) {
             return true;
         } else {
             return false;

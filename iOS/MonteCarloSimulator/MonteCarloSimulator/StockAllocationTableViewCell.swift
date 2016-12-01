@@ -13,37 +13,48 @@ class StockAllocationTableViewCell: UITableViewCell {
     @IBOutlet weak var tickerField: UITextField!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var percentageField: UITextField!
+    @IBOutlet weak var percentageField: UILabel!
+    
     var previousPercentage : Int = 0
     var StockAllocationInstance : StockAllocationTableViewController = StockAllocationTableViewController()
     
+    func setPercentageFieldText(newValue: String) {
+        let str = newValue + "%"
+        percentageField.text = str
+    }
+    
+    func getPercentageFieldValue() -> Int {
+        let value = percentageField.text!
+        return Int(String(value.characters.dropLast()))!
+    }
+    
     func setFieldTexts(tickerText: String, percentageText: String) {
         tickerField.text = tickerText
-        percentageField.text = percentageText
+        setPercentageFieldText(percentageText)
     }
     
-    @IBAction func beginEditingPercentageField(sender: AnyObject) {
-        previousPercentage = Int(percentageField.text!)!
-    }
-    
-    @IBAction func editPercentageField(sender: AnyObject) {
-        let newValue = Int(percentageField.text!)!
-        if(!StockAllocationInstance.validEdit(tickerField.text!, oldValue: previousPercentage, newValue: newValue)) {
-            percentageField.text = String(previousPercentage)
-        }
-    }
+//    @IBAction func beginEditingPercentageField(sender: AnyObject) {
+//        previousPercentage = getPercentageFieldValue()
+//    }
+//    
+//    @IBAction func editPercentageField(sender: AnyObject) {
+//        let newValue = getPercentageFieldValue()
+//        if(!StockAllocationInstance.validEdit(tickerField.text!, oldValue: previousPercentage, newValue: newValue)) {
+//            setPercentageFieldText(String(previousPercentage))
+//        }
+//    }
     
     @IBAction func minusClick(sender: AnyObject) {
         if(StockAllocationInstance.decrementStockPercentage(tickerField.text!)) {
-            let currentPercentage = Int(percentageField.text!)
-            percentageField.text = String(currentPercentage! - 1)
+            let currentPercentage = getPercentageFieldValue()
+            setPercentageFieldText(String(currentPercentage - 1))
         }
     }
     
     @IBAction func plusClick(sender: AnyObject) {
         if(StockAllocationInstance.incrementStockPercentage(tickerField.text!)) {
-            let currentPercentage = Int(percentageField.text!)
-            percentageField.text = String(currentPercentage! + 1)
+            let currentPercentage = getPercentageFieldValue()
+            setPercentageFieldText(String(currentPercentage + 1))
         }
     }
 }

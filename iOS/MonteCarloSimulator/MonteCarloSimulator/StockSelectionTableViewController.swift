@@ -64,7 +64,6 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         cell.StockInfo.text = stockInfoText
         cell.StockSelectionInstance = self
         cell.ticker = stockTickers[indexPath.row]
-        cell.StockInfo.enabled = false
         
         return cell
     }
