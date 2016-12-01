@@ -399,7 +399,7 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vo6-JF-gVf" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="526"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="512"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSQ-ft-fpw">
@@ -414,19 +414,19 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zO-L0-8uB">
-                                <rect key="frame" x="15" y="534" width="344" height="21"/>
+                                <rect key="frame" x="15" y="550" width="344" height="21"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J05-kJ-3x9">
-                                <rect key="frame" x="15" y="563" width="339" height="21"/>
+                                <rect key="frame" x="15" y="574" width="339" height="21"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phj-c1-PiH">
-                                <rect key="frame" x="15" y="592" width="339" height="21"/>
+                                <rect key="frame" x="15" y="598" width="339" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="aBg-Xt-hYP"/>
                                 </constraints>
@@ -448,27 +448,37 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                     <segue destination="TPc-sS-ZdN" kind="show" identifier="rerun" id="kkZ-Pe-lfX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percent of runs where the given dollar amount was reached" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ok-Cs-SrP">
+                                <rect key="frame" x="1" y="519" width="375" height="27"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="i3e-hy-fLb" secondAttribute="bottom" constant="-1" id="1W7-mu-cS1"/>
+                            <constraint firstItem="6zO-L0-8uB" firstAttribute="top" secondItem="3ok-Cs-SrP" secondAttribute="bottom" constant="4" id="1o4-T2-NCS"/>
                             <constraint firstItem="Phj-c1-PiH" firstAttribute="leading" secondItem="J05-kJ-3x9" secondAttribute="leading" id="4qI-DI-eSu"/>
                             <constraint firstItem="HSQ-ft-fpw" firstAttribute="leading" secondItem="i3e-hy-fLb" secondAttribute="trailing" constant="15" id="BGt-i7-j2y"/>
-                            <constraint firstAttribute="bottom" secondItem="Vo6-JF-gVf" secondAttribute="bottom" constant="141" id="DzS-cu-VT9"/>
-                            <constraint firstItem="i3e-hy-fLb" firstAttribute="top" secondItem="Phj-c1-PiH" secondAttribute="bottom" constant="14" id="IVv-YT-FfD"/>
+                            <constraint firstAttribute="bottom" secondItem="Vo6-JF-gVf" secondAttribute="bottom" constant="155" id="DzS-cu-VT9"/>
+                            <constraint firstItem="i3e-hy-fLb" firstAttribute="top" secondItem="Phj-c1-PiH" secondAttribute="bottom" constant="8" id="IVv-YT-FfD"/>
                             <constraint firstAttribute="bottomMargin" secondItem="HSQ-ft-fpw" secondAttribute="bottom" constant="-2" id="Ii4-ue-QqL"/>
-                            <constraint firstItem="Phj-c1-PiH" firstAttribute="top" secondItem="J05-kJ-3x9" secondAttribute="bottom" constant="8" id="JYr-DV-lwP"/>
+                            <constraint firstItem="Phj-c1-PiH" firstAttribute="top" secondItem="J05-kJ-3x9" secondAttribute="bottom" constant="3" id="JYr-DV-lwP"/>
                             <constraint firstItem="Phj-c1-PiH" firstAttribute="leading" secondItem="iPZ-mW-9JC" secondAttribute="leadingMargin" constant="-1" id="Juo-Hx-SJD"/>
                             <constraint firstItem="Phj-c1-PiH" firstAttribute="trailing" secondItem="J05-kJ-3x9" secondAttribute="trailing" id="NT6-bD-C2n"/>
-                            <constraint firstItem="J05-kJ-3x9" firstAttribute="top" secondItem="6zO-L0-8uB" secondAttribute="bottom" constant="8" id="QPW-F2-3UT"/>
+                            <constraint firstItem="J05-kJ-3x9" firstAttribute="top" secondItem="6zO-L0-8uB" secondAttribute="bottom" constant="3" id="QPW-F2-3UT"/>
+                            <constraint firstItem="3ok-Cs-SrP" firstAttribute="trailing" secondItem="J05-kJ-3x9" secondAttribute="trailing" constant="22" id="R6J-8S-9zS"/>
                             <constraint firstItem="HSQ-ft-fpw" firstAttribute="trailing" secondItem="Vo6-JF-gVf" secondAttribute="trailing" id="RxZ-gc-R7L"/>
                             <constraint firstItem="Vo6-JF-gVf" firstAttribute="centerX" secondItem="iPZ-mW-9JC" secondAttribute="centerX" id="T6r-XZ-nkD"/>
                             <constraint firstItem="i3e-hy-fLb" firstAttribute="leading" secondItem="iPZ-mW-9JC" secondAttribute="leading" id="WE8-uA-DuJ"/>
-                            <constraint firstAttribute="bottom" secondItem="Phj-c1-PiH" secondAttribute="bottom" constant="54" id="XJG-V9-IeF"/>
+                            <constraint firstAttribute="bottom" secondItem="Phj-c1-PiH" secondAttribute="bottom" constant="48" id="XJG-V9-IeF"/>
+                            <constraint firstItem="3ok-Cs-SrP" firstAttribute="top" secondItem="Vo6-JF-gVf" secondAttribute="bottom" constant="7" id="Yg2-nL-meK"/>
+                            <constraint firstItem="3ok-Cs-SrP" firstAttribute="leading" secondItem="6zO-L0-8uB" secondAttribute="leading" constant="-14" id="bsl-Vj-F8C"/>
                             <constraint firstItem="Phj-c1-PiH" firstAttribute="leading" secondItem="6zO-L0-8uB" secondAttribute="leading" id="cUY-kk-Pbj"/>
                             <constraint firstItem="i3e-hy-fLb" firstAttribute="leading" secondItem="Vo6-JF-gVf" secondAttribute="leading" id="lhx-be-1Xg"/>
-                            <constraint firstItem="HSQ-ft-fpw" firstAttribute="top" secondItem="Phj-c1-PiH" secondAttribute="bottom" constant="15" id="nLA-Xc-RW5"/>
-                            <constraint firstItem="6zO-L0-8uB" firstAttribute="top" secondItem="Vo6-JF-gVf" secondAttribute="bottom" constant="8" id="oAJ-P2-vTY"/>
+                            <constraint firstItem="HSQ-ft-fpw" firstAttribute="top" secondItem="Phj-c1-PiH" secondAttribute="bottom" constant="9" id="nLA-Xc-RW5"/>
+                            <constraint firstItem="6zO-L0-8uB" firstAttribute="top" secondItem="Vo6-JF-gVf" secondAttribute="bottom" constant="38" id="oAJ-P2-vTY"/>
                             <constraint firstItem="Vo6-JF-gVf" firstAttribute="top" secondItem="iPZ-mW-9JC" secondAttribute="top" id="v8X-1e-XaH"/>
                             <constraint firstItem="Vo6-JF-gVf" firstAttribute="centerX" secondItem="6zO-L0-8uB" secondAttribute="centerX" id="vXZ-1K-MVV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Phj-c1-PiH" secondAttribute="trailing" constant="5" id="zEU-oH-FBZ"/>
