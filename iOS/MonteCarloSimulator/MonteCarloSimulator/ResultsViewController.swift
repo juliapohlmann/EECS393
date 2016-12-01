@@ -5,6 +5,7 @@
 
 import UIKit
 import Charts
+import CoreGraphics
 
 class ResultsViewController: UIViewController {
     
@@ -89,9 +90,13 @@ class ResultsViewController: UIViewController {
         barChartView.xAxis.setLabelsToSkip(2)
         barChartView.xAxis.labelTextColor = UIColor.blackColor()
         
+        let percentFormatter            = NSNumberFormatter()
+        percentFormatter.numberStyle    = NSNumberFormatterStyle.PercentStyle
+
         //change y axis
         barChartView.rightAxis.enabled = false;
         barChartView.leftAxis.enabled = true;
+        barChartView.leftAxis.valueFormatter = percentFormatter;
         barChartView.leftAxis.drawGridLinesEnabled = false
         barChartView.rightAxis.labelTextColor = UIColor.blackColor()
         
@@ -125,8 +130,8 @@ class ResultsViewController: UIViewController {
         var total = Float(1.0)
         for key in sortedKeys {
             
-            // multiply by 100 to get it into percentage form
-            let valuePercent = (total - valuesDict[key]!) * 100
+            // store percents for each dollar value
+            let valuePercent = (total - valuesDict[key]!)
             total = valuesDict[key]!
             
             // keep max for the graph
@@ -151,7 +156,7 @@ class ResultsViewController: UIViewController {
         
         self.minValue.text = "Min Value: " + minValue!
         self.maxValue.text = "Max Value: " + maxValue!
-        self.percentReached.text = "Percent Goal Reached: " + String(percentReached) + "%"
+        self.percentReached.text = "Goal Reached: " + String(percentReached) + "% of simulations"
         
     }
     
