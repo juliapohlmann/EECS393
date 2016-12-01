@@ -11,7 +11,6 @@ import edu.cwru.eecs393.montecarlo.data.FinancialData;
 import edu.cwru.eecs393.montecarlo.data.HistoricalFinancialData;
 import edu.cwru.eecs393.montecarlo.data.SimulationParameters;
 import edu.cwru.eecs393.montecarlo.data.SimulationResult;
-import edu.cwru.eecs393.montecarlo.data.Stock;
 import edu.cwru.eecs393.montecarlo.math.Statistics;
 import lombok.extern.java.Log;
 
@@ -105,7 +104,7 @@ public class MonteCarloSimulation implements Simulation {
 		for (int i = 0; i < numStocks; i++) {
 			double alloc = simParameters.getTickerToAllocation().get(portfolio.get(i).getTicker());
 			double price = portfolio.get(i).getAsk();
-			double shareCount = (alloc * initialValue) / price;
+			double shareCount = ((alloc/100) * initialValue) / price;
 			endValue += shareCount * forecast[i][duration];
 		}
 		return endValue;
@@ -192,7 +191,6 @@ public class MonteCarloSimulation implements Simulation {
 	// the current price * e ^ (drift + random Value)
 	public double nextYearPrice(double today, double drift, double randomValue) {
 		return today * Math.exp(drift + randomValue);
-		//return today * Math.exp(randomValue);
 	}
 
 }
