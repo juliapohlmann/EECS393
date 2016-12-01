@@ -101,7 +101,8 @@ class ResultsViewController: UIViewController {
         barChartView.rightAxis.labelTextColor = UIColor.blackColor()
         
         //change label color
-        barChartView.legend.textColor = UIColor.blackColor()
+        //barChartView.legend.textColor = UIColor.blackColor()
+        barChartView.legend.enabled = false;
         
         barChartView.scaleXEnabled = false;
         barChartView.scaleYEnabled = false;
@@ -127,7 +128,7 @@ class ResultsViewController: UIViewController {
         let unsortedKeys = Array(valuesDict.keys)
         let sortedKeys = unsortedKeys.sort(<)
         
-        var total = Float(1.0)
+        var total = Float(0.85)
         for key in sortedKeys {
             
             // store percents for each dollar value
