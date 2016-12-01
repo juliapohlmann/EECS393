@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BasicInputsViewController: UIViewController {
+class BasicInputsViewController: UIViewController, UITextFieldDelegate {
     
     /// back button on nav bar to go to intro view controller
     @IBOutlet weak var backButton: UIBarButtonItem!
