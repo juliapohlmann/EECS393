@@ -36,8 +36,6 @@ class LoadingViewController: UIViewController {
     
     func submitAction() {
         
-        print(userDict)
-        
         do {
             
             let jsonData = try NSJSONSerialization.dataWithJSONObject(userDict, options: .PrettyPrinted)

@@ -28,21 +28,23 @@ class LoadingViewControllerTests: XCTestCase {
                 
             }
             
+            override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
+                // do nothing
+            }
+            
         }
         
         let controller = LoadingViewControllerMock()
-        controller.submitAction()
-        
-        print("yo")
-        NSThread.sleepForTimeInterval(5)
-        
-        XCTAssertEqual(controller.results.count, 5)
-            
         controller.setUserDictWrong()
+        controller.submitAction()
+        sleep(10)
         XCTAssertEqual(controller.results.count, 0)
-            
-        print("hi")
         
+        
+        controller.setUserDict()
+        controller.submitAction()
+        sleep(10)
+        XCTAssertEqual(controller.results.count, 4)
         
         
     }
