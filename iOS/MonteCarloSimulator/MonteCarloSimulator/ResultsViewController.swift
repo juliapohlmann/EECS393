@@ -35,6 +35,9 @@ class ResultsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    /// Handles large numbers (1.6E15) from the server
+    /// - parameters:
+    ///   - String: string to be converted
     func handleE(s: String) -> String {
         
         if(s.containsString("E")) {
@@ -54,6 +57,10 @@ class ResultsViewController: UIViewController {
         
     }
     
+    /// Sets the chart of the results page
+    /// - parameters:
+    ///   - [String]: x axis data
+    ///   - [Float]: y axis data
     func setChart(dataPoints: [String], values: [Float]) {
         
         //set data
@@ -108,8 +115,9 @@ class ResultsViewController: UIViewController {
         barChartView.scaleYEnabled = false;
     }
     
-    // the goal of this method is to populate
-    // sorted keys and sorted values to graph
+    /// the goal of this method is to populate sorted keys and sorted values to graph. The data is converted from the server to a cleaner format
+    /// - parameters:
+    ///   - [String: AnyObject]: JSON from the server
     func convertGraphValues(oldGraphValues: [String: AnyObject]) {
         
         print(oldGraphValues)
@@ -149,11 +157,9 @@ class ResultsViewController: UIViewController {
             self.sortedKeys.append(formatter.stringFromNumber(key as NSNumber)!)
         }
         
-        print(self.sortedKeys)
-        print(sortedValues)
-        
     }
     
+    /// Sets the labels for min/max/percent reached on the results page.
     func setLabels() {
         
         let formatter = NSNumberFormatter()
@@ -162,9 +168,6 @@ class ResultsViewController: UIViewController {
         let minValue = formatter.stringFromNumber(results["minValue"] as! NSNumber)
         let maxValue = formatter.stringFromNumber(results["maxValue"] as! NSNumber)
         let percentReached = Int(results["percentGoalReached"]! as! Double * 100)
-        
-        print(results["minValue"])
-        print(minValue)
         
         self.minValue.text = "Min Value: " + minValue!
         self.maxValue.text = "Max Value: " + maxValue!

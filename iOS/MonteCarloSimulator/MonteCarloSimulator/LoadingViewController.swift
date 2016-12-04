@@ -34,6 +34,7 @@ class LoadingViewController: UIViewController {
         destinationVC.results = results
     }
     
+    /// Submit user data to the server, which responds with the results of the simulation. 
     func submitAction() {
         
         do {
