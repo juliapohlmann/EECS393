@@ -88,12 +88,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulator/StockSelectionTableViewController.swift"
-            timestampString = "501097017.55933"
+            timestampString = "502307314.757512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "getStockQuote(ticker:searchBar:)"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "getStockQuote(_:searchBar:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -104,12 +104,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulator/StockSelectionTableViewController.swift"
-            timestampString = "501097017.55933"
+            timestampString = "502307314.757512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "getStockQuote(ticker:searchBar:)"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "getStockQuote(_:searchBar:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -120,12 +120,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulator/StockSelectionTableViewController.swift"
-            timestampString = "501099078.211353"
+            timestampString = "502307314.757512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "getStockQuote(ticker:searchBar:)"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "getStockQuote(_:searchBar:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -136,12 +136,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulator/StockSelectionTableViewController.swift"
-            timestampString = "501099080.401188"
+            timestampString = "502307314.757512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "getStockQuote(ticker:searchBar:)"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "getStockQuote(_:searchBar:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -152,12 +152,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulator/StockSelectionTableViewController.swift"
-            timestampString = "501099828.682742"
+            timestampString = "502307314.757512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "getStockQuote(ticker:searchBar:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "getStockQuote(_:searchBar:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -270,6 +270,54 @@
             startingLineNumber = "153"
             endingLineNumber = "153"
             landmarkName = "testDisplayError()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonteCarloSimulator/StockAllocationTableViewCell.swift"
+            timestampString = "502309562.337059"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "setPercentageFieldText(newValue:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonteCarloSimulator/StockAllocationTableViewCell.swift"
+            timestampString = "502310097.845314"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "setFieldTexts(tickerText:percentageText:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonteCarloSimulator/StockAllocationTableViewCell.swift"
+            timestampString = "502310097.845314"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "setFieldTexts(tickerText:percentageText:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

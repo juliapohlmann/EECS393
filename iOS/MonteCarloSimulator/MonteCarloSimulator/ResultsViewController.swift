@@ -101,7 +101,8 @@ class ResultsViewController: UIViewController {
         barChartView.rightAxis.labelTextColor = UIColor.blackColor()
         
         //change label color
-        barChartView.legend.textColor = UIColor.blackColor()
+        //barChartView.legend.textColor = UIColor.blackColor()
+        barChartView.legend.enabled = false;
         
         barChartView.scaleXEnabled = false;
         barChartView.scaleYEnabled = false;

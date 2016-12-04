@@ -25,14 +25,17 @@ public class MonteCarloSimulation implements Simulation {
 	// simulation
 	private int duration; // number of years money is invested
 	private double initialValue; // beginning portfolio balance
-	private double goalValue; // goal, or target, amount of money at the end of the duration
-	private List<FinancialData> portfolio; // list of type Stock that makes up the portfolio
+	private double goalValue; // goal, or target, amount of money at the end of
+								// the duration
+	private List<FinancialData> portfolio; // list of type Stock that makes up
+											// the portfolio
 	private int numStocks; // number of stocks in the portfolio
-	private double forecast[][];  //the annual price forcast for each stock in the portfolio
-	private int numTrials = 10000;  //number of trials the simulation runs
-	private List<Double> results = new ArrayList();  //list of ending values from each trial
+	private double forecast[][]; // the annual price forcast for each stock in
+									// the portfolio
+	private int numTrials = 10000; // number of trials the simulation runs
+	private List<Double> results = new ArrayList(); // list of ending values
+													// from each trial
 	private SimulationParameters simParameters;
-
 
 	public MonteCarloSimulation(SimulationParameters simParameters, Map<String, FinancialData> financialData) {
 		this.simParameters = simParameters;
@@ -65,8 +68,8 @@ public class MonteCarloSimulation implements Simulation {
 		Collections.sort(results);
 		bestTrial = results.get((int) (results.size() * 0.85));
 		worstTrial = results.get((int) (results.size() * 0.15));
-		simResult.setMaxValue(bestTrial);
-		simResult.setMinValue(worstTrial);
+		simResult.setMaxValue(results.get(results.size() - 1));
+		simResult.setMinValue(results.get(0));
 		simResult.setPercentGoalReached(successfulTrials * (1.0) / numTrials);
 		simResult.setValueToPercent(getMap(worstTrial, bestTrial));
 		return simResult;
@@ -104,7 +107,7 @@ public class MonteCarloSimulation implements Simulation {
 		for (int i = 0; i < numStocks; i++) {
 			double alloc = simParameters.getTickerToAllocation().get(portfolio.get(i).getTicker());
 			double price = portfolio.get(i).getAsk();
-			double shareCount = ((alloc/100) * initialValue) / price;
+			double shareCount = ((alloc / 100) * initialValue) / price;
 			endValue += shareCount * forecast[i][duration];
 		}
 		return endValue;
@@ -129,20 +132,19 @@ public class MonteCarloSimulation implements Simulation {
 	public double[] forecast(FinancialData stock) {
 		double currentPrice = stock.getAsk();
 		double prevYearPrice = stock.getHistoricalData().first().getClose();
-		double periodicReturns[] = new double[stock.getHistoricalData().size()-1];
+		double periodicReturns[] = new double[stock.getHistoricalData().size() - 1];
 		double annualPrices[] = new double[stock.getHistoricalData().size()];
 
 		Iterator<HistoricalFinancialData> iter = stock.getHistoricalData().iterator();
 		int i = 0;
-		while(iter.hasNext()){
+		while (iter.hasNext()) {
 			annualPrices[i] = iter.next().getClose();
 			i++;
 		}
-		
-		for(int j = 0; j < stock.getHistoricalData().size()-1; j++){
-			periodicReturns[j] = periodicAnnualReturn(annualPrices[j],annualPrices[j+1]);
-		}
 
+		for (int j = 0; j < stock.getHistoricalData().size() - 1; j++) {
+			periodicReturns[j] = periodicAnnualReturn(annualPrices[j], annualPrices[j + 1]);
+		}
 
 		Statistics stat = new Statistics(periodicReturns);
 
