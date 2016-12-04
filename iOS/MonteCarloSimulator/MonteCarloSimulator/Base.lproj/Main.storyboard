@@ -445,6 +445,7 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="rerunButtonClick:" destination="ibJ-KC-l7l" eventType="touchUpInside" id="qfm-u1-6WE"/>
                                     <segue destination="TPc-sS-ZdN" kind="show" identifier="rerun" id="kkZ-Pe-lfX"/>
                                 </connections>
                             </button>
@@ -476,6 +477,7 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                         <outlet property="maxValue" destination="J05-kJ-3x9" id="0gW-FN-N4f"/>
                         <outlet property="minValue" destination="6zO-L0-8uB" id="gKe-lZ-Fin"/>
                         <outlet property="percentReached" destination="Phj-c1-PiH" id="JPe-z3-aU4"/>
+                        <outlet property="rerunButtonClick" destination="i3e-hy-fLb" id="X2U-8W-dnZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76q-0M-xrt" userLabel="First Responder" sceneMemberID="firstResponder"/>

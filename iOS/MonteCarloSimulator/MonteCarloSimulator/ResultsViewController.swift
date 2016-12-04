@@ -111,6 +111,8 @@ class ResultsViewController: UIViewController {
     // sorted keys and sorted values to graph
     func convertGraphValues(oldGraphValues: [String: AnyObject]) {
         
+        print(oldGraphValues)
+        
         var valuesDict: [Int: Float] = [:]
         
         // convert all values to ints
@@ -145,6 +147,9 @@ class ResultsViewController: UIViewController {
             self.sortedValues.append(valuePercent)
             self.sortedKeys.append(formatter.stringFromNumber(key as NSNumber)!)
         }
+        
+        print(self.sortedKeys)
+        print(sortedValues)
         
     }
     

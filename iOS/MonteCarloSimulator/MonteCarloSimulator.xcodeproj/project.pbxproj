@@ -266,16 +266,16 @@
 		DACC344D1DBC136200B7DBF4 /* MonteCarloSimulatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA2BCC0A1DDF855000FE627F /* AppDelegateTests.swift */,
 				1CA21CC91DC13CEF005AB2E3 /* IntroViewControllerTests.swift */,
 				DACC344E1DBC136200B7DBF4 /* MonteCarloSimulatorTests.swift */,
 				DACC34501DBC136200B7DBF4 /* Info.plist */,
 				DA8898971DC1733B00BAB43E /* StockAllocationTableViewControllerTests.swift */,
 				DAE3AFAA1DC1A7B9004E8206 /* BasicInputsViewControllerTests.swift */,
 				DABA06A31DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift */,
-				DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */,
 				DA5CFA5C1DDE7714005EA4A1 /* StockAllocationTableViewCellTests.swift */,
 				DA5CFA5E1DDE7E01005EA4A1 /* StockSelectionTableViewCellTests.swift */,
-				DA2BCC0A1DDF855000FE627F /* AppDelegateTests.swift */,
+				DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */,
 			);
 			path = MonteCarloSimulatorTests;
 			sourceTree = "<group>";
