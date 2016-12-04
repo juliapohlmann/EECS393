@@ -93,8 +93,8 @@ class StockAllocationTableViewCellTests: XCTestCase {
         controller.percentageField = UILabel()
         controller.tickerField = UITextField()
         controller.percentageField.text = "33"
-        controller.minusClick(controller)
-        XCTAssertEqual("33", controller.percentageField.text)
+        controller.plusClick(controller)
+        XCTAssertEqual("34", controller.percentageField.text)
     }
     
     func testPlusClickValid() {

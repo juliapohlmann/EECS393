@@ -38,6 +38,35 @@
                BlueprintName = "MonteCarloSimulatorTests"
                ReferencedContainer = "container:MonteCarloSimulator.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "AppDelegateTests">
+               </Test>
+               <Test
+                  Identifier = "BasicInputsViewControllerTests">
+               </Test>
+               <Test
+                  Identifier = "IntroViewControllerTests">
+               </Test>
+               <Test
+                  Identifier = "MonteCarloSimulatorTests">
+               </Test>
+               <Test
+                  Identifier = "ResultsViewControllerTests">
+               </Test>
+               <Test
+                  Identifier = "StockAllocationTableViewCellTests">
+               </Test>
+               <Test
+                  Identifier = "StockAllocationViewControllerTests">
+               </Test>
+               <Test
+                  Identifier = "StockSelectionTableViewCellTests">
+               </Test>
+               <Test
+                  Identifier = "StockSelectionTableViewControllerTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">

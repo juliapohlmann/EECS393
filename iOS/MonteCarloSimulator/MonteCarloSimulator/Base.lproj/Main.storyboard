@@ -296,7 +296,7 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfP-A6-uDT" id="xor-hf-Z21">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TICKER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASW-OP-HK1">
@@ -438,7 +438,6 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="rerunButtonClick:" destination="ibJ-KC-l7l" eventType="touchUpInside" id="qfm-u1-6WE"/>
                                     <segue destination="TPc-sS-ZdN" kind="show" identifier="rerun" id="kkZ-Pe-lfX"/>
                                 </connections>
                             </button>
@@ -503,7 +502,6 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                         <outlet property="maxValue" destination="J05-kJ-3x9" id="0gW-FN-N4f"/>
                         <outlet property="minValue" destination="6zO-L0-8uB" id="gKe-lZ-Fin"/>
                         <outlet property="percentReached" destination="Phj-c1-PiH" id="JPe-z3-aU4"/>
-                        <outlet property="rerunButtonClick" destination="i3e-hy-fLb" id="X2U-8W-dnZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76q-0M-xrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -558,7 +556,7 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5uG-be-P3g" id="m1M-8Z-nHD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhB-Xw-Qmi">
@@ -712,6 +710,6 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NEM-3K-bH2"/>
+        <segue reference="kkZ-Pe-lfX"/>
     </inferredMetricsTieBreakers>
 </document>

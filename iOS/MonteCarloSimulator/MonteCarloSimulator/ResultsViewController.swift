@@ -163,6 +163,9 @@ class ResultsViewController: UIViewController {
         let maxValue = formatter.stringFromNumber(results["maxValue"] as! NSNumber)
         let percentReached = Int(results["percentGoalReached"]! as! Double * 100)
         
+        print(results["minValue"])
+        print(minValue)
+        
         self.minValue.text = "Min Value: " + minValue!
         self.maxValue.text = "Max Value: " + maxValue!
         self.percentReached.text = "Goal Reached: " + String(percentReached) + "% of simulations"

@@ -38,9 +38,9 @@ class StockAllocationTableViewController: UITableViewController {
             stockDict[element] = stockPercentages[index]
         }
         
-        userDict["tickerToAllocation"] = stockDict
+        print(stockDict)
         
-        print(userDict)
+        userDict["tickerToAllocation"] = stockDict
     }
     
     //SETUP FUNCTIONS

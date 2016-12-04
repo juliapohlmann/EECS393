@@ -11,6 +11,7 @@
 		1C1C39721DBFF38F00CB147B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */; };
 		1C8BE5781DDABA4C004EC7EE /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8BE5771DDABA4C004EC7EE /* LoadingViewController.swift */; };
 		1CA21CCA1DC13CEF005AB2E3 /* IntroViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA21CC91DC13CEF005AB2E3 /* IntroViewControllerTests.swift */; };
+		1CE5AAFD1DF3C342006CFA96 /* LoadingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE5AAFC1DF3C342006CFA96 /* LoadingViewControllerTests.swift */; };
 		34110C3B97536C8322EC39F7 /* Pods_MonteCarloSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0BB019AF49CC91B64EDD25 /* Pods_MonteCarloSimulatorTests.framework */; };
 		BD98E457620CF37F9D99D4B2 /* Pods_MonteCarloSimulatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09732685C9D5418514E21D79 /* Pods_MonteCarloSimulatorUITests.framework */; };
 		DA255C441DECC963006E9D00 /* money.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA255C431DECC963006E9D00 /* money.gif */; };
@@ -113,6 +114,7 @@
 		1C1C39711DBFF38F00CB147B /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		1C8BE5771DDABA4C004EC7EE /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		1CA21CC91DC13CEF005AB2E3 /* IntroViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroViewControllerTests.swift; path = ../MonteCarloSimulator/IntroViewControllerTests.swift; sourceTree = "<group>"; };
+		1CE5AAFC1DF3C342006CFA96 /* LoadingViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewControllerTests.swift; sourceTree = "<group>"; };
 		5712F9A486BEE6FFB2242BD8 /* Pods-MonteCarloSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorTests/Pods-MonteCarloSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C0BB019AF49CC91B64EDD25 /* Pods_MonteCarloSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonteCarloSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C32A32B857102DD69450FD /* Pods-MonteCarloSimulatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonteCarloSimulatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonteCarloSimulatorUITests/Pods-MonteCarloSimulatorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				DABA06A31DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift */,
 				DA5CFA5C1DDE7714005EA4A1 /* StockAllocationTableViewCellTests.swift */,
 				DA5CFA5E1DDE7E01005EA4A1 /* StockSelectionTableViewCellTests.swift */,
+				1CE5AAFC1DF3C342006CFA96 /* LoadingViewControllerTests.swift */,
 				DABA06A51DC242FA00BB1407 /* ResultsViewControllerTests.swift */,
 			);
 			path = MonteCarloSimulatorTests;
@@ -633,6 +636,7 @@
 				DA2BCC0B1DDF855000FE627F /* AppDelegateTests.swift in Sources */,
 				DA5CFA5F1DDE7E01005EA4A1 /* StockSelectionTableViewCellTests.swift in Sources */,
 				DA5CFA5D1DDE7714005EA4A1 /* StockAllocationTableViewCellTests.swift in Sources */,
+				1CE5AAFD1DF3C342006CFA96 /* LoadingViewControllerTests.swift in Sources */,
 				DABA06A41DC2420000BB1407 /* StockSelectionTableViewControllerTests.swift in Sources */,
 				DABA06A61DC242FA00BB1407 /* ResultsViewControllerTests.swift in Sources */,
 				1CA21CCA1DC13CEF005AB2E3 /* IntroViewControllerTests.swift in Sources */,
