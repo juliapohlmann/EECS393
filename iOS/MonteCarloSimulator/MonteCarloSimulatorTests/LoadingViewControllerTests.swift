@@ -43,7 +43,7 @@ class LoadingViewControllerTests: XCTestCase {
         
         controller.setUserDict()
         controller.submitAction()
-        sleep(10)
+        sleep(20)
         XCTAssertEqual(controller.results.count, 4)
         
         
