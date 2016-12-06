@@ -296,7 +296,7 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfP-A6-uDT" id="xor-hf-Z21">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TICKER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASW-OP-HK1">
@@ -349,7 +349,7 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="minusButton" destination="F0E-Ap-qIJ" id="PEl-Wa-q5J"/>
-                                    <outlet property="percentageField" destination="5mM-lw-cGP" id="Od5-wY-qdJ"/>
+                                    <outlet property="percentageField" destination="5mM-lw-cGP" id="qct-mY-7Fi"/>
                                     <outlet property="plusButton" destination="UbS-xC-I0C" id="WFH-lf-TgA"/>
                                     <outlet property="tickerField" destination="ASW-OP-HK1" id="KxM-Lu-Rz3"/>
                                 </connections>
@@ -388,15 +388,15 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                         <viewControllerLayoutGuide type="bottom" id="P1l-8d-Zkp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iPZ-mW-9JC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vo6-JF-gVf" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="448"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="512"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSQ-ft-fpw">
-                                <rect key="frame" x="195" y="564" width="180" height="41"/>
+                                <rect key="frame" x="195" y="628" width="180" height="41"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.44705882349999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="Restart">
@@ -419,7 +419,7 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phj-c1-PiH">
-                                <rect key="frame" x="15" y="534" width="339" height="21"/>
+                                <rect key="frame" x="15" y="598" width="339" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="aBg-Xt-hYP"/>
                                 </constraints>
@@ -428,7 +428,7 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-hy-fLb">
-                                <rect key="frame" x="0.0" y="563" width="180" height="41"/>
+                                <rect key="frame" x="0.0" y="627" width="180" height="41"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.44705882349999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="f7M-p4-eoN"/>
@@ -442,7 +442,7 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percent of runs where the given dollar amount was reached" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ok-Cs-SrP">
-                                <rect key="frame" x="1" y="455" width="375" height="27"/>
+                                <rect key="frame" x="1" y="519" width="375" height="27"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -556,7 +556,7 @@ After running the Monte Carlo Simulation, you will be able to see the results, a
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5uG-be-P3g" id="m1M-8Z-nHD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhB-Xw-Qmi">

@@ -280,12 +280,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulator/StockAllocationTableViewCell.swift"
-            timestampString = "502309562.337059"
+            timestampString = "502675439.959242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "setPercentageFieldText(newValue:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "setPercentageFieldText(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -296,12 +296,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulator/StockAllocationTableViewCell.swift"
-            timestampString = "502310097.845314"
+            timestampString = "502675439.959242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "setFieldTexts(tickerText:percentageText:)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "setFieldTexts(_:percentageText:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -312,13 +312,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonteCarloSimulator/StockAllocationTableViewCell.swift"
-            timestampString = "502310097.845314"
+            timestampString = "502675439.959242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "setFieldTexts(tickerText:percentageText:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "setFieldTexts(_:percentageText:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonteCarloSimulator/StockAllocationTableViewCell.swift"
+            timestampString = "502675439.959242"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "StockAllocationTableViewCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
