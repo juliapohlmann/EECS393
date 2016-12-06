@@ -88,7 +88,6 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
     }
     
     func getStockQuote(ticker: String, searchBar: UISearchBar) {
-        
         // the code below is making use of the StocksKit Cocoapod
         // we pass in the ticker value and it returns a result with
         // either success or failure, and we use the successful return
@@ -101,7 +100,7 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
                     self.setUserInteraction(true)
                     self.stockTickers += [ticker]
                     self.stockValues += [quotes[0].lastTradePrice]
-                    self.reloadData()
+                    self.tableView.reloadData()
                     break
                 case .Failure(_):
                     self.setUserInteraction(true)
@@ -118,12 +117,12 @@ class StockSelectionTableViewController: UITableViewController, UISearchBarDeleg
         let index = stockTickers.indexOf((ticker))
         stockTickers.removeAtIndex(index!)
         stockValues.removeAtIndex(index!)
-        self.reloadData()
-    }
-    
-    func reloadData() {
         self.tableView.reloadData()
     }
+    
+//    func reloadData() {
+//        self.tableView.reloadData()
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         

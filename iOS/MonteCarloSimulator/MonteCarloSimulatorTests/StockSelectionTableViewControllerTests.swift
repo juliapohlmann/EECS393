@@ -92,9 +92,12 @@ class StockSelectionTableViewControllerTests: XCTestCase {
     
     func testRemoveTicker() {
         class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
-            override func reloadData() {
+            override func viewDidLoad() {
                 //do nothing
             }
+//            override func reloadData() {
+//                //do nothing
+//            }
         }
         let controller = StockSelectionTableViewControllerMock()
         controller.stockTickers.appendContentsOf(generateStockTickers(15))
@@ -164,6 +167,13 @@ class StockSelectionTableViewControllerTests: XCTestCase {
         XCTAssertEqual("ABC", controller.alert.message)
         XCTAssertEqual("Error", controller.alert.title)
     }
+    
+    func testNumberOfSectionsInTableView() {
+        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {}
+        let controller = StockSelectionTableViewControllerMock()
+        XCTAssertEqual(1, controller.numberOfSectionsInTableView(UITableView()))
+    }
+    
     
 //    func testGetStockQuote() {
 //        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
