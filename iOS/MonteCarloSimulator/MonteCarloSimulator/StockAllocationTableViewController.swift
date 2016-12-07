@@ -33,8 +33,7 @@ class StockAllocationTableViewController: UITableViewController {
         
         var stockDict: [String: Int] = [:]
         
-        for (index, element) in stockTickers.enumerate()
-        {
+        for (index, element) in stockTickers.enumerate() {
             stockDict[element] = stockPercentages[index]
         }
         

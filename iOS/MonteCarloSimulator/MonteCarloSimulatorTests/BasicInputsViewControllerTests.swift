@@ -24,10 +24,88 @@ class BasicInputsViewControllerTests: XCTestCase {
     //functions that need testing
     
     //isInputValid      +
-    //backClick
-    //nextClick
-    //displayError
+    //backClick         +
+    //nextClick         +
+    //displayError      +
     //getInputValues    +
+    
+    func testBackClick() {
+        class BasicInputsViewControllerMock: BasicInputsViewController {
+            var viewDismissed = false
+            override func dismissViewControllerAnimated(flag: Bool, completion: (() -> Void)?) {
+                viewDismissed = true
+            }
+        }
+        let controller = BasicInputsViewControllerMock()
+        controller.backClick(self)
+        XCTAssertTrue(controller.viewDismissed)
+    }
+    
+    func testNextClickInputValid() {
+        class BasicInputsViewControllerMock: BasicInputsViewController {
+            var segueIdentifier = ""
+            override func getInputValues() -> (Int?, Int?, Int?) {
+                return (22, 33, 55)
+            }
+            override func isInputValid(values: (Int?, Int?, Int?)) -> Bool {
+                return true
+            }
+            override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
+                segueIdentifier = identifier
+            }
+        }
+        let controller = BasicInputsViewControllerMock()
+        var userDictBefore = controller.userDict
+        userDictBefore["years"] = 1
+        userDictBefore["startingMoney"] = 2
+        userDictBefore["goalMoney"] = 3
+        
+        controller.userDict = userDictBefore
+        controller.nextClick(self)
+//        controller.nextClick(controller.nextButton)
+        
+        let userDictAfter = controller.userDict
+        let yearsResult = String(userDictAfter["years"]!)
+        let startingMoneyResult = String(userDictAfter["startingMoney"]!)
+        let goalMoneyResult = String(userDictAfter["goalMoney"]!)
+        
+        XCTAssertEqual("22", yearsResult)
+        XCTAssertEqual("33", startingMoneyResult)
+        XCTAssertEqual("55", goalMoneyResult)
+        XCTAssertEqual("basicInputsNext", controller.segueIdentifier)
+    }
+    
+    func testNextClickInputInvalid() {
+        class BasicInputsViewControllerMock: BasicInputsViewController {
+            override func getInputValues() -> (Int?, Int?, Int?) {
+                return (-1, -1, -1)
+            }
+            override func isInputValid(values: (Int?, Int?, Int?)) -> Bool {
+                return false
+            }
+        }
+        let controller = BasicInputsViewControllerMock()
+        var userDictBefore = controller.userDict
+        userDictBefore["years"] = 1
+        userDictBefore["startingMoney"] = 2
+        userDictBefore["goalMoney"] = 3
+        
+        controller.userDict = userDictBefore
+        controller.nextClick(self)
+        
+        let userDictAfter = controller.userDict
+        let yearsResult = String(userDictAfter["years"]!)
+        let startingMoneyResult = String(userDictAfter["startingMoney"]!)
+        let goalMoneyResult = String(userDictAfter["goalMoney"]!)
+
+        XCTAssertEqual("1", yearsResult)
+        XCTAssertEqual("2", startingMoneyResult)
+        XCTAssertEqual("3", goalMoneyResult)
+//        XCTAssertEqual(userDictBefore["years"], controller.userDict["years"])
+//        XCTAssertEqual(userDictBefore["startingMoney"], controller.userDict["startingMoney"])
+//        XCTAssertEqual(userDictBefore["goalMoney"], controller.userDict["goalMoney"])
+
+    }
     
     func testIsInputValid() {
         testValid()

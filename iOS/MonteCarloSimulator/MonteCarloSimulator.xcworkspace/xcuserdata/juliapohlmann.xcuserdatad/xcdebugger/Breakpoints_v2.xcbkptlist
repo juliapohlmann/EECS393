@@ -93,7 +93,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "getStockQuote(_:searchBar:)"
+            landmarkName = "getStockQuote(ticker:searchBar:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -109,7 +109,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
             endingLineNumber = "99"
-            landmarkName = "getStockQuote(_:searchBar:)"
+            landmarkName = "getStockQuote(ticker:searchBar:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -125,7 +125,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "getStockQuote(_:searchBar:)"
+            landmarkName = "getStockQuote(ticker:searchBar:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -141,7 +141,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
             endingLineNumber = "105"
-            landmarkName = "getStockQuote(_:searchBar:)"
+            landmarkName = "getStockQuote(ticker:searchBar:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -157,7 +157,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
-            landmarkName = "getStockQuote(_:searchBar:)"
+            landmarkName = "getStockQuote(ticker:searchBar:)"
             landmarkType = "7">
             <Locations>
                <Location

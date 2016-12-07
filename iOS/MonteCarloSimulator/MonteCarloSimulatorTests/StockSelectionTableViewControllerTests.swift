@@ -189,9 +189,8 @@ class StockSelectionTableViewControllerTests: XCTestCase {
 //                //do nothing
 //                setUserInteract = value
 //            }
-//            override func reloadData() {
+//            override func viewDidLoad() {
 //                //do nothing
-//                reloadedData = true
 //            }
 //        }
 //        let controller = StockSelectionTableViewControllerMock()
@@ -199,7 +198,7 @@ class StockSelectionTableViewControllerTests: XCTestCase {
 //        let searchBar = UISearchBarMock()
 //        
 //        //test success 
-//        searchBar.text = "aBCd"
+//        searchBar.text = "aapl"
 //        controller.getStockQuote("AAPL", searchBar: searchBar)
 //        sleep(30)
 //        XCTAssertEqual(true, controller.setUserInteract)
