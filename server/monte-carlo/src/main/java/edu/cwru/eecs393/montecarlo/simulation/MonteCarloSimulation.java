@@ -12,30 +12,30 @@ import edu.cwru.eecs393.montecarlo.data.HistoricalFinancialData;
 import edu.cwru.eecs393.montecarlo.data.SimulationParameters;
 import edu.cwru.eecs393.montecarlo.data.SimulationResult;
 import edu.cwru.eecs393.montecarlo.math.Statistics;
-import lombok.extern.java.Log;
 
 /**
  * Implementation of {@link Simulation} for running monte carlo simulations.
  *
  */
-@Log
 public class MonteCarloSimulation implements Simulation {
 
-	// TODO fields and constructor with everything that is needed for this
-	// simulation
-	private int duration; // number of years money is invested
-	private double initialValue; // beginning portfolio balance
-	private double goalValue; // goal, or target, amount of money at the end of
-								// the duration
-	private List<FinancialData> portfolio; // list of type Stock that makes up
-											// the portfolio
-	private int numStocks; // number of stocks in the portfolio
-	private double forecast[][]; // the annual price forcast for each stock in
-									// the portfolio
-	private int numTrials = 10000; // number of trials the simulation runs
-	private List<Double> results = new ArrayList(); // list of ending values
-													// from each trial
-	private SimulationParameters simParameters;
+	// number of years money is invested
+	private final int duration;
+	// beginning portfolio balance
+	private final double initialValue;
+	// goal, or target, amount of money at the end of the duration
+	private final double goalValue;
+	// list of type Stock that makes up the portfolio
+	private final List<FinancialData> portfolio;
+	// number of stocks in the portfolio
+	private final int numStocks;
+	// the annual price forcast for each stock in the portfolio
+	private double forecast[][];
+	// number of trials the simulation runs
+	private final int numTrials = 10000;
+	// list of ending values from each trial
+	private final List<Double> results = new ArrayList<>();
+	private final SimulationParameters simParameters;
 
 	public MonteCarloSimulation(SimulationParameters simParameters, Map<String, FinancialData> financialData) {
 		this.simParameters = simParameters;
@@ -131,7 +131,6 @@ public class MonteCarloSimulation implements Simulation {
 	 */
 	public double[] forecast(FinancialData stock) {
 		double currentPrice = stock.getAsk();
-		double prevYearPrice = stock.getHistoricalData().first().getClose();
 		double periodicReturns[] = new double[stock.getHistoricalData().size() - 1];
 		double annualPrices[] = new double[stock.getHistoricalData().size()];
 
@@ -153,10 +152,10 @@ public class MonteCarloSimulation implements Simulation {
 		double drift = drift(aveAnnualReturn, variance);
 		double stdDev = stat.getStdDev();
 
-		double forecastedPrice[] = new double[duration + 1]; // duration + 1 to
-																// include price
-																// at time 0
-		forecastedPrice[0] = currentPrice; // year 0 price is current price
+		// duration + 1 to include price at time 0
+		double forecastedPrice[] = new double[duration + 1];
+		// year 0 price is current price
+		forecastedPrice[0] = currentPrice;
 
 		/*
 		 * for each year of duration, calculate the price. Model is based on the

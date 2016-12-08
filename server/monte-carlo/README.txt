@@ -1,5 +1,5 @@
 Dev Dependencies:
-	Maven:
+	Maven version 3.3.9 (may work with others, only tested on this):
 		$ sudo apt-get install maven
 	Java1.8:
 		$ sudo add-apt-repository ppa:webupd8team/java
