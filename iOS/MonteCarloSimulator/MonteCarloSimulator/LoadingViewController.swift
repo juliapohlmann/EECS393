@@ -25,11 +25,6 @@ class LoadingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         let navVC = segue.destinationViewController as! UINavigationController
@@ -39,6 +34,7 @@ class LoadingViewController: UIViewController {
         destinationVC.results = results
     }
     
+    /// Submit user data to the server, which responds with the results of the simulation. 
     func submitAction() {
         
         do {

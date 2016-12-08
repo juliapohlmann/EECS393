@@ -35,6 +35,9 @@ class ResultsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    /// Handles large numbers (1.6E15) from the server
+    /// - parameters:
+    ///   - String: string to be converted
     func handleE(s: String) -> String {
         
         if(s.containsString("E")) {
@@ -54,6 +57,10 @@ class ResultsViewController: UIViewController {
         
     }
     
+    /// Sets the chart of the results page
+    /// - parameters:
+    ///   - [String]: x axis data
+    ///   - [Float]: y axis data
     func setChart(dataPoints: [String], values: [Float]) {
         
         //set data
@@ -108,9 +115,12 @@ class ResultsViewController: UIViewController {
         barChartView.scaleYEnabled = false;
     }
     
-    // the goal of this method is to populate
-    // sorted keys and sorted values to graph
+    /// the goal of this method is to populate sorted keys and sorted values to graph. The data is converted from the server to a cleaner format
+    /// - parameters:
+    ///   - [String: AnyObject]: JSON from the server
     func convertGraphValues(oldGraphValues: [String: AnyObject]) {
+        
+        print(oldGraphValues)
         
         var valuesDict: [Int: Float] = [:]
         
@@ -149,6 +159,7 @@ class ResultsViewController: UIViewController {
         
     }
     
+    /// Sets the labels for min/max/percent reached on the results page.
     func setLabels() {
         
         let formatter = NSNumberFormatter()

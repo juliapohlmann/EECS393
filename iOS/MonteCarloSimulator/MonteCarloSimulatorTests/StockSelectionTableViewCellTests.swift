@@ -15,7 +15,7 @@ class StockSelectionTableViewCellTests: XCTestCase {
         class StockSelectionTableViewCellMock: StockSelectionTableViewCell {}
         let controller = StockSelectionTableViewCellMock()
         class StockSelectionTableViewControllerMock : StockSelectionTableViewController {
-            override func reloadData() {
+            override func viewDidLoad() {
                 //do nothing
             }
         }

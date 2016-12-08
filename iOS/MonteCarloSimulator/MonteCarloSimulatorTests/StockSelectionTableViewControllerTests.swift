@@ -92,9 +92,12 @@ class StockSelectionTableViewControllerTests: XCTestCase {
     
     func testRemoveTicker() {
         class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
-            override func reloadData() {
+            override func viewDidLoad() {
                 //do nothing
             }
+//            override func reloadData() {
+//                //do nothing
+//            }
         }
         let controller = StockSelectionTableViewControllerMock()
         controller.stockTickers.appendContentsOf(generateStockTickers(15))
@@ -165,6 +168,13 @@ class StockSelectionTableViewControllerTests: XCTestCase {
         XCTAssertEqual("Error", controller.alert.title)
     }
     
+    func testNumberOfSectionsInTableView() {
+        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {}
+        let controller = StockSelectionTableViewControllerMock()
+        XCTAssertEqual(1, controller.numberOfSectionsInTableView(UITableView()))
+    }
+    
+    
 //    func testGetStockQuote() {
 //        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
 //            var errorMessage: String? = ""
@@ -179,9 +189,8 @@ class StockSelectionTableViewControllerTests: XCTestCase {
 //                //do nothing
 //                setUserInteract = value
 //            }
-//            override func reloadData() {
+//            override func viewDidLoad() {
 //                //do nothing
-//                reloadedData = true
 //            }
 //        }
 //        let controller = StockSelectionTableViewControllerMock()
@@ -189,7 +198,7 @@ class StockSelectionTableViewControllerTests: XCTestCase {
 //        let searchBar = UISearchBarMock()
 //        
 //        //test success 
-//        searchBar.text = "aBCd"
+//        searchBar.text = "aapl"
 //        controller.getStockQuote("AAPL", searchBar: searchBar)
 //        sleep(30)
 //        XCTAssertEqual(true, controller.setUserInteract)

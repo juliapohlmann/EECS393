@@ -217,7 +217,7 @@ class StockAllocationViewControllerTests: XCTestCase {
         
         //true
         var expected = true
-        XCTAssertEqual(expected, controller.canDecrementStock(1))
+        XCTAssertEqual(expected, controller.canDecrementStock(2))
         
         //false
         expected = false

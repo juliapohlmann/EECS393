@@ -13,9 +13,10 @@ class StockAllocationTableViewCell: UITableViewCell {
     @IBOutlet weak var tickerField: UITextField!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var percentageField: UILabel!
+    @IBOutlet var percentageField: UILabel!
     
     var previousPercentage : Int = 0
+    
     var StockAllocationInstance : StockAllocationTableViewController = StockAllocationTableViewController()
     
     func setPercentageFieldText(newValue: String) {

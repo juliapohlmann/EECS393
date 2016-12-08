@@ -42,9 +42,13 @@ class BasicInputsViewController: UIViewController, UITextFieldDelegate {
     ///   - sender: current view controller
     @IBAction func nextClick(sender: AnyObject) {
         if(isInputValid(getInputValues())) {
-            userDict["years"] = Int(durationInput.text!)
-            userDict["startingMoney"] = Int(initialValueInput.text!)
-            userDict["goalMoney"] = Int(goalValueInput.text!)
+            let (years, startingMoney, goalMoney) = getInputValues()
+            userDict["years"] = years
+            userDict["startingMoney"] = startingMoney
+            userDict["goalMoney"] = goalMoney
+//            userDict["years"] = Int(durationInput.text!)
+//            userDict["startingMoney"] = Int(initialValueInput.text!)
+//            userDict["goalMoney"] = Int(goalValueInput.text!)
             performSegueWithIdentifier("basicInputsNext", sender: sender)
         }
     }
@@ -60,7 +64,6 @@ class BasicInputsViewController: UIViewController, UITextFieldDelegate {
         let destinationVC = navVC.viewControllers.first as! StockSelectionTableViewController
         
         destinationVC.userDict = userDict
-        
     }
     
     /// Get values from user input fields
