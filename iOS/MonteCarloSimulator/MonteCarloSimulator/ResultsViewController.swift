@@ -64,6 +64,12 @@ class ResultsViewController: UIViewController {
         return dataEntries
     }
     
+    /// Set the axes helper function
+    /// - parameters:
+    ///   - BarChartView: chart view to edit
+    ///   - NSNumberFormatter: percent formatter
+    /// - returns
+    /// [BarChartView]: view for bar chart
     func setAxesHelper(bcView: BarChartView, percentFormatter: NSNumberFormatter) -> BarChartView {
         //change x axis
         bcView.xAxis.labelPosition = .Bottom
@@ -84,6 +90,11 @@ class ResultsViewController: UIViewController {
         return bcView
     }
     
+    /// Set the basic chart feature
+    /// - parameters:
+    ///   - BarChartView: chart view to edit
+    /// - returns
+    /// [BarChartView]: view for bar chart
     func setBasicChartFeatures(bcView: BarChartView) -> BarChartView {
         bcView.gridBackgroundColor = UIColor.whiteColor()
         
