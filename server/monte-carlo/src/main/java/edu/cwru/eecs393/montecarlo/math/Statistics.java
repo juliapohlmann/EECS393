@@ -10,7 +10,7 @@ public class Statistics {
 		size = data.length;
 	}
 
-	//calculate average of data
+	// calculate average of data
 	public double getMean() {
 		double sum = 0.0;
 		for (double a : data) {
@@ -28,7 +28,6 @@ public class Statistics {
 		}
 		return temp / size;
 	}
-
 
 	// calculate standard deviation of the data
 	public double getStdDev() {
