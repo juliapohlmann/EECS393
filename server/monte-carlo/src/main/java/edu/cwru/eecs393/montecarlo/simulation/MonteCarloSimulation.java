@@ -37,6 +37,13 @@ public class MonteCarloSimulation implements Simulation {
 	private final List<Double> results = new ArrayList<>();
 	private final SimulationParameters simParameters;
 
+	/**
+	 * Constructor for the simulation
+	 * @param simParameters 
+	 * 				the parameters of the simulation passed in from the front end
+	 * @param financialData
+	 * 				historic financial data of each stock from the Yahoo! Finance API
+	 */
 	public MonteCarloSimulation(SimulationParameters simParameters, Map<String, FinancialData> financialData) {
 		this.simParameters = simParameters;
 		initialValue = simParameters.getStartingMoney();
@@ -50,6 +57,12 @@ public class MonteCarloSimulation implements Simulation {
 	}
 
 	@Override
+	/**
+	 * Runs the simulation.  Forecasts a portfolio of stocks over 10,000 trials.
+	 * 
+	 * @return Simulation Result
+	 * 				output of the simulation
+	 */
 	public SimulationResult runSimulation() {
 		SimulationResult simResult = new SimulationResult();
 		double bestTrial = 0;
@@ -75,11 +88,23 @@ public class MonteCarloSimulation implements Simulation {
 		return simResult;
 	}
 
+	/**
+	 * @return SimulationType
+	 * 			Returns the type of simulation to run.
+	 */
 	@Override
 	public SimulationType getSimulationType() {
 		return SimulationType.MONTE_CARLO;
 	}
 
+	/**
+	 * Creates the map of doubles used to create the graph shown at the end of the results page.
+	 * @param min
+	 * 			The minimum result shown on the graph
+	 * @param max
+	 * 			The maximum result shown on the graph
+	 * @return Map of the the ranges for the graph and the number of observation in each range
+	 */
 	public Map<Double, Double> getMap(double min, double max) {
 		double increment = (max - min) / 10;
 		Map<Double, Double> m = new HashMap<>();
@@ -90,17 +115,25 @@ public class MonteCarloSimulation implements Simulation {
 		}
 		return m;
 	}
-
+/**
+ * 
+ * @param x
+ * 			The lowest simulation result in the next graph increment
+ * @return The index of the input x, if it were in the results array
+ */
 	public double find(double x) {
 		int count = Math.abs(Collections.binarySearch(results, x));
 		count = results.size() - count;
 		return (count * 1.0) / results.size();
 	}
 
-	/*
+	/**
 	 * Calculates the number of shares purchased by dividing # dollars allocated
 	 * by current price. Then, multiplies share count by the price in the final
 	 * year of forecast to get a final value for that stock
+	 * @param simParameters
+	 * 			The initial parameters of the simulation passed in from the front end
+	 * @return  The final value of one trial of the simulation.
 	 */
 	public double calculateReturns(SimulationParameters simParameters) {
 		double endValue = 0;
@@ -113,7 +146,7 @@ public class MonteCarloSimulation implements Simulation {
 		return endValue;
 	}
 
-	/*
+	/**
 	 * Forecasts the entire portfolio for entire duration Creates a matrix of
 	 * number of stocks by duration, with the forecasted price of each stock for
 	 * each year of the simulation
@@ -126,8 +159,13 @@ public class MonteCarloSimulation implements Simulation {
 		}
 	}
 
-	/*
-	 * Forecast a stock price each year for the number of years of the duration
+
+	/**
+	 * Forecast an individual stock over the duration of the investment.
+	 * @param stock
+	 * 			The stock to be forecasted over the duration of the investment.
+	 * @return A double array that contains the current price at index 0, and forecasted prices from
+	 * index 1 through n, the duration of the simulation.
 	 */
 	public double[] forecast(FinancialData stock) {
 		double currentPrice = stock.getAsk();
@@ -171,25 +209,56 @@ public class MonteCarloSimulation implements Simulation {
 		return forecastedPrice;
 	}
 
-	// periodic return is the log (base e) of the change in price over 1 year
+	/**
+	 * periodic return is the natural log of the change in price over 1 year
+	 * @param today
+	 * 			The current price of the stock when the method is called.  
+	 * @param previousYear
+	 * 			The price of the stock one year prior in the simulation
+	 * @return The log of the percent change of the inputs.  
+	 */
 	public double periodicAnnualReturn(double today, double previousYear) {
 		return Math.log(today / previousYear);
 	}
 
-	// drift defined as the average annual periodic return less half the
-	// variance
+
+	/**
+	 * 	drift defined as the average annual periodic return less half the variance
+	 * @param aveAnnualReturn
+	 * 			The average annual periodic return of the stock.
+	 * @param variance
+	 * 			The variance of the periodic returns.
+	 * @return Drift, a measure of historic stock price movement.  
+	 */
 	public double drift(double aveAnnualReturn, double variance) {
 		double drift = aveAnnualReturn - (variance / 2);
 		return drift;
 	}
 
-	// inverse probability a random value occurs on a normal distribution scaled
-	// by the standard deviation
+	/**
+	 * inverse probability a random value occurs on a normal distribution scaled
+	 * by the standard deviation
+	 * @param stdDev
+	 * 			The standard deviation of periodic returns.
+	 * @param stat
+	 * 			An instance of a helper stat class
+	 * @return A random value
+	 */
 	public double randomValue(double stdDev, Statistics stat) {
 		return stdDev * stat.normInv(Math.random(), 0, 1);
 	}
 
-	// the current price * e ^ (drift + random Value)
+
+	/**
+	 * Forecast the next price as current price * e ^ (drift + random Value)
+	 * @param today
+	 * 			The current price in the simulation
+	 * @param drift
+	 * 			The drift calculated from the drift method
+	 * @param randomValue
+	 * 			The random value calculated from the random value method
+	 * @return  The next forecasted price.  
+	 */
 	public double nextYearPrice(double today, double drift, double randomValue) {
 		return today * Math.exp(drift + randomValue);
 	}
