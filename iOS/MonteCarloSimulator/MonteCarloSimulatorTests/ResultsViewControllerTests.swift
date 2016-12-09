@@ -111,11 +111,8 @@ class ResultsViewControllerTests: XCTestCase {
         
         let keys = ["$194.00", "$203.00", "$212.00", "$222.00", "$231.00", "$240.00", "$249.00", "$259.00", "$268.00", "$277.00"]
         
-        
         XCTAssertEqual(controller.sortedKeys, keys)
-        // can't test if floating point arrays are equal in iOS??
-        // let values = [0.2239, 0.0851, 0.08939999, 0.0905, 0.08039999, 0.0747, 0.0668, 0.0575, 0.0448, 0.0369]
-        // XCTAssertEqual(controller.sortedValues, values)
+        
     }
     
     //tests for ResultsViewController
