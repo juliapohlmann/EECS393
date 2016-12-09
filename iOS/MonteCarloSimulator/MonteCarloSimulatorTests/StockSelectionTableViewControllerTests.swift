@@ -40,7 +40,7 @@ class StockSelectionTableViewControllerTests: XCTestCase {
     //tests for StockSelectionTableViewControllerTests
     
     //displayError                      +
-    //backClick
+    //backClick                         +
     //nextClick
     //tableView -> Int
     //numberOfSectionsInTableView
@@ -51,9 +51,49 @@ class StockSelectionTableViewControllerTests: XCTestCase {
     //prepareForSegue
     //isInputValid                      +
     
-    func testIsInputValid() {
-        testIsInputValidTrue()
-        testIsInputValidFalse()
+    func testNextClickInputValid() {
+        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
+            var segueIdentifier = "notChanged"
+            override func isInputValid() -> Bool {
+                return true
+            }
+            override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
+                segueIdentifier = identifier
+            }
+        }
+        
+        let controller = StockSelectionTableViewControllerMock()
+        controller.nextClick(self)
+        XCTAssertEqual("stockSelectionNext", controller.segueIdentifier)
+    }
+    
+    func testNextClickInputInvalid() {
+        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
+            var segueIdentifier = "notChanged"
+            override func isInputValid() -> Bool {
+                return false
+            }
+            override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
+                segueIdentifier = identifier
+            }
+        }
+        
+        let controller = StockSelectionTableViewControllerMock()
+        let prevIdentifier = controller.segueIdentifier
+        controller.nextClick(self)
+        XCTAssertEqual(prevIdentifier, controller.segueIdentifier)
+    }
+    
+    func testBackClick() {
+        class StockSelectionTableViewControllerMock: StockSelectionTableViewController {
+            var viewDismissed = false
+            override func dismissViewControllerAnimated(flag: Bool, completion: (() -> Void)?) {
+                viewDismissed = true
+            }
+        }
+        let controller = StockSelectionTableViewControllerMock()
+        controller.backClick(self)
+        XCTAssertTrue(controller.viewDismissed)
     }
     
     func testIsInputValidTrue() {

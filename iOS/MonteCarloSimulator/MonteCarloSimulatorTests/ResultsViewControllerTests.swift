@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Charts
 @testable import MonteCarloSimulator
 
 class ResultsViewControllerTests: XCTestCase {
@@ -21,11 +22,55 @@ class ResultsViewControllerTests: XCTestCase {
         super.tearDown()
     }
     
+    func testSetBasicChartFeatures() {
+        class ResultsViewControllerMock: ResultsViewController {}
+        let controller = ResultsViewControllerMock()
+        
+        let actual = controller.setBasicChartFeatures(BarChartView())
+        
+        XCTAssertEqual(UIColor.whiteColor(), actual.gridBackgroundColor)
+        XCTAssertEqual("", actual.descriptionText)
+        XCTAssertFalse(actual.legend.enabled)
+    }
+    
+    func testSetAxesHelper() {
+        class ResultsViewControllerMock: ResultsViewController {}
+        let controller = ResultsViewControllerMock()
+        let percentFormatter = NSNumberFormatter()
+        percentFormatter.numberStyle = NSNumberFormatterStyle.PercentStyle
+        let actual = controller.setAxesHelper(BarChartView(), percentFormatter: percentFormatter)
+        
+        XCTAssertFalse(actual.xAxis.drawGridLinesEnabled)
+        XCTAssertFalse(actual.leftAxis.drawGridLinesEnabled)
+        XCTAssertFalse(actual.rightAxis.enabled)
+        XCTAssertFalse(actual.scaleYEnabled)
+        XCTAssertFalse(actual.scaleXEnabled)
+        XCTAssertTrue(actual.leftAxis.enabled)
+        XCTAssertEqual(UIColor.blackColor(), actual.xAxis.labelTextColor)
+        XCTAssertEqual(UIColor.blackColor(), actual.rightAxis.labelTextColor)
+        XCTAssertEqual(percentFormatter, actual.leftAxis.valueFormatter)
+    }
+    
+    func testSetDataHelper() {
+        class ResultsViewControllerMock: ResultsViewController {}
+        let controller = ResultsViewControllerMock()
+        let values : [Float] = [2.0, 3.0, 4.0]
+        
+        let entry1 = BarChartDataEntry(value: 2.0, xIndex: 0)
+        let entry2 = BarChartDataEntry(value: 3.0, xIndex: 1)
+        let entry3 = BarChartDataEntry(value: 4.0, xIndex: 2)
+        
+        let expected : [BarChartDataEntry] = [entry1, entry2, entry3]
+        let actual = controller.setDataHelper(values)
+        print("ACTUAL: ")
+        print(actual)
+        XCTAssertEqual(expected, actual)
+
+    }
+    
     func testHandleE() {
         //mock ResultsViewController
-        class ResultsViewControllerMock: ResultsViewController {
-            
-        }
+        class ResultsViewControllerMock: ResultsViewController {}
         
         let controller = ResultsViewControllerMock()
         
@@ -37,14 +82,9 @@ class ResultsViewControllerTests: XCTestCase {
     func testSetLabels() {
         //mock ResultsViewController
         class ResultsViewControllerMock: ResultsViewController {
-            
             func setResults() {
-                
                 results = ["maxValue": 15.2340, "percentGoalReached": 0.90, "minValue": 10.2340]
-                
             }
-            
-            
         }
         
         let controller = ResultsViewControllerMock()

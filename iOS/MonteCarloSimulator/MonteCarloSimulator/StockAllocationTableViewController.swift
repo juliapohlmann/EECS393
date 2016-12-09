@@ -11,7 +11,8 @@ class StockAllocationTableViewController: UITableViewController {
     
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var runSimulation: UIButton!
-    @IBOutlet weak var unallocatedPercentageField: UILabel!
+//    @IBOutlet weak var unallocatedPercentageField: UILabel!
+    @IBOutlet var unallocatedPercentageField: UILabel!
     
 //    @IBOutlet weak var unallocatedPercentageField: UITextField!
     
@@ -29,7 +30,7 @@ class StockAllocationTableViewController: UITableViewController {
     // SERVER FUNCTIONS
     
     /// prepares information to send to the server
-    func getReadyToSendToServer() {
+    func getReadyToSendToServer() -> [String: Int] {
         
         var stockDict: [String: Int] = [:]
         
@@ -40,6 +41,7 @@ class StockAllocationTableViewController: UITableViewController {
         print(stockDict)
         
         userDict["tickerToAllocation"] = stockDict
+        return stockDict
     }
     
     //SETUP FUNCTIONS
@@ -165,7 +167,6 @@ class StockAllocationTableViewController: UITableViewController {
             displayError("You must allocate all 100% percent")
             return false;
         }
-        
     }
     
     /// updates the unallocatedPercentageField to the value of the unallocatedPercentage field

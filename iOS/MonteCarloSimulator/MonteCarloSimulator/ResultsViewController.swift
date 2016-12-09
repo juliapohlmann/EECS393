@@ -41,20 +41,62 @@ class ResultsViewController: UIViewController {
     func handleE(s: String) -> String {
         
         if(s.containsString("E")) {
-            
             let nums = s.characters.split{$0 == "E"}.map(String.init)
-            
             let total = Float(nums[0])! * pow(10, Float(nums[1])!)
-            
             return String(total)
-            
-            
         } else {
-            
             return s
-            
         }
+    }
+    
+    
+    /// Sets the data to be used in the chart
+    /// - parameters:
+    ///   - [Float]: values to set as data
+    /// - returns
+    /// [BarChartDataEntry]: data to be graphed
+    func setDataHelper(values: [Float]) -> [BarChartDataEntry] {
+        var dataEntries : [BarChartDataEntry] = []
+        for i in 0..<values.count {
+            let dataEntry = BarChartDataEntry(value: Double(values[i]), xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        return dataEntries
+    }
+    
+    func setAxesHelper(bcView: BarChartView, percentFormatter: NSNumberFormatter) -> BarChartView {
+        //change x axis
+        bcView.xAxis.labelPosition = .Bottom
+        bcView.xAxis.drawGridLinesEnabled = false
+        bcView.xAxis.setLabelsToSkip(2)
+        bcView.xAxis.labelTextColor = UIColor.blackColor()
         
+        //change y axis
+        bcView.rightAxis.enabled = false
+        bcView.leftAxis.enabled = true
+        bcView.leftAxis.valueFormatter = percentFormatter
+        bcView.leftAxis.drawGridLinesEnabled = false
+        bcView.rightAxis.labelTextColor = UIColor.blackColor()
+        
+        bcView.scaleXEnabled = false
+        bcView.scaleYEnabled = false
+        
+        return bcView
+    }
+    
+    func setBasicChartFeatures(bcView: BarChartView) -> BarChartView {
+        bcView.gridBackgroundColor = UIColor.whiteColor()
+        
+        //set animation
+        bcView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        
+        //set description
+        bcView.descriptionText = ""
+        
+        //change label color
+        bcView.legend.enabled = false
+        
+        return bcView
     }
     
     /// Sets the chart of the results page
@@ -64,55 +106,21 @@ class ResultsViewController: UIViewController {
     func setChart(dataPoints: [String], values: [Float]) {
         
         //set data
-        var dataEntries: [BarChartDataEntry] = []
-        
-        for i in 0..<values.count {
-            let dataEntry = BarChartDataEntry(value: Double(values[i]), xIndex: i)
-            dataEntries.append(dataEntry)
-        }
-        
+        let dataEntries = setDataHelper(values)
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Percent Reached")
         chartDataSet.axisDependency = .Left;
         chartDataSet.valueTextColor = UIColor.whiteColor()
+        //set colors
+        chartDataSet.colors = ChartColorTemplates.joyful()
+        
         let chartData = BarChartData(xVals: dataPoints, dataSet: chartDataSet)
         barChartView.data = chartData
         
-        //set colors
-        chartDataSet.colors = ChartColorTemplates.joyful()
-        self.barChartView.gridBackgroundColor = UIColor.whiteColor()
-        
-        //set animation
-        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
-        
-        //set description
-        barChartView.descriptionText = ""
-        
-        //set target
-        //let ll = ChartLimitLine(limit: (userDict["goalMoney"] as? Double)!, label: "Goal Value")
-        //barChartView.xAxis.addLimitLine(ll)
-        
-        //change x axis
-        barChartView.xAxis.labelPosition = .Bottom
-        barChartView.xAxis.drawGridLinesEnabled = false
-        barChartView.xAxis.setLabelsToSkip(2)
-        barChartView.xAxis.labelTextColor = UIColor.blackColor()
+        barChartView = setBasicChartFeatures(barChartView)
         
         let percentFormatter = NSNumberFormatter()
         percentFormatter.numberStyle = NSNumberFormatterStyle.PercentStyle
-
-        //change y axis
-        barChartView.rightAxis.enabled = false;
-        barChartView.leftAxis.enabled = true;
-        barChartView.leftAxis.valueFormatter = percentFormatter;
-        barChartView.leftAxis.drawGridLinesEnabled = false
-        barChartView.rightAxis.labelTextColor = UIColor.blackColor()
-        
-        //change label color
-        //barChartView.legend.textColor = UIColor.blackColor()
-        barChartView.legend.enabled = false;
-        
-        barChartView.scaleXEnabled = false;
-        barChartView.scaleYEnabled = false;
+        barChartView = setAxesHelper(barChartView, percentFormatter: percentFormatter)
     }
     
     /// the goal of this method is to populate sorted keys and sorted values to graph. The data is converted from the server to a cleaner format

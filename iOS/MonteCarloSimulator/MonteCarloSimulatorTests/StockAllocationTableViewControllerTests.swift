@@ -39,7 +39,7 @@ class StockAllocationViewControllerTests: XCTestCase {
     //numberOfSectionsInTableView         +
     //tableView -> Int                    +
     //updateUnallocatedPercentageField
-    //backClick
+    //backClick                           +
     //tableView -> Cell
     //displayError
 
@@ -57,8 +57,41 @@ class StockAllocationViewControllerTests: XCTestCase {
 //        XCTAssertEqual("25", actual.percentageField.text)
 //
 //    }
-
+    
+    func testGetReadyToSendToServer() {
+        class StockAllocationTableViewControllerMock: StockAllocationTableViewController {}
+        let controller = StockAllocationTableViewControllerMock()
         
+        controller.loadStocks(["ABC","DEF", "GHI"])
+        controller.stockPercentages = [20, 40, 40]
+        
+        let expected = ["DEF": 40, "GHI": 40, "ABC": 20]
+        let actual = controller.getReadyToSendToServer()
+        XCTAssertEqual(expected, actual)
+        
+    }
+
+    func testUpdateUnallocatedPercentageField() {
+        class StockAllocationTableViewControllerMock: StockAllocationTableViewController {}
+        let controller = StockAllocationTableViewControllerMock()
+        controller.unallocatedPercentageField = UILabel(frame: CGRectZero)
+        controller.unallocatedPercentageField.text = "abc"
+        controller.unallocatedPercentage = 53
+        controller.updateUnallocatedPercentageField()
+        XCTAssertEqual("53% left to allocate", controller.unallocatedPercentageField.text)
+    }
+    
+    func testBackClick() {
+        class StockAllocationTableViewControllerMock: StockAllocationTableViewController {
+            var viewDismissed = false
+            override func dismissViewControllerAnimated(flag: Bool, completion: (() -> Void)?) {
+                viewDismissed = true
+            }
+        }
+        let controller = StockAllocationTableViewControllerMock()
+        controller.backClick(self)
+        XCTAssertTrue(controller.viewDismissed)
+    }
     
     
     func testTableViewIntReturned() {
@@ -224,11 +257,6 @@ class StockAllocationViewControllerTests: XCTestCase {
         XCTAssertEqual(expected, controller.canDecrementStock(0))
     }
     
-    func testValidEdit() {
-        testValidEditTrue()
-        testValidEditFalse()
-    }
-    
     func testValidEditTrue() {
         //true
         helperValidEdit(true, ticker: "ABCD", oldValue: 1, newValue: 2)
@@ -245,7 +273,7 @@ class StockAllocationViewControllerTests: XCTestCase {
         helperValidEdit(false, ticker: "ABCD", oldValue: 25, newValue: -1)
         
         //false because (newValue - oldValue) > unallocatedPercentage
-        helperValidEdit(false, ticker: "ABCD", oldValue: 1, newValue: 1000)
+        helperValidEdit(false, ticker: "ABCD", oldValue: 1, newValue: 99)
     }
     
     func helperValidEdit(expectedValue: Bool, ticker: String, oldValue: Int, newValue: Int) {
@@ -257,7 +285,8 @@ class StockAllocationViewControllerTests: XCTestCase {
         let controller = StockAllocationTableViewControllerMock()
         controller.loadStocks(["ABCD", "EFGH", "IJKL"])
         controller.setStartingStockPercentages()
-        
+        controller.unallocatedPercentage = 55
+
         let actualValue = controller.validEdit(ticker, oldValue: oldValue, newValue: newValue)
         
         XCTAssertEqual(expectedValue, actualValue)

@@ -18,4 +18,50 @@ class AppDelegateTests: XCTestCase {
 
         XCTAssertTrue(controller.application(app, didFinishLaunchingWithOptions: [NSObject:AnyObject]()))
     }
+    
+    func testApplicationWillResignActive() {
+        class AppDelegateMock : AppDelegate {}
+        let controller = AppDelegateMock()
+        let app = UIApplication.sharedApplication()
+        
+        controller.applicationDidEnterBackground(app)
+        //nothing to test explicitly
+    }
+    
+    func testApplicationWillEnterForeground() {
+        class AppDelegateMock : AppDelegate {}
+        let controller = AppDelegateMock()
+        let app = UIApplication.sharedApplication()
+        
+        controller.applicationWillEnterForeground(app)
+        //nothing to test explicitly
+    }
+    
+    func testApplicationDidBecomeActive() {
+        class AppDelegateMock : AppDelegate {}
+        let controller = AppDelegateMock()
+        let app = UIApplication.sharedApplication()
+        
+        controller.applicationDidBecomeActive(app)
+        //nothing to test explicitly
+    }
+    
+    func testApplicationWillTerminate() {
+        class AppDelegateMock : AppDelegate {
+            var contextSaved = false
+            override func saveContext() {
+                contextSaved = true
+            }
+        }
+        let controller = AppDelegateMock()
+        let app = UIApplication.sharedApplication()
+        
+        controller.applicationWillTerminate(app)
+        XCTAssertTrue(controller.contextSaved)
+        //nothing to test explicitly
+    }
+    
+    
+    
+    
 }
